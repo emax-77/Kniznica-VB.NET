@@ -34,10 +34,10 @@ Public Class Form1
             GridView1.UpdateCurrentRow()
 
             Dim Riadok As Object = GridView1.GetFocusedRow()
-            Dim xpObject As XPBaseObject = CType(Riadok, XPBaseObject)
-            xpObject.Save()
+            Dim Citatel As Citatelia = CType(Riadok, XPBaseObject)
+            Citatel.Save()
             UnitOfWork1.CommitChanges()
-            MessageBox.Show($"Citatel {xpObject.GetMemberValue("Meno")} {xpObject.GetMemberValue("Priezvisko")} bol upraveny.")
+            MessageBox.Show($"Citatel {Citatel.Meno} {Citatel.Priezvisko} bol upraveny.")
 
         Catch ex As Exception
             MessageBox.Show($"Chyba pri ukladaní: {ex.Message}")
@@ -52,10 +52,10 @@ Public Class Form1
             GridView2.UpdateCurrentRow()
 
             Dim Riadok As Object = GridView2.GetFocusedRow()
-            Dim xpObject As XPBaseObject = CType(Riadok, XPBaseObject)
-            xpObject.Save()
+            Dim Kniha As Knihy = CType(Riadok, XPBaseObject)
+            Kniha.Save()
             UnitOfWork2.CommitChanges()
-            MessageBox.Show($"Kniha {xpObject.GetMemberValue("Nazov")} bola upravena.")
+            MessageBox.Show($"Kniha {Kniha.Nazov} bola upravena.")
 
         Catch ex As Exception
             MessageBox.Show($"Chyba pri ukladaní: {ex.Message}")
@@ -65,8 +65,8 @@ Public Class Form1
     Private Sub btnNovyRiadokCitatelia_Click(sender As Object, e As EventArgs) Handles btnNovyRiadokCitatelia.Click
         ' Pridat novy riadok do tabulky Citatelia
         Try
-            Dim xpObject As XPBaseObject = New Citatelia(UnitOfWork1)
-            xpObject.Save()
+            Dim novyCitatel As XPBaseObject = New Citatelia(UnitOfWork1)
+            novyCitatel.Save()
             UnitOfWork1.CommitChanges()
 
             ' zobrazit tabulku Citatelia s novym riadkom, zotriedenou podla Priezviska
@@ -84,8 +84,8 @@ Public Class Form1
     Private Sub btnNovyRiadokKnihy_Click(sender As Object, e As EventArgs) Handles btnNovyRiadokKnihy.Click
         ' Pridat novy riadok do tabulky Knihy
         Try
-            Dim xpObject As XPBaseObject = New Knihy(UnitOfWork2)
-            xpObject.Save()
+            Dim novaKniha As XPBaseObject = New Knihy(UnitOfWork2)
+            novaKniha.Save()
             UnitOfWork2.CommitChanges()
 
             ' zobrazit tabulku Citatelia s novym riadkom, zotriedenu podla ID
@@ -104,10 +104,10 @@ Public Class Form1
         ' Vymazat vybrany riadok z tabulky Citatelia
         Try
             Dim Riadok As Object = GridView1.GetFocusedRow()
-            Dim xpObject As XPBaseObject = CType(Riadok, XPBaseObject)
-            xpObject.Delete()
+            Dim vymazatCitatela As Citatelia = CType(Riadok, XPBaseObject)
+            vymazatCitatela.Delete()
             UnitOfWork1.CommitChanges()
-            MessageBox.Show($"Citatel: {xpObject.GetMemberValue("Meno")} {xpObject.GetMemberValue("Priezvisko")} bol vymazany")
+            MessageBox.Show($"Citatel: {vymazatCitatela.Meno} {vymazatCitatela.Priezvisko} bol vymazany")
 
             ' zobrazit aktualizovanu tabulku Citatelia
             XpCollection1.Reload()
@@ -122,10 +122,10 @@ Public Class Form1
         ' Vymazat vybrany riadok z tabulky Knihy
         Try
             Dim Riadok As Object = GridView2.GetFocusedRow()
-            Dim xpObject As XPBaseObject = CType(Riadok, XPBaseObject)
-            xpObject.Delete()
+            Dim vymazatKnihu As Knihy = CType(Riadok, XPBaseObject)
+            vymazatKnihu.Delete()
             UnitOfWork2.CommitChanges()
-            MessageBox.Show($"Kniha {xpObject.GetMemberValue("Nazov")} bola vymazany")
+            MessageBox.Show($"Kniha {vymazatKnihu.Nazov} bola vymazana")
 
             ' zobrazit aktualizovanu tabulku Knihy
             XpCollection2.Reload()
@@ -149,11 +149,11 @@ Public Class Form1
             End If
 
             'zmenit stav knihy na pozicanu
-            Dim pozicanaKniha As XPBaseObject = CType(vyberKnihy, XPBaseObject)
-            pozicanaKniha.SetMemberValue("Pozicana", True)
+            Dim pozicanaKniha As Knihy = CType(vyberKnihy, Knihy)
+            pozicanaKniha.Pozicana = True
             pozicanaKniha.Save()
             UnitOfWork2.CommitChanges()
-            MessageBox.Show($"Kniha {pozicanaKniha.GetMemberValue("Nazov")} bola pozicana.")
+            MessageBox.Show($"Kniha {pozicanaKniha.Nazov} bola pozicana.")
 
             ' vytvorit objekt pozicky pomocou klucov na knihu a citatela
             Dim keyKnihy As String = GridView2.GetFocusedRowCellValue("Key").ToString()
@@ -226,8 +226,8 @@ Public Class Form1
             End If
 
             ' zmenit stav knihy na nepozicana
-            Dim pozicanaKniha As XPBaseObject = CType(vyberKnihy, XPBaseObject)
-            pozicanaKniha.SetMemberValue("Pozicana", False)
+            Dim pozicanaKniha As Knihy = CType(vyberKnihy, XPBaseObject)
+            pozicanaKniha.Pozicana = False
             pozicanaKniha.Save()
             UnitOfWork2.CommitChanges()
             MessageBox.Show($"Kniha {pozicanaKniha.GetMemberValue("Nazov")} bola vrátená.")

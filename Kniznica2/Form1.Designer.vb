@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
@@ -57,6 +58,8 @@ Partial Class Form1
         Me.colKey2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDatumpozicania = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDatumvratenia = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.lbxPozicaneKnihy = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -136,8 +139,8 @@ Partial Class Form1
         'GridControl2
         '
         Me.GridControl2.DataSource = Me.XpCollection2
-        GridLevelNode2.RelationName = "Level1"
-        Me.GridControl2.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
+        GridLevelNode1.RelationName = "Level1"
+        Me.GridControl2.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
         Me.GridControl2.Location = New System.Drawing.Point(631, 43)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
@@ -275,6 +278,8 @@ Partial Class Form1
         'GridControl3
         '
         Me.GridControl3.DataSource = Me.XpCollection3
+        GridLevelNode2.RelationName = "Level1"
+        Me.GridControl3.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
         Me.GridControl3.Location = New System.Drawing.Point(632, 436)
         Me.GridControl3.MainView = Me.GridView3
         Me.GridControl3.Name = "GridControl3"
@@ -290,30 +295,47 @@ Partial Class Form1
         '
         'GridView3
         '
-        Me.GridView3.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey2, Me.colDatumpozicania, Me.colDatumvratenia})
+        Me.GridView3.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey2, Me.colDatumpozicania, Me.colDatumvratenia, Me.GridColumn1, Me.GridColumn2})
         Me.GridView3.GridControl = Me.GridControl3
         Me.GridView3.Name = "GridView3"
+        Me.GridView3.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colKey2, DevExpress.Data.ColumnSortOrder.Descending)})
         '
         'colKey2
         '
         Me.colKey2.FieldName = "Key"
         Me.colKey2.Name = "colKey2"
         Me.colKey2.Visible = True
-        Me.colKey2.VisibleIndex = 2
+        Me.colKey2.VisibleIndex = 4
         '
         'colDatumpozicania
         '
         Me.colDatumpozicania.FieldName = "Datumpozicania"
         Me.colDatumpozicania.Name = "colDatumpozicania"
         Me.colDatumpozicania.Visible = True
-        Me.colDatumpozicania.VisibleIndex = 0
+        Me.colDatumpozicania.VisibleIndex = 2
         '
         'colDatumvratenia
         '
         Me.colDatumvratenia.FieldName = "Datumvratenia"
         Me.colDatumvratenia.Name = "colDatumvratenia"
         Me.colDatumvratenia.Visible = True
-        Me.colDatumvratenia.VisibleIndex = 1
+        Me.colDatumvratenia.VisibleIndex = 3
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "GridColumn1"
+        Me.GridColumn1.FieldName = "Citatel.Priezvisko"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 0
+        '
+        'GridColumn2
+        '
+        Me.GridColumn2.Caption = "GridColumn2"
+        Me.GridColumn2.FieldName = "Kniha.Nazov"
+        Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.Visible = True
+        Me.GridColumn2.VisibleIndex = 1
         '
         'lbxPozicaneKnihy
         '
@@ -444,4 +466,6 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
 End Class
