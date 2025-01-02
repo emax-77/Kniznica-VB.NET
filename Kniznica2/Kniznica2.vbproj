@@ -58,6 +58,7 @@
     <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -144,11 +145,36 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCitatelia.Designer.vb">
+      <DependentUpon>frmCitatelia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCitatelia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKnihy.Designer.vb">
+      <DependentUpon>frmKnihy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmKnihy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPozicky.Designer.vb">
+      <DependentUpon>frmPozicky.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPozicky.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Knihy.vb" />
+    <Compile Include="Kniznica.Designer.vb">
+      <DependentUpon>Kniznica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Kniznica.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -165,6 +191,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCitatelia.resx">
+      <DependentUpon>frmCitatelia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKnihy.resx">
+      <DependentUpon>frmKnihy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPozicky.resx">
+      <DependentUpon>frmPozicky.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kniznica.resx">
+      <DependentUpon>Kniznica.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
