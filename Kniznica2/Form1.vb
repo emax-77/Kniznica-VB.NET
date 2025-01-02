@@ -144,7 +144,7 @@ Public Class Form1
             Dim vyberCitatela As Object = GridView1.GetFocusedRow()
 
             If vyberKnihy Is Nothing OrElse vyberCitatela Is Nothing Then
-                MessageBox.Show("Vyberte knihu aj citatela")
+                MessageBox.Show("Vyber knihu aj citatela")
                 Return
             End If
 
@@ -216,11 +216,20 @@ Public Class Form1
     Private Sub btnVratitKnihu_Click(sender As Object, e As EventArgs) Handles btnVratitKnihu.Click
         ' Vratit knihu
         Try
-            Dim riadok As Object = GridView2.GetFocusedRow()
-            Dim pozicanaKniha As Knihy = CType(riadok, XPBaseObject)
+
+            ' overenie vyberu knihy
+            Dim vyberKnihy As Object = GridView2.GetFocusedRow()
+            Dim vyberCitatela As Object = GridView1.GetFocusedRow()
+
+            If vyberKnihy Is Nothing OrElse vyberCitatela Is Nothing Then
+                MessageBox.Show("Vyber knihu aj citatela pre vratenie knihy")
+                Return
+            End If
+
+            'nastavit priznak Pozicana na False
+            Dim pozicanaKniha As Knihy = CType(vyberKnihy, XPBaseObject)
             pozicanaKniha.Pozicana = False
             pozicanaKniha.Save()
-
             UnitOfWork2.CommitChanges()
             MessageBox.Show($"Kniha {pozicanaKniha.Nazov} bola vrátená.")
 
@@ -230,6 +239,8 @@ Public Class Form1
             Dim kniha As Knihy = UnitOfWork3.FindObject(Of Knihy)(CriteriaOperator.Parse("Key = ?", New Guid(keyKnihy)))
             Dim citatel As Citatelia = UnitOfWork3.FindObject(Of Citatelia)(CriteriaOperator.Parse("Key = ?", New Guid(keyCitatela)))
             Dim pozicka As Pozicky = UnitOfWork3.FindObject(Of Pozicky)(CriteriaOperator.Parse("Kniha = ? AND Citatel = ?", kniha, citatel))
+
+            'nastavit datum vratenia knihy
             pozicka.Datumvratenia = DateTime.Now
 
             ' zobrazit aktualizovanu tabulku Pozicky zotriedenu podla datumu pozicania
@@ -260,8 +271,6 @@ Public Class Form1
         ' zobrazit aktualizovanu tabulku Pozicky
         XpCollection3.Reload()
         GridView3.RefreshData()
-
-
 
 
     End Sub

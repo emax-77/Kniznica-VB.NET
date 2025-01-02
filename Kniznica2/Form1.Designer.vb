@@ -106,8 +106,6 @@ Partial Class Form1
         '
         Me.colKey.FieldName = "Key"
         Me.colKey.Name = "colKey"
-        Me.colKey.Visible = True
-        Me.colKey.VisibleIndex = 4
         '
         'colObciansky
         '
@@ -132,6 +130,7 @@ Partial Class Form1
         '
         'colDatumnarodenia
         '
+        Me.colDatumnarodenia.Caption = "Datum narodenia"
         Me.colDatumnarodenia.FieldName = "Datumnarodenia"
         Me.colDatumnarodenia.Name = "colDatumnarodenia"
         Me.colDatumnarodenia.Visible = True
@@ -165,8 +164,6 @@ Partial Class Form1
         '
         Me.colKey1.FieldName = "Key"
         Me.colKey1.Name = "colKey1"
-        Me.colKey1.Visible = True
-        Me.colKey1.VisibleIndex = 4
         '
         'colId
         '
@@ -174,27 +171,31 @@ Partial Class Form1
         Me.colId.Name = "colId"
         Me.colId.Visible = True
         Me.colId.VisibleIndex = 0
+        Me.colId.Width = 46
         '
         'colNazov
         '
         Me.colNazov.FieldName = "Nazov"
         Me.colNazov.Name = "colNazov"
         Me.colNazov.Visible = True
-        Me.colNazov.VisibleIndex = 1
+        Me.colNazov.VisibleIndex = 2
+        Me.colNazov.Width = 217
         '
         'colAutor
         '
         Me.colAutor.FieldName = "Autor"
         Me.colAutor.Name = "colAutor"
         Me.colAutor.Visible = True
-        Me.colAutor.VisibleIndex = 2
+        Me.colAutor.VisibleIndex = 3
+        Me.colAutor.Width = 242
         '
         'colPozicana
         '
         Me.colPozicana.FieldName = "Pozicana"
         Me.colPozicana.Name = "colPozicana"
         Me.colPozicana.Visible = True
-        Me.colPozicana.VisibleIndex = 3
+        Me.colPozicana.VisibleIndex = 1
+        Me.colPozicana.Width = 54
         '
         'btnUlozitCitatelia
         '
@@ -305,38 +306,42 @@ Partial Class Form1
         '
         Me.colKey2.FieldName = "Key"
         Me.colKey2.Name = "colKey2"
-        Me.colKey2.Visible = True
-        Me.colKey2.VisibleIndex = 4
         '
         'colDatumpozicania
         '
+        Me.colDatumpozicania.Caption = "Datum pozicania"
         Me.colDatumpozicania.FieldName = "Datumpozicania"
         Me.colDatumpozicania.Name = "colDatumpozicania"
         Me.colDatumpozicania.Visible = True
         Me.colDatumpozicania.VisibleIndex = 2
+        Me.colDatumpozicania.Width = 139
         '
         'colDatumvratenia
         '
+        Me.colDatumvratenia.Caption = "Datum vratenia"
         Me.colDatumvratenia.FieldName = "Datumvratenia"
         Me.colDatumvratenia.Name = "colDatumvratenia"
         Me.colDatumvratenia.Visible = True
         Me.colDatumvratenia.VisibleIndex = 3
+        Me.colDatumvratenia.Width = 143
         '
         'GridColumn1
         '
-        Me.GridColumn1.Caption = "GridColumn1"
+        Me.GridColumn1.Caption = "Priezvisko"
         Me.GridColumn1.FieldName = "Citatel.Priezvisko"
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 0
+        Me.GridColumn1.Width = 149
         '
         'GridColumn2
         '
-        Me.GridColumn2.Caption = "GridColumn2"
+        Me.GridColumn2.Caption = "Nazov knihy"
         Me.GridColumn2.FieldName = "Kniha.Nazov"
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 1
+        Me.GridColumn2.Width = 254
         '
         'lbxPozicaneKnihy
         '
@@ -392,11 +397,11 @@ Partial Class Form1
         'btnVymazatPoziku
         '
         Me.btnVymazatPoziku.BackColor = System.Drawing.Color.RosyBrown
-        Me.btnVymazatPoziku.Location = New System.Drawing.Point(632, 436)
+        Me.btnVymazatPoziku.Location = New System.Drawing.Point(629, 436)
         Me.btnVymazatPoziku.Name = "btnVymazatPoziku"
-        Me.btnVymazatPoziku.Size = New System.Drawing.Size(92, 33)
+        Me.btnVymazatPoziku.Size = New System.Drawing.Size(268, 33)
         Me.btnVymazatPoziku.TabIndex = 25
-        Me.btnVymazatPoziku.Text = "Vymazat"
+        Me.btnVymazatPoziku.Text = "Vymazat pozicku"
         Me.btnVymazatPoziku.UseVisualStyleBackColor = False
         '
         'Form1
