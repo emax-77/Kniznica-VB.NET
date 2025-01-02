@@ -65,6 +65,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnVymazatPoziku = New System.Windows.Forms.Button()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -218,9 +219,9 @@ Partial Class Form1
         'btnUlozitKnihy
         '
         Me.btnUlozitKnihy.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnUlozitKnihy.Location = New System.Drawing.Point(706, 43)
+        Me.btnUlozitKnihy.Location = New System.Drawing.Point(707, 43)
         Me.btnUlozitKnihy.Name = "btnUlozitKnihy"
-        Me.btnUlozitKnihy.Size = New System.Drawing.Size(79, 33)
+        Me.btnUlozitKnihy.Size = New System.Drawing.Size(104, 33)
         Me.btnUlozitKnihy.TabIndex = 10
         Me.btnUlozitKnihy.Text = "Ulozit"
         Me.btnUlozitKnihy.UseVisualStyleBackColor = False
@@ -230,7 +231,7 @@ Partial Class Form1
         Me.btnNovyRiadokKnihy.BackColor = System.Drawing.SystemColors.Info
         Me.btnNovyRiadokKnihy.Location = New System.Drawing.Point(629, 43)
         Me.btnNovyRiadokKnihy.Name = "btnNovyRiadokKnihy"
-        Me.btnNovyRiadokKnihy.Size = New System.Drawing.Size(79, 33)
+        Me.btnNovyRiadokKnihy.Size = New System.Drawing.Size(95, 33)
         Me.btnNovyRiadokKnihy.TabIndex = 11
         Me.btnNovyRiadokKnihy.Text = "Novy"
         Me.btnNovyRiadokKnihy.UseVisualStyleBackColor = False
@@ -248,9 +249,9 @@ Partial Class Form1
         'btnVymazatRiadokKnihy
         '
         Me.btnVymazatRiadokKnihy.BackColor = System.Drawing.Color.RosyBrown
-        Me.btnVymazatRiadokKnihy.Location = New System.Drawing.Point(782, 43)
+        Me.btnVymazatRiadokKnihy.Location = New System.Drawing.Point(807, 43)
         Me.btnVymazatRiadokKnihy.Name = "btnVymazatRiadokKnihy"
-        Me.btnVymazatRiadokKnihy.Size = New System.Drawing.Size(74, 33)
+        Me.btnVymazatRiadokKnihy.Size = New System.Drawing.Size(83, 33)
         Me.btnVymazatRiadokKnihy.TabIndex = 13
         Me.btnVymazatRiadokKnihy.Text = "Vymazat"
         Me.btnVymazatRiadokKnihy.UseVisualStyleBackColor = False
@@ -258,7 +259,7 @@ Partial Class Form1
         'btnPozicatKnihu
         '
         Me.btnPozicatKnihu.BackColor = System.Drawing.Color.LightGreen
-        Me.btnPozicatKnihu.Location = New System.Drawing.Point(852, 43)
+        Me.btnPozicatKnihu.Location = New System.Drawing.Point(884, 43)
         Me.btnPozicatKnihu.Name = "btnPozicatKnihu"
         Me.btnPozicatKnihu.Size = New System.Drawing.Size(90, 33)
         Me.btnPozicatKnihu.TabIndex = 14
@@ -268,7 +269,7 @@ Partial Class Form1
         'btnVratitKnihu
         '
         Me.btnVratitKnihu.BackColor = System.Drawing.Color.Orange
-        Me.btnVratitKnihu.Location = New System.Drawing.Point(938, 43)
+        Me.btnVratitKnihu.Location = New System.Drawing.Point(966, 43)
         Me.btnVratitKnihu.Name = "btnVratitKnihu"
         Me.btnVratitKnihu.Size = New System.Drawing.Size(90, 33)
         Me.btnVratitKnihu.TabIndex = 15
@@ -280,7 +281,7 @@ Partial Class Form1
         Me.GridControl3.DataSource = Me.XpCollection3
         GridLevelNode2.RelationName = "Level1"
         Me.GridControl3.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
-        Me.GridControl3.Location = New System.Drawing.Point(632, 436)
+        Me.GridControl3.Location = New System.Drawing.Point(631, 436)
         Me.GridControl3.MainView = Me.GridView3
         Me.GridControl3.Name = "GridControl3"
         Me.GridControl3.Size = New System.Drawing.Size(583, 282)
@@ -388,19 +389,30 @@ Partial Class Form1
         Me.Label4.TabIndex = 24
         Me.Label4.Text = "Pozicky :"
         '
+        'btnVymazatPoziku
+        '
+        Me.btnVymazatPoziku.BackColor = System.Drawing.Color.RosyBrown
+        Me.btnVymazatPoziku.Location = New System.Drawing.Point(632, 436)
+        Me.btnVymazatPoziku.Name = "btnVymazatPoziku"
+        Me.btnVymazatPoziku.Size = New System.Drawing.Size(92, 33)
+        Me.btnVymazatPoziku.TabIndex = 25
+        Me.btnVymazatPoziku.Text = "Vymazat"
+        Me.btnVymazatPoziku.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1234, 761)
+        Me.Controls.Add(Me.btnPozicatKnihu)
+        Me.Controls.Add(Me.btnVratitKnihu)
+        Me.Controls.Add(Me.btnVymazatPoziku)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbxPozicaneKnihy)
         Me.Controls.Add(Me.GridControl3)
-        Me.Controls.Add(Me.btnVratitKnihu)
-        Me.Controls.Add(Me.btnPozicatKnihu)
         Me.Controls.Add(Me.btnVymazatRiadokKnihy)
         Me.Controls.Add(Me.btnVymazatRiadokCitatelia)
         Me.Controls.Add(Me.btnNovyRiadokKnihy)
@@ -468,4 +480,5 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents btnVymazatPoziku As Button
 End Class

@@ -216,21 +216,13 @@ Public Class Form1
     Private Sub btnVratitKnihu_Click(sender As Object, e As EventArgs) Handles btnVratitKnihu.Click
         ' Vratit knihu
         Try
-            ' overenie vyberu knihy
-            Dim vyberKnihy As Object = GridView2.GetFocusedRow()
-            Dim vyberCitatela As Object = GridView1.GetFocusedRow()
-
-            If vyberKnihy Is Nothing OrElse vyberCitatela Is Nothing Then
-                MessageBox.Show("Vyberte knihu aj citatela")
-                Return
-            End If
-
-            ' zmenit stav knihy na nepozicana
-            Dim pozicanaKniha As Knihy = CType(vyberKnihy, XPBaseObject)
+            Dim riadok As Object = GridView2.GetFocusedRow()
+            Dim pozicanaKniha As Knihy = CType(riadok, XPBaseObject)
             pozicanaKniha.Pozicana = False
             pozicanaKniha.Save()
+
             UnitOfWork2.CommitChanges()
-            MessageBox.Show($"Kniha {pozicanaKniha.GetMemberValue("Nazov")} bola vrátená.")
+            MessageBox.Show($"Kniha {pozicanaKniha.Nazov} bola vrátená.")
 
             ' ziskat pozicku knihy
             Dim keyKnihy As String = GridView2.GetFocusedRowCellValue("Key").ToString()
@@ -238,11 +230,7 @@ Public Class Form1
             Dim kniha As Knihy = UnitOfWork3.FindObject(Of Knihy)(CriteriaOperator.Parse("Key = ?", New Guid(keyKnihy)))
             Dim citatel As Citatelia = UnitOfWork3.FindObject(Of Citatelia)(CriteriaOperator.Parse("Key = ?", New Guid(keyCitatela)))
             Dim pozicka As Pozicky = UnitOfWork3.FindObject(Of Pozicky)(CriteriaOperator.Parse("Kniha = ? AND Citatel = ?", kniha, citatel))
-
-            ' vymazat pozicku
-            pozicka.Delete()
-            UnitOfWork3.CommitChanges()
-            MessageBox.Show($"Pozicka pre knihu {pozicanaKniha.GetMemberValue("Nazov")} bola vymazana.")
+            pozicka.Datumvratenia = DateTime.Now
 
             ' zobrazit aktualizovanu tabulku Pozicky zotriedenu podla datumu pozicania
             XpCollection3.Reload()
@@ -257,6 +245,24 @@ Public Class Form1
         Catch ex As Exception
             MessageBox.Show($"Chyba pri vracani knihy: {ex.Message}")
         End Try
+
+    End Sub
+
+    Private Sub btnVymazatPoziku_Click(sender As Object, e As EventArgs) Handles btnVymazatPoziku.Click
+        'vymazat pozicku
+
+        Dim Riadok As Object = GridView3.GetFocusedRow()
+        Dim vymazatPozicku As Pozicky = CType(Riadok, XPBaseObject)
+        vymazatPozicku.Delete()
+        UnitOfWork3.CommitChanges()
+        MessageBox.Show("Pozicka bola vymazana")
+
+        ' zobrazit aktualizovanu tabulku Pozicky
+        XpCollection3.Reload()
+        GridView3.RefreshData()
+
+
+
 
     End Sub
 End Class
