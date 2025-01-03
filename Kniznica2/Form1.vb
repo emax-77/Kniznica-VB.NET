@@ -27,41 +27,6 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnUlozitCitatelia.Click
-        ' Uprava udajov v tabulke Citatelia
-        Try
-            GridView1.PostEditor()
-            GridView1.UpdateCurrentRow()
-
-            Dim Riadok As Object = GridView1.GetFocusedRow()
-            Dim Citatel As Citatelia = CType(Riadok, XPBaseObject)
-            Citatel.Save()
-            UnitOfWork1.CommitChanges()
-            MessageBox.Show($"Citatel {Citatel.Meno} {Citatel.Priezvisko} bol upraveny.")
-
-        Catch ex As Exception
-            MessageBox.Show($"Chyba pri ukladaní: {ex.Message}")
-        End Try
-
-    End Sub
-
-    Private Sub btnUlozitKnihy_Click(sender As Object, e As EventArgs) Handles btnUlozitKnihy.Click
-        ' Uprava udajov v tabulke Knihy
-        Try
-            GridView2.PostEditor()
-            GridView2.UpdateCurrentRow()
-
-            Dim Riadok As Object = GridView2.GetFocusedRow()
-            Dim Kniha As Knihy = CType(Riadok, XPBaseObject)
-            Kniha.Save()
-            UnitOfWork2.CommitChanges()
-            MessageBox.Show($"Kniha {Kniha.Nazov} bola upravena.")
-
-        Catch ex As Exception
-            MessageBox.Show($"Chyba pri ukladaní: {ex.Message}")
-        End Try
-    End Sub
-
     Private Sub btnNovyRiadokCitatelia_Click(sender As Object, e As EventArgs) Handles btnNovyRiadokCitatelia.Click
         ' Pridat novy riadok do tabulky Citatelia
         Try
@@ -100,6 +65,41 @@ Public Class Form1
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnUlozitCitatelia.Click
+        ' Ulozenie udajov v tabulke Citatelia
+        Try
+            GridView1.PostEditor()
+            GridView1.UpdateCurrentRow()
+
+            Dim Riadok As Object = GridView1.GetFocusedRow()
+            Dim Citatel As Citatelia = CType(Riadok, XPBaseObject)
+            Citatel.Save()
+            UnitOfWork1.CommitChanges()
+            MessageBox.Show($"Citatel {Citatel.Meno} {Citatel.Priezvisko} bol upraveny.")
+
+        Catch ex As Exception
+            MessageBox.Show($"Chyba pri ukladaní: {ex.Message}")
+        End Try
+
+    End Sub
+
+    Private Sub btnUlozitKnihy_Click(sender As Object, e As EventArgs) Handles btnUlozitKnihy.Click
+        ' Ulozenie udajov v tabulke Knihy
+        Try
+            GridView2.PostEditor()
+            GridView2.UpdateCurrentRow()
+
+            Dim Riadok As Object = GridView2.GetFocusedRow()
+            Dim Kniha As Knihy = CType(Riadok, XPBaseObject)
+            Kniha.Save()
+            UnitOfWork2.CommitChanges()
+            MessageBox.Show($"Kniha {Kniha.Nazov} bola upravena.")
+
+        Catch ex As Exception
+            MessageBox.Show($"Chyba pri ukladaní: {ex.Message}")
+        End Try
+    End Sub
+
     Private Sub btnVymazatRiadokCitatelia_Click(sender As Object, e As EventArgs) Handles btnVymazatRiadokCitatelia.Click
         ' Vymazat vybrany riadok z tabulky Citatelia
         Try
@@ -133,6 +133,25 @@ Public Class Form1
 
         Catch ex As Exception
             MessageBox.Show($"Chyba pri mazani: {ex.Message}")
+        End Try
+    End Sub
+
+    Private Sub btnVymazatPoziku_Click(sender As Object, e As EventArgs) Handles btnVymazatPoziku.Click
+        'Vymazat vybrany riadok z tabulky Pozicky
+        Try
+            Dim Riadok As Object = GridView3.GetFocusedRow()
+            Dim vymazatPozicku As Pozicky = CType(Riadok, XPBaseObject)
+            vymazatPozicku.Delete()
+            UnitOfWork3.CommitChanges()
+            MessageBox.Show("Pozicka bola vymazana")
+
+            ' zobrazit aktualizovanu tabulku Pozicky
+            XpCollection3.Reload()
+            GridView3.RefreshData()
+
+        Catch ex As Exception
+            MessageBox.Show($"Chyba pri mazani: {ex.Message}")
+
         End Try
     End Sub
 
@@ -256,22 +275,6 @@ Public Class Form1
         Catch ex As Exception
             MessageBox.Show($"Chyba pri vracani knihy: {ex.Message}")
         End Try
-
     End Sub
 
-    Private Sub btnVymazatPoziku_Click(sender As Object, e As EventArgs) Handles btnVymazatPoziku.Click
-        'vymazat pozicku
-
-        Dim Riadok As Object = GridView3.GetFocusedRow()
-        Dim vymazatPozicku As Pozicky = CType(Riadok, XPBaseObject)
-        vymazatPozicku.Delete()
-        UnitOfWork3.CommitChanges()
-        MessageBox.Show("Pozicka bola vymazana")
-
-        ' zobrazit aktualizovanu tabulku Pozicky
-        XpCollection3.Reload()
-        GridView3.RefreshData()
-
-
-    End Sub
 End Class

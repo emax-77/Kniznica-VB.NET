@@ -23,8 +23,8 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim GridLevelNode3 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
-        Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
         Me.UnitOfWork1 = New DevExpress.Xpo.UnitOfWork(Me.components)
@@ -139,8 +139,8 @@ Partial Class Form1
         'GridControl2
         '
         Me.GridControl2.DataSource = Me.XpCollection2
-        GridLevelNode1.RelationName = "Level1"
-        Me.GridControl2.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
+        GridLevelNode3.RelationName = "Level1"
+        Me.GridControl2.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode3})
         Me.GridControl2.Location = New System.Drawing.Point(631, 43)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
@@ -280,8 +280,8 @@ Partial Class Form1
         'GridControl3
         '
         Me.GridControl3.DataSource = Me.XpCollection3
-        GridLevelNode2.RelationName = "Level1"
-        Me.GridControl3.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
+        GridLevelNode1.RelationName = "Level1"
+        Me.GridControl3.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
         Me.GridControl3.Location = New System.Drawing.Point(631, 436)
         Me.GridControl3.MainView = Me.GridView3
         Me.GridControl3.Name = "GridControl3"
@@ -355,7 +355,7 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label1.Location = New System.Drawing.Point(21, 406)
+        Me.Label1.Location = New System.Drawing.Point(12, 406)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(130, 16)
         Me.Label1.TabIndex = 21
@@ -366,7 +366,7 @@ Partial Class Form1
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label2.Location = New System.Drawing.Point(21, 19)
+        Me.Label2.Location = New System.Drawing.Point(12, 19)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(61, 16)
         Me.Label2.TabIndex = 22
@@ -377,7 +377,7 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label3.Location = New System.Drawing.Point(647, 19)
+        Me.Label3.Location = New System.Drawing.Point(628, 19)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 16)
         Me.Label3.TabIndex = 23
@@ -388,7 +388,7 @@ Partial Class Form1
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label4.Location = New System.Drawing.Point(647, 406)
+        Me.Label4.Location = New System.Drawing.Point(628, 406)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 16)
         Me.Label4.TabIndex = 24

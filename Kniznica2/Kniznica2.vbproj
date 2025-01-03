@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.5.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
@@ -145,31 +148,7 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCitatelia.Designer.vb">
-      <DependentUpon>frmCitatelia.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmCitatelia.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmKnihy.Designer.vb">
-      <DependentUpon>frmKnihy.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmKnihy.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPozicky.Designer.vb">
-      <DependentUpon>frmPozicky.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmPozicky.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Knihy.vb" />
-    <Compile Include="Kniznica.Designer.vb">
-      <DependentUpon>Kniznica.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Kniznica.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -187,22 +166,40 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Pozicky.vb" />
+    <Compile Include="xCitatelia.Designer.vb">
+      <DependentUpon>xCitatelia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xCitatelia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xKnihy.Designer.vb">
+      <DependentUpon>xKnihy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xKnihy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xKniznica.Designer.vb">
+      <DependentUpon>xKniznica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xKniznica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xNovaKniha.Designer.vb">
+      <DependentUpon>xNovaKniha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xNovaKniha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xPozicky.Designer.vb">
+      <DependentUpon>xPozicky.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xPozicky.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCitatelia.resx">
-      <DependentUpon>frmCitatelia.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmKnihy.resx">
-      <DependentUpon>frmKnihy.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPozicky.resx">
-      <DependentUpon>frmPozicky.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Kniznica.resx">
-      <DependentUpon>Kniznica.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -211,8 +208,24 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="xCitatelia.resx">
+      <DependentUpon>xCitatelia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xKnihy.resx">
+      <DependentUpon>xKnihy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xKniznica.resx">
+      <DependentUpon>xKniznica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xNovaKniha.resx">
+      <DependentUpon>xNovaKniha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xPozicky.resx">
+      <DependentUpon>xPozicky.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
