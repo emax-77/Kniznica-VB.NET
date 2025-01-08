@@ -4,8 +4,8 @@ Imports DevExpress.Xpo.DB
 
 Module GlobalVariables
     Public edit As Boolean = False
-    Public pozickaKnihy = False
-    Public vratenieKnihy = False
+    Public pozickaKnihy As Boolean = False
+    Public vratenieKnihy As Boolean = False
 End Module
 
 Public Class xKniznica
@@ -25,7 +25,7 @@ Public Class xKniznica
         xPozicky.GridView3.Columns("Datumpozicania").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending 'Zotriedi tabulku Pozicky podla datumu pozicania
 
     End Sub
-
+    'Horne menu (horizontalne)
     Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
         xPozicky.Close()
         xKnihy.Close()
@@ -40,6 +40,24 @@ Public Class xKniznica
     End Sub
 
     Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
+        xCitatelia.Close()
+        xKnihy.Close()
+        xPozicky.Show()
+    End Sub
+    ' Bocne menu (vertikalne)
+    Private Sub NavBarItem1_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem1.LinkClicked
+        xPozicky.Close()
+        xKnihy.Close()
+        xCitatelia.Show()
+    End Sub
+
+    Private Sub NavBarItem2_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem2.LinkClicked
+        xCitatelia.Close()
+        xPozicky.Close()
+        xKnihy.Show()
+    End Sub
+
+    Private Sub NavBarItem3_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem3.LinkClicked
         xCitatelia.Close()
         xKnihy.Close()
         xPozicky.Show()

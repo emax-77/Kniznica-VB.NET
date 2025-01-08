@@ -9,29 +9,18 @@ Public Class xCitatelia
 
     End Sub
 
-    Private Sub btnNovyRiadokCitatelia_Click(sender As Object, e As EventArgs) Handles btnNovyRiadokCitatelia.Click
+    Private Sub sbtnNovyCitatel_Click(sender As Object, e As EventArgs) Handles sbtnNovyCitatel.Click
         ' Pridat novy riadok do tabulky Citatelia
         xNovyCitatel.Show()
     End Sub
 
-    Private Sub btnUlozitCitatelia_Click(sender As Object, e As EventArgs) Handles btnUpravitCitatela.Click
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         ' Editovat citatela
         edit = True
         xNovyCitatel.Show()
-        ' Ulozenie udajov v tabulke Citatelia
-        'Try
-        '    Dim Riadok As Object = GridView1.GetFocusedRow()
-        '    Dim Citatel As Citatelia = CType(Riadok, XPBaseObject)
-        '    Citatel.Save()
-        '    UnitOfWork1.CommitChanges()
-        '    MessageBox.Show($"Citatel {Citatel.Meno} {Citatel.Priezvisko} bol upraveny.")
-
-        'Catch ex As Exception
-        '    MessageBox.Show($"Chyba pri ukladaní: {ex.Message}")
-        'End Try
     End Sub
 
-    Private Sub btnVymazatRiadokCitatelia_Click(sender As Object, e As EventArgs) Handles btnVymazatRiadokCitatelia.Click
+    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
         ' Vymazat vybrany riadok z tabulky Citatelia
         Try
             Dim Riadok As Object = GridView1.GetFocusedRow()

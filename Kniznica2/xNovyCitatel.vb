@@ -13,7 +13,7 @@ Public Class xNovyCitatel
             Dim Citatel As Citatelia = CType(Riadok, XPBaseObject)
 
             tedMeno.DataBindings.Add("Text", Citatel, "Meno")
-            tedPriezvysko.DataBindings.Add("Text", Citatel, "Meno")
+            tedPriezvysko.DataBindings.Add("Text", Citatel, "Priezvisko")
             dedDatumNarodenia.DataBindings.Add("Text", Citatel, "Datumnarodenia")
             tedObciansky.DataBindings.Add("Text", Citatel, "Obciansky")
 
@@ -28,7 +28,7 @@ Public Class xNovyCitatel
             ' nacitat udaje z formularu
             Dim meno As String = tedMeno.Text
             Dim priezvisko As String = tedPriezvysko.Text
-            Dim datumNarodenia As Integer = dedDatumNarodenia.Text
+            Dim datumNarodenia As String = dedDatumNarodenia.Text
             Dim obcianskyPreukaz As String = tedObciansky.Text
 
             ' vlozit udaje do tabulky Citatelia

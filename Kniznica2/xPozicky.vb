@@ -12,7 +12,7 @@ Public Class xPozicky
 
     End Sub
 
-    Private Sub btnVymazatPoziku_Click(sender As Object, e As EventArgs) Handles btnVymazatPoziku.Click
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         'Vymazat vybrany riadok z tabulky Pozicky
         Try
             Dim Riadok As Object = GridView3.GetFocusedRow()
@@ -29,6 +29,5 @@ Public Class xPozicky
             MessageBox.Show($"Chyba pri mazani: {ex.Message}")
 
         End Try
-
     End Sub
 End Class

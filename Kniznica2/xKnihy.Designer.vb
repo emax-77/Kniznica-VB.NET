@@ -20,14 +20,10 @@ Partial Class xKnihy
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
-        Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
+        Dim GridLevelNode3 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
+        Dim GridLevelNode4 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(xKnihy))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.btnPozicatKnihu = New System.Windows.Forms.Button()
-        Me.btnVratitKnihu = New System.Windows.Forms.Button()
-        Me.btnVymazatRiadokKnihy = New System.Windows.Forms.Button()
-        Me.btnNovaKniha = New System.Windows.Forms.Button()
-        Me.btnUpravitKnihu = New System.Windows.Forms.Button()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
         Me.XpCollection2 = New DevExpress.Xpo.XPCollection(Me.components)
         Me.UnitOfWork2 = New DevExpress.Xpo.UnitOfWork(Me.components)
@@ -38,13 +34,18 @@ Partial Class xKnihy
         Me.colAutor = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPozicana = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPocet = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,22 +53,22 @@ Partial Class xKnihy
         CType(Me.UnitOfWork2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
-        Me.LayoutControl1.Controls.Add(Me.btnPozicatKnihu)
-        Me.LayoutControl1.Controls.Add(Me.btnVratitKnihu)
-        Me.LayoutControl1.Controls.Add(Me.btnVymazatRiadokKnihy)
-        Me.LayoutControl1.Controls.Add(Me.btnNovaKniha)
-        Me.LayoutControl1.Controls.Add(Me.btnUpravitKnihu)
         Me.LayoutControl1.Controls.Add(Me.GridControl2)
+        Me.LayoutControl1.Controls.Add(Me.SimpleButton1)
+        Me.LayoutControl1.Controls.Add(Me.SimpleButton2)
+        Me.LayoutControl1.Controls.Add(Me.SimpleButton3)
+        Me.LayoutControl1.Controls.Add(Me.SimpleButton4)
+        Me.LayoutControl1.Controls.Add(Me.SimpleButton5)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
@@ -77,66 +78,16 @@ Partial Class xKnihy
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'btnPozicatKnihu
-        '
-        Me.btnPozicatKnihu.BackColor = System.Drawing.Color.LightGreen
-        Me.btnPozicatKnihu.Location = New System.Drawing.Point(624, 12)
-        Me.btnPozicatKnihu.Name = "btnPozicatKnihu"
-        Me.btnPozicatKnihu.Size = New System.Drawing.Size(199, 45)
-        Me.btnPozicatKnihu.TabIndex = 33
-        Me.btnPozicatKnihu.Text = "Pozicat knihu"
-        Me.btnPozicatKnihu.UseVisualStyleBackColor = False
-        '
-        'btnVratitKnihu
-        '
-        Me.btnVratitKnihu.BackColor = System.Drawing.Color.Orange
-        Me.btnVratitKnihu.Location = New System.Drawing.Point(827, 12)
-        Me.btnVratitKnihu.Name = "btnVratitKnihu"
-        Me.btnVratitKnihu.Size = New System.Drawing.Size(200, 45)
-        Me.btnVratitKnihu.TabIndex = 34
-        Me.btnVratitKnihu.Text = "Vratit knihu"
-        Me.btnVratitKnihu.UseVisualStyleBackColor = False
-        '
-        'btnVymazatRiadokKnihy
-        '
-        Me.btnVymazatRiadokKnihy.BackColor = System.Drawing.Color.RosyBrown
-        Me.btnVymazatRiadokKnihy.Location = New System.Drawing.Point(420, 12)
-        Me.btnVymazatRiadokKnihy.Name = "btnVymazatRiadokKnihy"
-        Me.btnVymazatRiadokKnihy.Size = New System.Drawing.Size(200, 45)
-        Me.btnVymazatRiadokKnihy.TabIndex = 32
-        Me.btnVymazatRiadokKnihy.Text = "Vymazat"
-        Me.btnVymazatRiadokKnihy.UseVisualStyleBackColor = False
-        '
-        'btnNovaKniha
-        '
-        Me.btnNovaKniha.BackColor = System.Drawing.SystemColors.Info
-        Me.btnNovaKniha.Location = New System.Drawing.Point(12, 12)
-        Me.btnNovaKniha.Name = "btnNovaKniha"
-        Me.btnNovaKniha.Size = New System.Drawing.Size(200, 45)
-        Me.btnNovaKniha.TabIndex = 31
-        Me.btnNovaKniha.Text = "Nova Kniha"
-        Me.btnNovaKniha.UseVisualStyleBackColor = False
-        '
-        'btnUpravitKnihu
-        '
-        Me.btnUpravitKnihu.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnUpravitKnihu.Location = New System.Drawing.Point(216, 12)
-        Me.btnUpravitKnihu.Name = "btnUpravitKnihu"
-        Me.btnUpravitKnihu.Size = New System.Drawing.Size(200, 45)
-        Me.btnUpravitKnihu.TabIndex = 30
-        Me.btnUpravitKnihu.Text = "Upravit"
-        Me.btnUpravitKnihu.UseVisualStyleBackColor = False
-        '
         'GridControl2
         '
         Me.GridControl2.DataSource = Me.XpCollection2
-        GridLevelNode1.RelationName = "Level1"
-        GridLevelNode2.RelationName = "Level2"
-        Me.GridControl2.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1, GridLevelNode2})
-        Me.GridControl2.Location = New System.Drawing.Point(12, 61)
+        GridLevelNode3.RelationName = "Level1"
+        GridLevelNode4.RelationName = "Level2"
+        Me.GridControl2.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode3, GridLevelNode4})
+        Me.GridControl2.Location = New System.Drawing.Point(12, 52)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(1015, 356)
+        Me.GridControl2.Size = New System.Drawing.Size(1015, 365)
         Me.GridControl2.TabIndex = 25
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -197,68 +148,118 @@ Partial Class xKnihy
         Me.colPocet.Visible = True
         Me.colPocet.VisibleIndex = 4
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(12, 12)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(200, 36)
+        Me.SimpleButton1.StyleController = Me.LayoutControl1
+        Me.SimpleButton1.TabIndex = 35
+        Me.SimpleButton1.Text = "Nova Kniha"
+        '
+        'SimpleButton2
+        '
+        Me.SimpleButton2.ImageOptions.Image = CType(resources.GetObject("SimpleButton2.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton2.Location = New System.Drawing.Point(216, 12)
+        Me.SimpleButton2.Name = "SimpleButton2"
+        Me.SimpleButton2.Size = New System.Drawing.Size(200, 36)
+        Me.SimpleButton2.StyleController = Me.LayoutControl1
+        Me.SimpleButton2.TabIndex = 36
+        Me.SimpleButton2.Text = "Upravit"
+        '
+        'SimpleButton3
+        '
+        Me.SimpleButton3.ImageOptions.Image = CType(resources.GetObject("SimpleButton3.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton3.Location = New System.Drawing.Point(420, 12)
+        Me.SimpleButton3.Name = "SimpleButton3"
+        Me.SimpleButton3.Size = New System.Drawing.Size(200, 36)
+        Me.SimpleButton3.StyleController = Me.LayoutControl1
+        Me.SimpleButton3.TabIndex = 37
+        Me.SimpleButton3.Text = "Vymazat"
+        '
+        'SimpleButton4
+        '
+        Me.SimpleButton4.ImageOptions.Image = CType(resources.GetObject("SimpleButton4.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton4.Location = New System.Drawing.Point(624, 12)
+        Me.SimpleButton4.Name = "SimpleButton4"
+        Me.SimpleButton4.Size = New System.Drawing.Size(199, 36)
+        Me.SimpleButton4.StyleController = Me.LayoutControl1
+        Me.SimpleButton4.TabIndex = 38
+        Me.SimpleButton4.Text = "Pozicat knihu"
+        '
+        'SimpleButton5
+        '
+        Me.SimpleButton5.ImageOptions.Image = CType(resources.GetObject("SimpleButton5.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton5.Location = New System.Drawing.Point(827, 12)
+        Me.SimpleButton5.Name = "SimpleButton5"
+        Me.SimpleButton5.Size = New System.Drawing.Size(200, 36)
+        Me.SimpleButton5.StyleController = Me.LayoutControl1
+        Me.SimpleButton5.TabIndex = 39
+        Me.SimpleButton5.Text = "Vratit knihu"
+        '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem1, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem4})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem10, Me.LayoutControlItem11})
         Me.Root.Name = "Root"
         Me.Root.Size = New System.Drawing.Size(1039, 429)
         Me.Root.TextVisible = False
         '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.btnPozicatKnihu
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(612, 0)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(203, 49)
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem2.TextVisible = False
-        '
-        'LayoutControlItem3
-        '
-        Me.LayoutControlItem3.Control = Me.btnVratitKnihu
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(815, 0)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(204, 49)
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem3.TextVisible = False
-        '
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.GridControl2
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 49)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 40)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1019, 360)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1019, 369)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
-        'LayoutControlItem5
+        'LayoutControlItem7
         '
-        Me.LayoutControlItem5.Control = Me.btnNovaKniha
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(204, 49)
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem5.TextVisible = False
+        Me.LayoutControlItem7.Control = Me.SimpleButton1
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem7.Name = "LayoutControlItem7"
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(204, 40)
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem7.TextVisible = False
         '
-        'LayoutControlItem6
+        'LayoutControlItem8
         '
-        Me.LayoutControlItem6.Control = Me.btnUpravitKnihu
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(204, 0)
-        Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(204, 49)
-        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem6.TextVisible = False
+        Me.LayoutControlItem8.Control = Me.SimpleButton2
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(204, 0)
+        Me.LayoutControlItem8.Name = "LayoutControlItem8"
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(204, 40)
+        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem8.TextVisible = False
         '
-        'LayoutControlItem4
+        'LayoutControlItem9
         '
-        Me.LayoutControlItem4.Control = Me.btnVymazatRiadokKnihy
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(408, 0)
-        Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(204, 49)
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem4.TextVisible = False
+        Me.LayoutControlItem9.Control = Me.SimpleButton3
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(408, 0)
+        Me.LayoutControlItem9.Name = "LayoutControlItem9"
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(204, 40)
+        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem9.TextVisible = False
+        '
+        'LayoutControlItem10
+        '
+        Me.LayoutControlItem10.Control = Me.SimpleButton4
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(612, 0)
+        Me.LayoutControlItem10.Name = "LayoutControlItem10"
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(203, 40)
+        Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem10.TextVisible = False
+        '
+        'LayoutControlItem11
+        '
+        Me.LayoutControlItem11.Control = Me.SimpleButton5
+        Me.LayoutControlItem11.Location = New System.Drawing.Point(815, 0)
+        Me.LayoutControlItem11.Name = "LayoutControlItem11"
+        Me.LayoutControlItem11.Size = New System.Drawing.Size(204, 40)
+        Me.LayoutControlItem11.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem11.TextVisible = False
         '
         'xKnihy
         '
@@ -276,12 +277,12 @@ Partial Class xKnihy
         CType(Me.UnitOfWork2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -296,17 +297,17 @@ Partial Class xKnihy
     Friend WithEvents colAutor As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colPozicana As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents btnPozicatKnihu As Button
-    Friend WithEvents btnVratitKnihu As Button
-    Friend WithEvents btnVymazatRiadokKnihy As Button
-    Friend WithEvents btnNovaKniha As Button
-    Friend WithEvents btnUpravitKnihu As Button
-    Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents XpCollection2 As DevExpress.Xpo.XPCollection
     Friend WithEvents UnitOfWork2 As DevExpress.Xpo.UnitOfWork
     Friend WithEvents colPocet As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem8 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem9 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem10 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents SimpleButton5 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LayoutControlItem11 As DevExpress.XtraLayout.LayoutControlItem
 End Class
