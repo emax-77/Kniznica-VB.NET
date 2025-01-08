@@ -32,7 +32,7 @@ Partial Class xCitatelia
         Me.colDatumnarodenia = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.btnVymazatRiadokCitatelia = New System.Windows.Forms.Button()
         Me.btnNovyRiadokCitatelia = New System.Windows.Forms.Button()
-        Me.btnUlozitCitatelia = New System.Windows.Forms.Button()
+        Me.btnUpravitCitatela = New System.Windows.Forms.Button()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -60,7 +60,7 @@ Partial Class xCitatelia
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Controls.Add(Me.btnVymazatRiadokCitatelia)
         Me.LayoutControl1.Controls.Add(Me.btnNovyRiadokCitatelia)
-        Me.LayoutControl1.Controls.Add(Me.btnUlozitCitatelia)
+        Me.LayoutControl1.Controls.Add(Me.btnUpravitCitatela)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
@@ -146,15 +146,15 @@ Partial Class xCitatelia
         Me.btnNovyRiadokCitatelia.Text = "Novy "
         Me.btnNovyRiadokCitatelia.UseVisualStyleBackColor = False
         '
-        'btnUlozitCitatelia
+        'btnUpravitCitatela
         '
-        Me.btnUlozitCitatelia.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnUlozitCitatelia.Location = New System.Drawing.Point(449, 12)
-        Me.btnUlozitCitatelia.Name = "btnUlozitCitatelia"
-        Me.btnUlozitCitatelia.Size = New System.Drawing.Size(432, 60)
-        Me.btnUlozitCitatelia.TabIndex = 27
-        Me.btnUlozitCitatelia.Text = "Ulozit"
-        Me.btnUlozitCitatelia.UseVisualStyleBackColor = False
+        Me.btnUpravitCitatela.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnUpravitCitatela.Location = New System.Drawing.Point(449, 12)
+        Me.btnUpravitCitatela.Name = "btnUpravitCitatela"
+        Me.btnUpravitCitatela.Size = New System.Drawing.Size(432, 60)
+        Me.btnUpravitCitatela.TabIndex = 27
+        Me.btnUpravitCitatela.Text = "Upravit"
+        Me.btnUpravitCitatela.UseVisualStyleBackColor = False
         '
         'Root
         '
@@ -167,7 +167,7 @@ Partial Class xCitatelia
         '
         'LayoutControlItem4
         '
-        Me.LayoutControlItem4.Control = Me.btnUlozitCitatelia
+        Me.LayoutControlItem4.Control = Me.btnUpravitCitatela
         Me.LayoutControlItem4.Location = New System.Drawing.Point(437, 0)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.Size = New System.Drawing.Size(436, 64)
@@ -237,7 +237,7 @@ Partial Class xCitatelia
     Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents btnVymazatRiadokCitatelia As Button
     Friend WithEvents btnNovyRiadokCitatelia As Button
-    Friend WithEvents btnUlozitCitatelia As Button
+    Friend WithEvents btnUpravitCitatela As Button
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem

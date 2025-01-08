@@ -30,6 +30,17 @@ Public Class Knihy
         End Set
     End Property
 
+    'Pocet knih
+    Private _pocet As Integer
+    Public Property Pocet() As Integer
+        Get
+            Return _pocet
+        End Get
+        Set(ByVal value As Integer)
+            SetPropertyValue(NameOf(Pocet), _pocet, value)
+        End Set
+    End Property
+
     'Názov knihy
     Private _nazov As String
     <Size(255)>

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class xKnihy
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,7 +17,7 @@ Partial Class xKnihy
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
@@ -26,8 +26,8 @@ Partial Class xKnihy
         Me.btnPozicatKnihu = New System.Windows.Forms.Button()
         Me.btnVratitKnihu = New System.Windows.Forms.Button()
         Me.btnVymazatRiadokKnihy = New System.Windows.Forms.Button()
-        Me.btnNovyRiadokKnihy = New System.Windows.Forms.Button()
-        Me.btnUlozitKnihy = New System.Windows.Forms.Button()
+        Me.btnNovaKniha = New System.Windows.Forms.Button()
+        Me.btnUpravitKnihu = New System.Windows.Forms.Button()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
         Me.XpCollection2 = New DevExpress.Xpo.XPCollection(Me.components)
         Me.UnitOfWork2 = New DevExpress.Xpo.UnitOfWork(Me.components)
@@ -37,6 +37,7 @@ Partial Class xKnihy
         Me.colNazov = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colAutor = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPozicana = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPocet = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -64,8 +65,8 @@ Partial Class xKnihy
         Me.LayoutControl1.Controls.Add(Me.btnPozicatKnihu)
         Me.LayoutControl1.Controls.Add(Me.btnVratitKnihu)
         Me.LayoutControl1.Controls.Add(Me.btnVymazatRiadokKnihy)
-        Me.LayoutControl1.Controls.Add(Me.btnNovyRiadokKnihy)
-        Me.LayoutControl1.Controls.Add(Me.btnUlozitKnihy)
+        Me.LayoutControl1.Controls.Add(Me.btnNovaKniha)
+        Me.LayoutControl1.Controls.Add(Me.btnUpravitKnihu)
         Me.LayoutControl1.Controls.Add(Me.GridControl2)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
@@ -106,25 +107,25 @@ Partial Class xKnihy
         Me.btnVymazatRiadokKnihy.Text = "Vymazat"
         Me.btnVymazatRiadokKnihy.UseVisualStyleBackColor = False
         '
-        'btnNovyRiadokKnihy
+        'btnNovaKniha
         '
-        Me.btnNovyRiadokKnihy.BackColor = System.Drawing.SystemColors.Info
-        Me.btnNovyRiadokKnihy.Location = New System.Drawing.Point(12, 12)
-        Me.btnNovyRiadokKnihy.Name = "btnNovyRiadokKnihy"
-        Me.btnNovyRiadokKnihy.Size = New System.Drawing.Size(200, 45)
-        Me.btnNovyRiadokKnihy.TabIndex = 31
-        Me.btnNovyRiadokKnihy.Text = "Novy"
-        Me.btnNovyRiadokKnihy.UseVisualStyleBackColor = False
+        Me.btnNovaKniha.BackColor = System.Drawing.SystemColors.Info
+        Me.btnNovaKniha.Location = New System.Drawing.Point(12, 12)
+        Me.btnNovaKniha.Name = "btnNovaKniha"
+        Me.btnNovaKniha.Size = New System.Drawing.Size(200, 45)
+        Me.btnNovaKniha.TabIndex = 31
+        Me.btnNovaKniha.Text = "Nova Kniha"
+        Me.btnNovaKniha.UseVisualStyleBackColor = False
         '
-        'btnUlozitKnihy
+        'btnUpravitKnihu
         '
-        Me.btnUlozitKnihy.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnUlozitKnihy.Location = New System.Drawing.Point(216, 12)
-        Me.btnUlozitKnihy.Name = "btnUlozitKnihy"
-        Me.btnUlozitKnihy.Size = New System.Drawing.Size(200, 45)
-        Me.btnUlozitKnihy.TabIndex = 30
-        Me.btnUlozitKnihy.Text = "Ulozit"
-        Me.btnUlozitKnihy.UseVisualStyleBackColor = False
+        Me.btnUpravitKnihu.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnUpravitKnihu.Location = New System.Drawing.Point(216, 12)
+        Me.btnUpravitKnihu.Name = "btnUpravitKnihu"
+        Me.btnUpravitKnihu.Size = New System.Drawing.Size(200, 45)
+        Me.btnUpravitKnihu.TabIndex = 30
+        Me.btnUpravitKnihu.Text = "Upravit"
+        Me.btnUpravitKnihu.UseVisualStyleBackColor = False
         '
         'GridControl2
         '
@@ -141,13 +142,13 @@ Partial Class xKnihy
         '
         'XpCollection2
         '
-        Me.XpCollection2.DisplayableProperties = "Key;Id;Nazov;Autor;Pozicana"
+        Me.XpCollection2.DisplayableProperties = "Key;Id;Pocet;Nazov;Autor;Pozicana"
         Me.XpCollection2.ObjectType = GetType(Kniznica2.Knihy)
         Me.XpCollection2.Session = Me.UnitOfWork2
         '
         'GridView2
         '
-        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey1, Me.colId, Me.colNazov, Me.colAutor, Me.colPozicana})
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey1, Me.colId, Me.colNazov, Me.colAutor, Me.colPozicana, Me.colPocet})
         Me.GridView2.GridControl = Me.GridControl2
         Me.GridView2.Name = "GridView2"
         '
@@ -184,9 +185,17 @@ Partial Class xKnihy
         '
         Me.colPozicana.FieldName = "Pozicana"
         Me.colPozicana.Name = "colPozicana"
+        Me.colPozicana.OptionsColumn.AllowEdit = False
         Me.colPozicana.Visible = True
         Me.colPozicana.VisibleIndex = 1
         Me.colPozicana.Width = 54
+        '
+        'colPocet
+        '
+        Me.colPocet.FieldName = "Pocet"
+        Me.colPocet.Name = "colPocet"
+        Me.colPocet.Visible = True
+        Me.colPocet.VisibleIndex = 4
         '
         'Root
         '
@@ -226,7 +235,7 @@ Partial Class xKnihy
         '
         'LayoutControlItem5
         '
-        Me.LayoutControlItem5.Control = Me.btnNovyRiadokKnihy
+        Me.LayoutControlItem5.Control = Me.btnNovaKniha
         Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
         Me.LayoutControlItem5.Size = New System.Drawing.Size(204, 49)
@@ -235,7 +244,7 @@ Partial Class xKnihy
         '
         'LayoutControlItem6
         '
-        Me.LayoutControlItem6.Control = Me.btnUlozitKnihy
+        Me.LayoutControlItem6.Control = Me.btnUpravitKnihu
         Me.LayoutControlItem6.Location = New System.Drawing.Point(204, 0)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
         Me.LayoutControlItem6.Size = New System.Drawing.Size(204, 49)
@@ -290,8 +299,8 @@ Partial Class xKnihy
     Friend WithEvents btnPozicatKnihu As Button
     Friend WithEvents btnVratitKnihu As Button
     Friend WithEvents btnVymazatRiadokKnihy As Button
-    Friend WithEvents btnNovyRiadokKnihy As Button
-    Friend WithEvents btnUlozitKnihy As Button
+    Friend WithEvents btnNovaKniha As Button
+    Friend WithEvents btnUpravitKnihu As Button
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
@@ -299,4 +308,5 @@ Partial Class xKnihy
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents XpCollection2 As DevExpress.Xpo.XPCollection
     Friend WithEvents UnitOfWork2 As DevExpress.Xpo.UnitOfWork
+    Friend WithEvents colPocet As DevExpress.XtraGrid.Columns.GridColumn
 End Class

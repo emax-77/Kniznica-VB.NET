@@ -3,6 +3,13 @@
 Public Class xPozicky
     Private Sub xPozicky_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = xKniznica
+
+        ' zobrazit aktualizovanu tabulku Pozicky zotriedenu podla datumu pozicania
+        XpCollection3.Reload()
+        GridView3.RefreshData()
+        GridView3.ClearSorting()
+        GridView3.Columns("Datumpozicania").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending
+
     End Sub
 
     Private Sub btnVymazatPoziku_Click(sender As Object, e As EventArgs) Handles btnVymazatPoziku.Click

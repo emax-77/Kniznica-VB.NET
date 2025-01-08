@@ -261,6 +261,7 @@ Public Class Form1
 
             'nastavit datum vratenia knihy
             pozicka.Datumvratenia = DateTime.Now
+            UnitOfWork3.CommitChanges()
 
             ' zobrazit aktualizovanu tabulku Pozicky zotriedenu podla datumu pozicania
             XpCollection3.Reload()

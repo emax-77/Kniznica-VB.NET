@@ -65,6 +65,7 @@
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Google.Protobuf, Version=3.29.2.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.29.2\lib\net45\Google.Protobuf.dll</HintPath>
@@ -165,6 +166,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PozickaVratenie.Designer.vb">
+      <DependentUpon>PozickaVratenie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PozickaVratenie.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pozicky.vb" />
     <Compile Include="xCitatelia.Designer.vb">
       <DependentUpon>xCitatelia.vb</DependentUpon>
@@ -190,6 +197,12 @@
     <Compile Include="xNovaKniha.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="xNovyCitatel.Designer.vb">
+      <DependentUpon>xNovyCitatel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xNovyCitatel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="xPozicky.Designer.vb">
       <DependentUpon>xPozicky.vb</DependentUpon>
     </Compile>
@@ -208,6 +221,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="PozickaVratenie.resx">
+      <DependentUpon>PozickaVratenie.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="xCitatelia.resx">
       <DependentUpon>xCitatelia.vb</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="xNovaKniha.resx">
       <DependentUpon>xNovaKniha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xNovyCitatel.resx">
+      <DependentUpon>xNovyCitatel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="xPozicky.resx">
       <DependentUpon>xPozicky.vb</DependentUpon>

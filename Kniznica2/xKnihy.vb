@@ -1,44 +1,26 @@
-﻿Imports DevExpress.Xpo
+﻿Imports DevExpress.Data.Filtering
+Imports DevExpress.Xpo
 
 Public Class xKnihy
+
     Private Sub xKnihy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = xKniznica
+
+        ' zobrazit aktualizovanu tabulku Knihy 
+        XpCollection2.Reload()
+        GridView2.RefreshData()
+
     End Sub
 
-    Private Sub btnNovyRiadokKnihy_Click(sender As Object, e As EventArgs) Handles btnNovyRiadokKnihy.Click
+    Private Sub btnNovyRiadokKnihy_Click(sender As Object, e As EventArgs) Handles btnNovaKniha.Click
+        'Nova kniha
         xNovaKniha.Show()
-
-        'Try
-        '    Dim novaKniha As XPBaseObject = New Knihy(UnitOfWork2)
-        '    novaKniha.Save()
-        '    UnitOfWork2.CommitChanges()
-
-        '    ' zobrazit tabulku Citatelia s novym riadkom, zotriedenu podla ID
-        '    XpCollection2.Reload()
-        '    GridView2.RefreshData()
-        '    GridView2.ClearSorting()
-        '    GridView2.Columns("Id").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending
-
-        'Catch ex As Exception
-        '    MessageBox.Show($"Chyba pri ukladani: {ex.Message}")
-        'End Try
     End Sub
 
-    Private Sub btnUlozitKnihy_Click(sender As Object, e As EventArgs) Handles btnUlozitKnihy.Click
-        ' Ulozenie udajov v tabulke Knihy
-        Try
-            GridView2.PostEditor()
-            GridView2.UpdateCurrentRow()
-
-            Dim Riadok As Object = GridView2.GetFocusedRow()
-            Dim Kniha As Knihy = CType(Riadok, XPBaseObject)
-            Kniha.Save()
-            UnitOfWork2.CommitChanges()
-            MessageBox.Show($"Kniha {Kniha.Nazov} bola upravena.")
-
-        Catch ex As Exception
-            MessageBox.Show($"Chyba pri ukladaní: {ex.Message}")
-        End Try
+    Private Sub btnUlozitKnihy_Click(sender As Object, e As EventArgs) Handles btnUpravitKnihu.Click
+        'Uprava udajov knihy
+        edit = True
+        xNovaKniha.Show()
     End Sub
 
     Private Sub btnVymazatRiadokKnihy_Click(sender As Object, e As EventArgs) Handles btnVymazatRiadokKnihy.Click
@@ -59,4 +41,25 @@ Public Class xKnihy
         End Try
     End Sub
 
+    Private Sub btnPozicatKnihu_Click(sender As Object, e As EventArgs) Handles btnPozicatKnihu.Click
+        'Vytvorit pozicku knihy
+        pozickaKnihy = True
+        PozickaVratenie.Show()
+
+        ' zobrazit aktualizovanu tabulku Knihy 
+        XpCollection2.Reload()
+        GridView2.RefreshData()
+
+    End Sub
+
+    Private Sub btnVratitKnihu_Click(sender As Object, e As EventArgs) Handles btnVratitKnihu.Click
+        ' Vratit knihu
+        vratenieKnihy = True
+        PozickaVratenie.Show()
+
+        ' zobrazit aktualizovanu tabulku Knihy 
+        XpCollection2.Reload()
+        GridView2.RefreshData()
+
+    End Sub
 End Class
