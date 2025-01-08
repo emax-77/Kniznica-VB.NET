@@ -17,7 +17,11 @@ Public Class xKniznica
         Dim connectionString As String = MySqlConnectionProvider.GetConnectionString("localhost", 3306, "root", "peter", "databaza")
         XpoDefault.DataLayer = XpoDefault.GetDataLayer(connectionString, Nothing)
 
+        ' rozbalit okna 
         xKnihy.Show()
+        xCitatelia.Show()
+        xPozicky.Show()
+        xKnihy.Activate()
 
         'zotriedenie tabuliek po spusteni
         xCitatelia.GridView1.Columns("Priezvisko").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending ' Zotriedi tabulku Citatelia podla priezviska
@@ -27,39 +31,27 @@ Public Class xKniznica
     End Sub
     'Horne menu (horizontalne)
     Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
-        xPozicky.Close()
-        xKnihy.Close()
-        xCitatelia.Show()
+        xCitatelia.Activate()
 
     End Sub
 
     Private Sub BarButtonItem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem3.ItemClick
-        xCitatelia.Close()
-        xPozicky.Close()
-        xKnihy.Show()
+        xKnihy.Activate()
     End Sub
 
     Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
-        xCitatelia.Close()
-        xKnihy.Close()
-        xPozicky.Show()
+        xPozicky.Activate()
     End Sub
     ' Bocne menu (vertikalne)
     Private Sub NavBarItem1_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem1.LinkClicked
-        xPozicky.Close()
-        xKnihy.Close()
-        xCitatelia.Show()
+        xCitatelia.Activate()
     End Sub
 
     Private Sub NavBarItem2_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem2.LinkClicked
-        xCitatelia.Close()
-        xPozicky.Close()
-        xKnihy.Show()
+        xKnihy.Activate()
     End Sub
 
     Private Sub NavBarItem3_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem3.LinkClicked
-        xCitatelia.Close()
-        xKnihy.Close()
-        xPozicky.Show()
+        xPozicky.Activate()
     End Sub
 End Class
