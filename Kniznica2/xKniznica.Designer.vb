@@ -42,8 +42,10 @@ Partial Class xKniznica
         Me.NavBarItem1 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem2 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem3 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NavBarControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -217,6 +219,10 @@ Partial Class xKniznica
         Me.NavBarItem3.ImageOptions.SmallImage = CType(resources.GetObject("NavBarItem3.ImageOptions.SmallImage"), System.Drawing.Image)
         Me.NavBarItem3.Name = "NavBarItem3"
         '
+        'XtraTabbedMdiManager1
+        '
+        Me.XtraTabbedMdiManager1.MdiParent = Me
+        '
         'xKniznica
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -234,6 +240,7 @@ Partial Class xKniznica
         Me.Text = "xKniznica"
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NavBarControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -260,4 +267,5 @@ Partial Class xKniznica
     Friend WithEvents NavBarItem1 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarItem2 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarItem3 As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents XtraTabbedMdiManager1 As DevExpress.XtraTabbedMdi.XtraTabbedMdiManager
 End Class
