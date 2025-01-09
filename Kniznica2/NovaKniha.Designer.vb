@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class xNovaKniha
+Partial Class NovaKniha
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -19,7 +19,7 @@ Partial Class xNovaKniha
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(xNovaKniha))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NovaKniha))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.tedNazovKnihy = New DevExpress.XtraEditors.TextEdit()
         Me.tedAutor = New DevExpress.XtraEditors.TextEdit()

@@ -141,7 +141,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Citatelia.vb" />
+    <Compile Include="Citatel.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -149,7 +149,7 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Knihy.vb" />
+    <Compile Include="Kniha.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -172,41 +172,41 @@
     <Compile Include="PozickaVratenie.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pozicky.vb" />
-    <Compile Include="xCitatelia.Designer.vb">
-      <DependentUpon>xCitatelia.vb</DependentUpon>
+    <Compile Include="Pozicka.vb" />
+    <Compile Include="Citatelia.Designer.vb">
+      <DependentUpon>Citatelia.vb</DependentUpon>
     </Compile>
-    <Compile Include="xCitatelia.vb">
+    <Compile Include="Citatelia.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="xKnihy.Designer.vb">
-      <DependentUpon>xKnihy.vb</DependentUpon>
+    <Compile Include="Knihy.Designer.vb">
+      <DependentUpon>Knihy.vb</DependentUpon>
     </Compile>
-    <Compile Include="xKnihy.vb">
+    <Compile Include="Knihy.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="xKniznica.Designer.vb">
-      <DependentUpon>xKniznica.vb</DependentUpon>
+    <Compile Include="Kniznica.Designer.vb">
+      <DependentUpon>Kniznica.vb</DependentUpon>
     </Compile>
-    <Compile Include="xKniznica.vb">
+    <Compile Include="Kniznica.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="xNovaKniha.Designer.vb">
-      <DependentUpon>xNovaKniha.vb</DependentUpon>
+    <Compile Include="NovaKniha.Designer.vb">
+      <DependentUpon>NovaKniha.vb</DependentUpon>
     </Compile>
-    <Compile Include="xNovaKniha.vb">
+    <Compile Include="NovaKniha.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="xNovyCitatel.Designer.vb">
-      <DependentUpon>xNovyCitatel.vb</DependentUpon>
+    <Compile Include="NovyCitatel.Designer.vb">
+      <DependentUpon>NovyCitatel.vb</DependentUpon>
     </Compile>
-    <Compile Include="xNovyCitatel.vb">
+    <Compile Include="NovyCitatel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="xPozicky.Designer.vb">
-      <DependentUpon>xPozicky.vb</DependentUpon>
+    <Compile Include="Pozicky.Designer.vb">
+      <DependentUpon>Pozicky.vb</DependentUpon>
     </Compile>
-    <Compile Include="xPozicky.vb">
+    <Compile Include="Pozicky.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -224,23 +224,23 @@
     <EmbeddedResource Include="PozickaVratenie.resx">
       <DependentUpon>PozickaVratenie.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="xCitatelia.resx">
-      <DependentUpon>xCitatelia.vb</DependentUpon>
+    <EmbeddedResource Include="Citatelia.resx">
+      <DependentUpon>Citatelia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="xKnihy.resx">
-      <DependentUpon>xKnihy.vb</DependentUpon>
+    <EmbeddedResource Include="Knihy.resx">
+      <DependentUpon>Knihy.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="xKniznica.resx">
-      <DependentUpon>xKniznica.vb</DependentUpon>
+    <EmbeddedResource Include="Kniznica.resx">
+      <DependentUpon>Kniznica.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="xNovaKniha.resx">
-      <DependentUpon>xNovaKniha.vb</DependentUpon>
+    <EmbeddedResource Include="NovaKniha.resx">
+      <DependentUpon>NovaKniha.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="xNovyCitatel.resx">
-      <DependentUpon>xNovyCitatel.vb</DependentUpon>
+    <EmbeddedResource Include="NovyCitatel.resx">
+      <DependentUpon>NovyCitatel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="xPozicky.resx">
-      <DependentUpon>xPozicky.vb</DependentUpon>
+    <EmbeddedResource Include="Pozicky.resx">
+      <DependentUpon>Pozicky.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

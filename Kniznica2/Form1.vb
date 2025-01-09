@@ -30,7 +30,7 @@ Public Class Form1
     Private Sub btnNovyRiadokCitatelia_Click(sender As Object, e As EventArgs) Handles btnNovyRiadokCitatelia.Click
         ' Pridat novy riadok do tabulky Citatelia
         Try
-            Dim novyCitatel As XPBaseObject = New Citatelia(UnitOfWork1)
+            Dim novyCitatel As XPBaseObject = New Citatel(UnitOfWork1)
             novyCitatel.Save()
             UnitOfWork1.CommitChanges()
 
@@ -49,7 +49,7 @@ Public Class Form1
     Private Sub btnNovyRiadokKnihy_Click(sender As Object, e As EventArgs) Handles btnNovyRiadokKnihy.Click
         ' Pridat novy riadok do tabulky Knihy
         Try
-            Dim novaKniha As XPBaseObject = New Knihy(UnitOfWork2)
+            Dim novaKniha As XPBaseObject = New Kniha(UnitOfWork2)
             novaKniha.Save()
             UnitOfWork2.CommitChanges()
 
@@ -72,7 +72,7 @@ Public Class Form1
             GridView1.UpdateCurrentRow()
 
             Dim Riadok As Object = GridView1.GetFocusedRow()
-            Dim Citatel As Citatelia = CType(Riadok, XPBaseObject)
+            Dim Citatel As Citatel = CType(Riadok, XPBaseObject)
             Citatel.Save()
             UnitOfWork1.CommitChanges()
             MessageBox.Show($"Citatel {Citatel.Meno} {Citatel.Priezvisko} bol upraveny.")
@@ -90,7 +90,7 @@ Public Class Form1
             GridView2.UpdateCurrentRow()
 
             Dim Riadok As Object = GridView2.GetFocusedRow()
-            Dim Kniha As Knihy = CType(Riadok, XPBaseObject)
+            Dim Kniha As Kniha = CType(Riadok, XPBaseObject)
             Kniha.Save()
             UnitOfWork2.CommitChanges()
             MessageBox.Show($"Kniha {Kniha.Nazov} bola upravena.")
@@ -104,7 +104,7 @@ Public Class Form1
         ' Vymazat vybrany riadok z tabulky Citatelia
         Try
             Dim Riadok As Object = GridView1.GetFocusedRow()
-            Dim vymazatCitatela As Citatelia = CType(Riadok, XPBaseObject)
+            Dim vymazatCitatela As Citatel = CType(Riadok, XPBaseObject)
             vymazatCitatela.Delete()
             UnitOfWork1.CommitChanges()
             MessageBox.Show($"Citatel: {vymazatCitatela.Meno} {vymazatCitatela.Priezvisko} bol vymazany")
@@ -122,7 +122,7 @@ Public Class Form1
         ' Vymazat vybrany riadok z tabulky Knihy
         Try
             Dim Riadok As Object = GridView2.GetFocusedRow()
-            Dim vymazatKnihu As Knihy = CType(Riadok, XPBaseObject)
+            Dim vymazatKnihu As Kniha = CType(Riadok, XPBaseObject)
             vymazatKnihu.Delete()
             UnitOfWork2.CommitChanges()
             MessageBox.Show($"Kniha {vymazatKnihu.Nazov} bola vymazana")
@@ -140,7 +140,7 @@ Public Class Form1
         'Vymazat vybrany riadok z tabulky Pozicky
         Try
             Dim Riadok As Object = GridView3.GetFocusedRow()
-            Dim vymazatPozicku As Pozicky = CType(Riadok, XPBaseObject)
+            Dim vymazatPozicku As Pozicka = CType(Riadok, XPBaseObject)
             vymazatPozicku.Delete()
             UnitOfWork3.CommitChanges()
             MessageBox.Show("Pozicka bola vymazana")
@@ -168,7 +168,7 @@ Public Class Form1
             End If
 
             'zmenit stav knihy na pozicanu
-            Dim pozicanaKniha As Knihy = CType(vyberKnihy, Knihy)
+            Dim pozicanaKniha As Kniha = CType(vyberKnihy, Kniha)
             pozicanaKniha.Pozicana = True
             pozicanaKniha.Save()
             UnitOfWork2.CommitChanges()
@@ -177,11 +177,11 @@ Public Class Form1
             ' vytvorit objekt pozicky pomocou klucov na knihu a citatela
             Dim keyKnihy As String = GridView2.GetFocusedRowCellValue("Key").ToString()
             Dim keyCitatela As String = GridView1.GetFocusedRowCellValue("Key").ToString()
-            Dim kniha As Knihy = UnitOfWork3.FindObject(Of Knihy)(CriteriaOperator.Parse("Key = ?", New Guid(keyKnihy)))
-            Dim citatel As Citatelia = UnitOfWork3.FindObject(Of Citatelia)(CriteriaOperator.Parse("Key = ?", New Guid(keyCitatela)))
+            Dim kniha As Kniha = UnitOfWork3.FindObject(Of Kniha)(CriteriaOperator.Parse("Key = ?", New Guid(keyKnihy)))
+            Dim citatel As Citatel = UnitOfWork3.FindObject(Of Citatel)(CriteriaOperator.Parse("Key = ?", New Guid(keyCitatela)))
 
             ' vytvorit novu pozicku
-            Dim novaPozicka As Pozicky = New Pozicky(UnitOfWork3)
+            Dim novaPozicka As Pozicka = New Pozicka(UnitOfWork3)
             novaPozicka.Kniha = kniha
             novaPozicka.Citatel = citatel
             novaPozicka.Datumpozicania = DateTime.Now
@@ -215,14 +215,14 @@ Public Class Form1
             Dim vyberCitatela As Object = GridView1.GetFocusedRow()
 
             Dim keyCitatela As String = GridView1.GetFocusedRowCellValue("Key").ToString()
-            Dim citatel As Citatelia = UnitOfWork3.FindObject(Of Citatelia)(CriteriaOperator.Parse("Key = ?", New Guid(keyCitatela)))
+            Dim citatel As Citatel = UnitOfWork3.FindObject(Of Citatel)(CriteriaOperator.Parse("Key = ?", New Guid(keyCitatela)))
 
             ' Získanie pozicanych knih
-            Dim pozicaneKnihy As XPCollection(Of Pozicky) = citatel.Pozicky
+            Dim pozicaneKnihy As XPCollection(Of Pozicka) = citatel.Pozicka
 
             ' Vytvorenie zoznamu nazvov knih do listboxu
             lbxPozicaneKnihy.Items.Clear()
-            For Each pozicka As Pozicky In pozicaneKnihy
+            For Each pozicka As Pozicka In pozicaneKnihy
                 lbxPozicaneKnihy.Items.Add(pozicka.Kniha.Nazov)
             Next
 
@@ -246,7 +246,7 @@ Public Class Form1
             End If
 
             'nastavit priznak Pozicana na False
-            Dim pozicanaKniha As Knihy = CType(vyberKnihy, XPBaseObject)
+            Dim pozicanaKniha As Kniha = CType(vyberKnihy, XPBaseObject)
             pozicanaKniha.Pozicana = False
             pozicanaKniha.Save()
             UnitOfWork2.CommitChanges()
@@ -255,9 +255,9 @@ Public Class Form1
             ' ziskat pozicku knihy
             Dim keyKnihy As String = GridView2.GetFocusedRowCellValue("Key").ToString()
             Dim keyCitatela As String = GridView1.GetFocusedRowCellValue("Key").ToString()
-            Dim kniha As Knihy = UnitOfWork3.FindObject(Of Knihy)(CriteriaOperator.Parse("Key = ?", New Guid(keyKnihy)))
-            Dim citatel As Citatelia = UnitOfWork3.FindObject(Of Citatelia)(CriteriaOperator.Parse("Key = ?", New Guid(keyCitatela)))
-            Dim pozicka As Pozicky = UnitOfWork3.FindObject(Of Pozicky)(CriteriaOperator.Parse("Kniha = ? AND Citatel = ?", kniha, citatel))
+            Dim kniha As Kniha = UnitOfWork3.FindObject(Of Kniha)(CriteriaOperator.Parse("Key = ?", New Guid(keyKnihy)))
+            Dim citatel As Citatel = UnitOfWork3.FindObject(Of Citatel)(CriteriaOperator.Parse("Key = ?", New Guid(keyCitatela)))
+            Dim pozicka As Pozicka = UnitOfWork3.FindObject(Of Pozicka)(CriteriaOperator.Parse("Kniha = ? AND Citatel = ?", kniha, citatel))
 
             'nastavit datum vratenia knihy
             pozicka.Datumvratenia = DateTime.Now

@@ -1,67 +1,33 @@
 ﻿Imports DevExpress.Xpo
 
 Public Class Pozicky
-    Inherits XPLiteObject
+    Private Sub xPozicky_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MdiParent = Kniznica
 
-    Public Sub New(ByVal session As Session)
-        MyBase.New(session)
+        ' zobrazit aktualizovanu tabulku Pozicky zotriedenu podla datumu pozicania
+        XpCollection3.Reload()
+        GridView3.RefreshData()
+        GridView3.ClearSorting()
+        GridView3.Columns("Datumpozicania").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending
+
     End Sub
 
-    'Primarny kluc
-    Private _key As Guid
-    <Key(True)>
-    Public Property Key() As Guid
-        Get
-            Return _key
-        End Get
-        Set(ByVal value As Guid)
-            SetPropertyValue(NameOf(Key), _key, value)
-        End Set
-    End Property
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        'Vymazat vybrany riadok z tabulky Pozicky
+        Try
+            Dim Riadok As Object = GridView3.GetFocusedRow()
+            Dim vymazatPozicku As Pozicka = CType(Riadok, XPBaseObject)
+            vymazatPozicku.Delete()
+            UnitOfWork3.CommitChanges()
+            MessageBox.Show("Pozicka bola vymazana")
 
-    'Cudzi kluc na knihu
-    Private _kniha As Knihy
-    <Association("Kniha-Pozicky")>
-    Public Property Kniha() As Knihy
-        Get
-            Return _kniha
-        End Get
-        Set(ByVal value As Knihy)
-            SetPropertyValue(NameOf(Kniha), _kniha, value)
-        End Set
-    End Property
+            ' zobrazit aktualizovanu tabulku Pozicky
+            XpCollection3.Reload()
+            GridView3.RefreshData()
 
-    'Cudzi kluc na citatela
-    Private _citatel As Citatelia
-    <Association("Citatel-Pozicky")>
-    Public Property Citatel() As Citatelia
-        Get
-            Return _citatel
-        End Get
-        Set(ByVal value As Citatelia)
-            SetPropertyValue(NameOf(Citatel), _citatel, value)
-        End Set
-    End Property
+        Catch ex As Exception
+            MessageBox.Show($"Chyba pri mazani: {ex.Message}")
 
-    'Datum pozicania knihy
-    Private _datumpozicania As DateTime
-    Public Property Datumpozicania() As DateTime
-        Get
-            Return _datumpozicania
-        End Get
-        Set(ByVal value As DateTime)
-            SetPropertyValue(NameOf(Datumpozicania), _datumpozicania, value)
-        End Set
-    End Property
-
-    'Datum vratenia knihy
-    Private _datumvratenia As DateTime?
-    Public Property Datumvratenia() As DateTime?
-        Get
-            Return _datumvratenia
-        End Get
-        Set(ByVal value As DateTime?)
-            SetPropertyValue(NameOf(Datumvratenia), _datumvratenia, value)
-        End Set
-    End Property
+        End Try
+    End Sub
 End Class

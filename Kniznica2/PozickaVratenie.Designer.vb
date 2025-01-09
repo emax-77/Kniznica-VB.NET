@@ -105,7 +105,7 @@ Partial Class PozickaVratenie
         'XpCollection2
         '
         Me.XpCollection2.DisplayableProperties = "Key;Id;Pocet;Nazov;Autor;Pozicana"
-        Me.XpCollection2.ObjectType = GetType(Kniznica2.Knihy)
+        Me.XpCollection2.ObjectType = GetType(Kniznica2.Kniha)
         Me.XpCollection2.Session = Me.UnitOfWork2
         Me.XpCollection2.Sorting.AddRange(New DevExpress.Xpo.SortProperty() {New DevExpress.Xpo.SortProperty("[Nazov]", DevExpress.Xpo.DB.SortingDirection.Ascending)})
         '
@@ -169,7 +169,7 @@ Partial Class PozickaVratenie
         'XpCollection1
         '
         Me.XpCollection1.DisplayableProperties = "Key;Obciansky;Meno;Priezvisko;Datumnarodenia"
-        Me.XpCollection1.ObjectType = GetType(Kniznica2.Citatelia)
+        Me.XpCollection1.ObjectType = GetType(Kniznica2.Citatel)
         Me.XpCollection1.Session = Me.UnitOfWork1
         Me.XpCollection1.Sorting.AddRange(New DevExpress.Xpo.SortProperty() {New DevExpress.Xpo.SortProperty("[Priezvisko]", DevExpress.Xpo.DB.SortingDirection.Ascending)})
         '
@@ -307,7 +307,7 @@ Partial Class PozickaVratenie
         'XpCollection3
         '
         Me.XpCollection3.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
-        Me.XpCollection3.ObjectType = GetType(Kniznica2.Pozicky)
+        Me.XpCollection3.ObjectType = GetType(Kniznica2.Pozicka)
         Me.XpCollection3.Session = Me.UnitOfWork3
         '
         'PozickaVratenie

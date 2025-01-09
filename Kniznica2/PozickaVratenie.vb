@@ -17,11 +17,11 @@ Public Class PozickaVratenie
             Dim uow As New UnitOfWork()
 
             ' Nacitanie vybranych objektov cez KEY 
-            Dim keyKnihy As String = CType(SearchLookUpEdit2.GetSelectedDataRow(), Knihy).Key.ToString()
-            Dim keyCitatela As String = CType(SearchLookUpEdit1.GetSelectedDataRow(), Citatelia).Key.ToString()
+            Dim keyKnihy As String = CType(SearchLookUpEdit2.GetSelectedDataRow(), Kniha).Key.ToString()
+            Dim keyCitatela As String = CType(SearchLookUpEdit1.GetSelectedDataRow(), Citatel).Key.ToString()
 
-            Dim pozicanaKniha As Knihy = uow.GetObjectByKey(Of Knihy)(New Guid(keyKnihy))
-            Dim vybranyCitatel As Citatelia = uow.GetObjectByKey(Of Citatelia)(New Guid(keyCitatela))
+            Dim pozicanaKniha As Kniha = uow.GetObjectByKey(Of Kniha)(New Guid(keyKnihy))
+            Dim vybranyCitatel As Citatel = uow.GetObjectByKey(Of Citatel)(New Guid(keyCitatela))
 
             ' Overenie vybratych objektov
             If pozicanaKniha Is Nothing OrElse vybranyCitatel Is Nothing Then
@@ -33,7 +33,7 @@ Public Class PozickaVratenie
             pozicanaKniha.Pozicana = True
 
             ' Vytvoriť novu vypozicku
-            Dim novaPozicka As New Pozicky(uow)
+            Dim novaPozicka As New Pozicka(uow)
             novaPozicka.Kniha = pozicanaKniha
             novaPozicka.Citatel = vybranyCitatel
             novaPozicka.Datumpozicania = DateTime.Now
@@ -53,11 +53,11 @@ Public Class PozickaVratenie
             Dim uow As New UnitOfWork()
 
             ' Nacitanie vybranych objektov cez KEY 
-            Dim keyKnihy As String = CType(SearchLookUpEdit2.GetSelectedDataRow(), Knihy).Key.ToString()
-            Dim keyCitatela As String = CType(SearchLookUpEdit1.GetSelectedDataRow(), Citatelia).Key.ToString()
+            Dim keyKnihy As String = CType(SearchLookUpEdit2.GetSelectedDataRow(), Kniha).Key.ToString()
+            Dim keyCitatela As String = CType(SearchLookUpEdit1.GetSelectedDataRow(), Citatel).Key.ToString()
 
-            Dim pozicanaKniha As Knihy = uow.GetObjectByKey(Of Knihy)(New Guid(keyKnihy))
-            Dim vybranyCitatel As Citatelia = uow.GetObjectByKey(Of Citatelia)(New Guid(keyCitatela))
+            Dim pozicanaKniha As Kniha = uow.GetObjectByKey(Of Kniha)(New Guid(keyKnihy))
+            Dim vybranyCitatel As Citatel = uow.GetObjectByKey(Of Citatel)(New Guid(keyCitatela))
 
             ' Overenie vybratych objektov
             If pozicanaKniha Is Nothing OrElse vybranyCitatel Is Nothing Then
@@ -69,7 +69,7 @@ Public Class PozickaVratenie
             pozicanaKniha.Pozicana = False
 
             ' Nastavit Datum vratenia knihy v pozicke
-            Dim pozicka As Pozicky = uow.FindObject(Of Pozicky)(CriteriaOperator.Parse("Kniha = ? AND Citatel = ?", pozicanaKniha, vybranyCitatel))
+            Dim pozicka As Pozicka = uow.FindObject(Of Pozicka)(CriteriaOperator.Parse("Kniha = ? AND Citatel = ?", pozicanaKniha, vybranyCitatel))
             pozicka.Datumvratenia = DateTime.Now
 
             ' Ulozit zmeny

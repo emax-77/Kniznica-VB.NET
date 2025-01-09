@@ -93,7 +93,7 @@ Partial Class Form1
         'XpCollection1
         '
         Me.XpCollection1.DisplayableProperties = "Key;Obciansky;Meno;Priezvisko;Datumnarodenia"
-        Me.XpCollection1.ObjectType = GetType(Kniznica2.Citatelia)
+        Me.XpCollection1.ObjectType = GetType(Kniznica2.Citatel)
         Me.XpCollection1.Session = Me.UnitOfWork1
         '
         'GridView1
@@ -151,7 +151,7 @@ Partial Class Form1
         'XpCollection2
         '
         Me.XpCollection2.DisplayableProperties = "Key;Id;Nazov;Autor;Pozicana"
-        Me.XpCollection2.ObjectType = GetType(Kniznica2.Knihy)
+        Me.XpCollection2.ObjectType = GetType(Kniznica2.Kniha)
         Me.XpCollection2.Session = Me.UnitOfWork2
         '
         'GridView2
@@ -292,7 +292,7 @@ Partial Class Form1
         'XpCollection3
         '
         Me.XpCollection3.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
-        Me.XpCollection3.ObjectType = GetType(Kniznica2.Pozicky)
+        Me.XpCollection3.ObjectType = GetType(Kniznica2.Pozicka)
         Me.XpCollection3.Session = Me.UnitOfWork3
         '
         'GridView3

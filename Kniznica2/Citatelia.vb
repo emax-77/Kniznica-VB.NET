@@ -1,76 +1,41 @@
 ﻿Imports DevExpress.Xpo
 
 Public Class Citatelia
-    Inherits XPLiteObject
+    Private Sub xCitatelia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MdiParent = Kniznica
+        'zobrazit aktualizovanmu tabulku Citatelia 
+        XpCollection1.Reload()
+        GridView1.RefreshData()
 
-    Public Sub New(ByVal session As Session)
-        MyBase.New(session)
     End Sub
 
-    'Primarny kluc
-    Private _key As Guid
-    <Key(True)>
-    Public Property Key() As Guid
-        Get
-            Return _key
-        End Get
-        Set(ByVal value As Guid)
-            SetPropertyValue(NameOf(Key), _key, value)
-        End Set
-    End Property
+    Private Sub sbtnNovyCitatel_Click(sender As Object, e As EventArgs) Handles sbtnNovyCitatel.Click
+        ' Pridat noveho Citatelia
+        edit = False
+        NovyCitatel.Show()
+    End Sub
 
-    'Cislo obcianskeho preukazu
-    Private _obciansky As String
-    <Size(255)>
-    Public Property Obciansky() As String
-        Get
-            Return _obciansky
-        End Get
-        Set(ByVal value As String)
-            SetPropertyValue(NameOf(Obciansky), _obciansky, value)
-        End Set
-    End Property
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        ' Editovat citatela
+        edit = True
+        NovyCitatel.Show()
+    End Sub
 
-    'Meno
-    Private _meno As String
-    <Size(255)>
-    Public Property Meno() As String
-        Get
-            Return _meno
-        End Get
-        Set(ByVal value As String)
-            SetPropertyValue(NameOf(Meno), _meno, value)
-        End Set
-    End Property
+    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
+        ' Vymazat vybrany riadok z tabulky Citatelia
+        Try
+            Dim Riadok As Object = GridView1.GetFocusedRow()
+            Dim vymazatCitatela As Citatel = CType(Riadok, XPBaseObject)
+            vymazatCitatela.Delete()
+            UnitOfWork1.CommitChanges()
+            MessageBox.Show($"Citatel: {vymazatCitatela.Meno} {vymazatCitatela.Priezvisko} bol vymazany")
 
-    'Priezvisko
-    Private _priezvisko As String
-    <Size(255)>
-    Public Property Priezvisko() As String
-        Get
-            Return _priezvisko
-        End Get
-        Set(ByVal value As String)
-            SetPropertyValue(NameOf(Priezvisko), _priezvisko, value)
-        End Set
-    End Property
+            ' zobrazit aktualizovanu tabulku Citatelia
+            XpCollection1.Reload()
+            GridView1.RefreshData()
 
-    'Datum narodenia
-    Private _datumnarodenia As DateTime
-    Public Property Datumnarodenia() As DateTime
-        Get
-            Return _datumnarodenia
-        End Get
-        Set(ByVal value As DateTime)
-            SetPropertyValue(NameOf(Datumnarodenia), _datumnarodenia, value)
-        End Set
-    End Property
-
-    'Asociacia na tabulku Pozicky
-    <Association("Citatel-Pozicky")>
-    Public ReadOnly Property Pozicky() As XPCollection(Of Pozicky)
-        Get
-            Return GetCollection(Of Pozicky)(NameOf(Pozicky))
-        End Get
-    End Property
+        Catch ex As Exception
+            MessageBox.Show($"Chyba pri mazani: {ex.Message}")
+        End Try
+    End Sub
 End Class

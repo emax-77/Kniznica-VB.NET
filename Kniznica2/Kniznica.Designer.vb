@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class xKniznica
+Partial Class Kniznica
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -20,11 +20,11 @@ Partial Class xKniznica
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(xKniznica))
-        Dim SuperToolTip3 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem7 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipTitleItem8 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipTitleItem9 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipTitleItem2 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipTitleItem3 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Kniznica))
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar1 = New DevExpress.XtraBars.Bar()
         Me.Bar2 = New DevExpress.XtraBars.Bar()
@@ -32,12 +32,14 @@ Partial Class xKniznica
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarSubItem6 = New DevExpress.XtraBars.BarSubItem()
         Me.BarButtonItem10 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem11 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem12 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem15 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem16 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarSubItem7 = New DevExpress.XtraBars.BarSubItem()
+        Me.BarButtonItem13 = New DevExpress.XtraBars.BarButtonItem()
         Me.Bar3 = New DevExpress.XtraBars.Bar()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
@@ -50,10 +52,12 @@ Partial Class xKniznica
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.PopupMenu1 = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarSubItem4 = New DevExpress.XtraBars.BarSubItem()
         Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
         Me.PopupMenu2 = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.BarButtonItem14 = New DevExpress.XtraBars.BarButtonItem()
         Me.NavBarGroup1 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarControl1 = New DevExpress.XtraNavBar.NavBarControl()
         Me.NavBarGroup2 = New DevExpress.XtraNavBar.NavBarGroup()
@@ -62,10 +66,6 @@ Partial Class xKniznica
         Me.NavBarItem3 = New DevExpress.XtraNavBar.NavBarItem()
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.SeparatorControl1 = New DevExpress.XtraEditors.SeparatorControl()
-        Me.BarButtonItem13 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem14 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem15 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem16 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,14 +131,6 @@ Partial Class xKniznica
         Me.BarButtonItem9.Id = 13
         Me.BarButtonItem9.Name = "BarButtonItem9"
         '
-        'BarButtonItem4
-        '
-        Me.BarButtonItem4.Caption = "Pozicky"
-        Me.BarButtonItem4.Id = 6
-        Me.BarButtonItem4.ImageOptions.Image = CType(resources.GetObject("BarButtonItem4.ImageOptions.Image"), System.Drawing.Image)
-        Me.BarButtonItem4.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.LargeImage"), System.Drawing.Image)
-        Me.BarButtonItem4.Name = "BarButtonItem4"
-        '
         'BarSubItem6
         '
         Me.BarSubItem6.Caption = "Knihy"
@@ -164,12 +156,30 @@ Partial Class xKniznica
         Me.BarButtonItem12.Id = 17
         Me.BarButtonItem12.Name = "BarButtonItem12"
         '
+        'BarButtonItem15
+        '
+        Me.BarButtonItem15.Caption = "Pozicat knihu"
+        Me.BarButtonItem15.Id = 21
+        Me.BarButtonItem15.Name = "BarButtonItem15"
+        '
+        'BarButtonItem16
+        '
+        Me.BarButtonItem16.Caption = "Vratit knihu"
+        Me.BarButtonItem16.Id = 22
+        Me.BarButtonItem16.Name = "BarButtonItem16"
+        '
         'BarSubItem7
         '
         Me.BarSubItem7.Caption = "Pozicky"
         Me.BarSubItem7.Id = 18
         Me.BarSubItem7.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem13)})
         Me.BarSubItem7.Name = "BarSubItem7"
+        '
+        'BarButtonItem13
+        '
+        Me.BarButtonItem13.Caption = "Vymazat pozicku"
+        Me.BarButtonItem13.Id = 19
+        Me.BarButtonItem13.Name = "BarButtonItem13"
         '
         'Bar3
         '
@@ -265,6 +275,14 @@ Partial Class xKniznica
         Me.BarButtonItem3.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem3.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.BarButtonItem3.Name = "BarButtonItem3"
         '
+        'BarButtonItem4
+        '
+        Me.BarButtonItem4.Caption = "Pozicky"
+        Me.BarButtonItem4.Id = 6
+        Me.BarButtonItem4.ImageOptions.Image = CType(resources.GetObject("BarButtonItem4.ImageOptions.Image"), System.Drawing.Image)
+        Me.BarButtonItem4.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.BarButtonItem4.Name = "BarButtonItem4"
+        '
         'BarSubItem4
         '
         Me.BarSubItem4.Caption = "BarSubItem4"
@@ -287,18 +305,24 @@ Partial Class xKniznica
         Me.BarButtonItem6.DropDownControl = Me.PopupMenu2
         Me.BarButtonItem6.Id = 9
         Me.BarButtonItem6.Name = "BarButtonItem6"
-        ToolTipTitleItem7.Text = "One"
-        ToolTipTitleItem8.Text = "Two"
-        ToolTipTitleItem9.Text = "Three"
-        SuperToolTip3.Items.Add(ToolTipTitleItem7)
-        SuperToolTip3.Items.Add(ToolTipTitleItem8)
-        SuperToolTip3.Items.Add(ToolTipTitleItem9)
-        Me.BarButtonItem6.SuperTip = SuperToolTip3
+        ToolTipTitleItem1.Text = "One"
+        ToolTipTitleItem2.Text = "Two"
+        ToolTipTitleItem3.Text = "Three"
+        SuperToolTip1.Items.Add(ToolTipTitleItem1)
+        SuperToolTip1.Items.Add(ToolTipTitleItem2)
+        SuperToolTip1.Items.Add(ToolTipTitleItem3)
+        Me.BarButtonItem6.SuperTip = SuperToolTip1
         '
         'PopupMenu2
         '
         Me.PopupMenu2.Manager = Me.BarManager1
         Me.PopupMenu2.Name = "PopupMenu2"
+        '
+        'BarButtonItem14
+        '
+        Me.BarButtonItem14.Caption = "Vratit knihu"
+        Me.BarButtonItem14.Id = 20
+        Me.BarButtonItem14.Name = "BarButtonItem14"
         '
         'NavBarGroup1
         '
@@ -357,31 +381,7 @@ Partial Class xKniznica
         Me.SeparatorControl1.Size = New System.Drawing.Size(1918, 23)
         Me.SeparatorControl1.TabIndex = 16
         '
-        'BarButtonItem13
-        '
-        Me.BarButtonItem13.Caption = "Vymazat pozicku"
-        Me.BarButtonItem13.Id = 19
-        Me.BarButtonItem13.Name = "BarButtonItem13"
-        '
-        'BarButtonItem14
-        '
-        Me.BarButtonItem14.Caption = "Vratit knihu"
-        Me.BarButtonItem14.Id = 20
-        Me.BarButtonItem14.Name = "BarButtonItem14"
-        '
-        'BarButtonItem15
-        '
-        Me.BarButtonItem15.Caption = "Pozicat knihu"
-        Me.BarButtonItem15.Id = 21
-        Me.BarButtonItem15.Name = "BarButtonItem15"
-        '
-        'BarButtonItem16
-        '
-        Me.BarButtonItem16.Caption = "Vratit knihu"
-        Me.BarButtonItem16.Id = 22
-        Me.BarButtonItem16.Name = "BarButtonItem16"
-        '
-        'xKniznica
+        'Kniznica
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -392,9 +392,9 @@ Partial Class xKniznica
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
-        Me.IconOptions.LargeImage = CType(resources.GetObject("xKniznica.IconOptions.LargeImage"), System.Drawing.Image)
+        Me.IconOptions.LargeImage = CType(resources.GetObject("Kniznica.IconOptions.LargeImage"), System.Drawing.Image)
         Me.IsMdiContainer = True
-        Me.Name = "xKniznica"
+        Me.Name = "Kniznica"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "xKniznica"
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()

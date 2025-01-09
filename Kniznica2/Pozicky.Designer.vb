@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class xPozicky
+Partial Class Pozicky
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -21,7 +21,7 @@ Partial Class xPozicky
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(xPozicky))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pozicky))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.GridControl3 = New DevExpress.XtraGrid.GridControl()
         Me.XpCollection3 = New DevExpress.Xpo.XPCollection(Me.components)
@@ -75,7 +75,7 @@ Partial Class xPozicky
         'XpCollection3
         '
         Me.XpCollection3.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
-        Me.XpCollection3.ObjectType = GetType(Kniznica2.Pozicky)
+        Me.XpCollection3.ObjectType = GetType(Kniznica2.Pozicka)
         Me.XpCollection3.Session = Me.UnitOfWork3
         '
         'GridView3
@@ -163,15 +163,15 @@ Partial Class xPozicky
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextVisible = False
         '
-        'xPozicky
+        'Pozicky
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1188, 538)
         Me.Controls.Add(Me.LayoutControl1)
-        Me.Name = "xPozicky"
+        Me.Name = "Pozicky"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "xPozicky"
+        Me.Text = "Pozicky"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -195,8 +195,8 @@ Partial Class xPozicky
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents XpCollection3 As DevExpress.Xpo.XPCollection
-    Friend WithEvents UnitOfWork3 As DevExpress.Xpo.UnitOfWork
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents XpCollection3 As DevExpress.Xpo.XPCollection
+    Friend WithEvents UnitOfWork3 As DevExpress.Xpo.UnitOfWork
 End Class

@@ -1,86 +1,77 @@
-﻿Imports DevExpress.Xpo
+﻿Imports DevExpress.Data.Filtering
+Imports DevExpress.Xpo
 
 Public Class Knihy
-    Inherits XPLiteObject
 
-    Public Sub New(ByVal session As Session)
-        MyBase.New(session)
+    Private Sub xKnihy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MdiParent = Kniznica
+
+        ' zobrazit aktualizovanu tabulku Knihy 
+        XpCollection2.Reload()
+        GridView2.RefreshData()
+
     End Sub
 
-    'Primarny kluc
-    Private _key As Guid
-    <Key(True)>
-    Public Property Key() As Guid
-        Get
-            Return _key
-        End Get
-        Set(ByVal value As Guid)
-            SetPropertyValue(NameOf(Key), _key, value)
-        End Set
-    End Property
 
-    'ID knihy
-    Private _id As Integer
-    Public Property Id() As Integer
-        Get
-            Return _id
-        End Get
-        Set(ByVal value As Integer)
-            SetPropertyValue(NameOf(Id), _id, value)
-        End Set
-    End Property
 
-    'Pocet knih
-    Private _pocet As Integer
-    Public Property Pocet() As Integer
-        Get
-            Return _pocet
-        End Get
-        Set(ByVal value As Integer)
-            SetPropertyValue(NameOf(Pocet), _pocet, value)
-        End Set
-    End Property
+    Private Sub btnVratitKnihu_Click(sender As Object, e As EventArgs)
+        ' Vratit knihu
+        vratenieKnihy = True
+        PozickaVratenie.Show()
 
-    'Názov knihy
-    Private _nazov As String
-    <Size(255)>
-    Public Property Nazov() As String
-        Get
-            Return _nazov
-        End Get
-        Set(ByVal value As String)
-            SetPropertyValue(NameOf(Nazov), _nazov, value)
-        End Set
-    End Property
+        ' zobrazit aktualizovanu tabulku Knihy 
+        XpCollection2.Reload()
+        GridView2.RefreshData()
 
-    'Autor
-    Private _autor As String
-    <Size(255)>
-    Public Property Autor() As String
-        Get
-            Return _autor
-        End Get
-        Set(ByVal value As String)
-            SetPropertyValue(NameOf(Autor), _autor, value)
-        End Set
-    End Property
+    End Sub
 
-    'Priznak "Je pozicana?"
-    Private _pozicana As Boolean
-    Public Property Pozicana() As Boolean
-        Get
-            Return _pozicana
-        End Get
-        Set(ByVal value As Boolean)
-            SetPropertyValue(NameOf(Pozicana), _pozicana, value)
-        End Set
-    End Property
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        'Nova kniha
+        edit = False
+        NovaKniha.Show()
+    End Sub
 
-    'Asociacia na tabulku Pozicky
-    <Association("Kniha-Pozicky")>
-    Public ReadOnly Property Pozicky() As XPCollection(Of Pozicky)
-        Get
-            Return GetCollection(Of Pozicky)(NameOf(Pozicky))
-        End Get
-    End Property
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        'Uprava udajov knihy
+        edit = True
+        NovaKniha.Show()
+    End Sub
+
+    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
+        ' Vymazat vybrany riadok z tabulky Knihy
+        Try
+            Dim Riadok As Object = GridView2.GetFocusedRow()
+            Dim vymazatKnihu As Kniha = CType(Riadok, XPBaseObject)
+            vymazatKnihu.Delete()
+            UnitOfWork2.CommitChanges()
+            MessageBox.Show($"Kniha {vymazatKnihu.Nazov} bola vymazana")
+
+            ' zobrazit aktualizovanu tabulku Knihy
+            XpCollection2.Reload()
+            GridView2.RefreshData()
+
+        Catch ex As Exception
+            MessageBox.Show($"Chyba pri mazani: {ex.Message}")
+        End Try
+    End Sub
+
+    Private Sub SimpleButton4_Click(sender As Object, e As EventArgs) Handles SimpleButton4.Click
+        'Vytvorit pozicku knihy
+        pozickaKnihy = True
+        PozickaVratenie.Show()
+
+        ' zobrazit aktualizovanu tabulku Knihy 
+        XpCollection2.Reload()
+        GridView2.RefreshData()
+    End Sub
+
+    Private Sub SimpleButton5_Click(sender As Object, e As EventArgs) Handles SimpleButton5.Click
+        ' Vratit knihu
+        vratenieKnihy = True
+        PozickaVratenie.Show()
+
+        ' zobrazit aktualizovanu tabulku Knihy 
+        XpCollection2.Reload()
+        GridView2.RefreshData()
+    End Sub
 End Class

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class xKnihy
+Partial Class Knihy
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class xKnihy
         Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(xKnihy))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Knihy))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
         Me.XpCollection2 = New DevExpress.Xpo.XPCollection(Me.components)
@@ -96,7 +96,7 @@ Partial Class xKnihy
         'XpCollection2
         '
         Me.XpCollection2.DisplayableProperties = "Key;Id;Pocet;Nazov;Autor;Pozicana"
-        Me.XpCollection2.ObjectType = GetType(Kniznica2.Knihy)
+        Me.XpCollection2.ObjectType = GetType(Kniznica2.Kniha)
         Me.XpCollection2.Session = Me.UnitOfWork2
         '
         'GridView2
@@ -267,15 +267,15 @@ Partial Class xKnihy
         '
         Me.XtraTabbedMdiManager1.MdiParent = Nothing
         '
-        'xKnihy
+        'Knihy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1039, 429)
         Me.Controls.Add(Me.LayoutControl1)
-        Me.Name = "xKnihy"
+        Me.Name = "Knihy"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "xKnihy"
+        Me.Text = "Knihy"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -304,8 +304,6 @@ Partial Class xKnihy
     Friend WithEvents colAutor As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colPozicana As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents XpCollection2 As DevExpress.Xpo.XPCollection
-    Friend WithEvents UnitOfWork2 As DevExpress.Xpo.UnitOfWork
     Friend WithEvents colPocet As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
@@ -318,4 +316,6 @@ Partial Class xKnihy
     Friend WithEvents SimpleButton5 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem11 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents XtraTabbedMdiManager1 As DevExpress.XtraTabbedMdi.XtraTabbedMdiManager
+    Friend WithEvents XpCollection2 As DevExpress.Xpo.XPCollection
+    Friend WithEvents UnitOfWork2 As DevExpress.Xpo.UnitOfWork
 End Class
