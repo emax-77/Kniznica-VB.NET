@@ -23,8 +23,6 @@ Partial Class xCitatelia
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(xCitatelia))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.XpCollection2 = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.UnitOfWork2 = New DevExpress.Xpo.UnitOfWork(Me.components)
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colKey = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colObciansky = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -44,8 +42,6 @@ Partial Class xCitatelia
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UnitOfWork2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,19 +69,13 @@ Partial Class xCitatelia
         '
         'GridControl1
         '
-        Me.GridControl1.DataSource = Me.XpCollection2
+        Me.GridControl1.DataSource = Me.XpCollection1
         Me.GridControl1.Location = New System.Drawing.Point(12, 52)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.Size = New System.Drawing.Size(1309, 568)
         Me.GridControl1.TabIndex = 30
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'XpCollection2
-        '
-        Me.XpCollection2.DisplayableProperties = "Key;Obciansky;Meno;Priezvisko;Datumnarodenia"
-        Me.XpCollection2.ObjectType = GetType(Kniznica2.Citatelia)
-        Me.XpCollection2.Session = Me.UnitOfWork2
         '
         'GridView1
         '
@@ -220,8 +210,6 @@ Partial Class xCitatelia
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UnitOfWork2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -236,11 +224,7 @@ Partial Class xCitatelia
 
     Friend WithEvents LayoutControl1 As DevExpress.XtraLayout.LayoutControl
     Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
-    Friend WithEvents XpCollection1 As DevExpress.Xpo.XPCollection
-    Friend WithEvents UnitOfWork1 As DevExpress.Xpo.UnitOfWork
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents XpCollection2 As DevExpress.Xpo.XPCollection
-    Friend WithEvents UnitOfWork2 As DevExpress.Xpo.UnitOfWork
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents colKey As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colObciansky As DevExpress.XtraGrid.Columns.GridColumn
@@ -254,4 +238,6 @@ Partial Class xCitatelia
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents XpCollection1 As DevExpress.Xpo.XPCollection
+    Friend WithEvents UnitOfWork1 As DevExpress.Xpo.UnitOfWork
 End Class
