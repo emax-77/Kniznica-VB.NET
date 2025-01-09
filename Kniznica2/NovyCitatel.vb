@@ -1,26 +1,27 @@
 ﻿Imports DevExpress.Xpo
 
 Public Class NovyCitatel
-    'Vytvorit alebo Editovat  noveho citatela
+    'Vytvorit alebo Editovat noveho citatela
 
     Dim Citatel As Citatel
     Dim UnitOfWork As UnitOfWork
 
     Private Sub NovyCitatel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'V pripade editacie nacitat data z vybrateho riadku do formularov
+        'V pripade editacie urobit DataBindings
         If edit = True Then
 
             UnitOfWork = New UnitOfWork()
 
-            Dim Riadok As Object = Citatelia.GridView1.GetFocusedRow()
-            Dim pomocnyCitatel As Citatel = CType(Riadok, XPBaseObject)
-            Dim Citatel = UnitOfWork.GetObjectByKey(Of Citatel)(pomocnyCitatel.Key)
+            Dim riadok = TryCast(Citatelia.GridView1.GetFocusedRow(), Citatel)
+            If riadok IsNot Nothing Then
+                Dim Citatel = UnitOfWork.GetObjectByKey(Of Citatel)(riadok.Key)
 
-            tedMeno.DataBindings.Add("Text", Citatel, "Meno")
-            tedPriezvysko.DataBindings.Add("Text", Citatel, "Priezvisko")
-            dedDatumNarodenia.DataBindings.Add("Text", Citatel, "Datumnarodenia")
-            tedObciansky.DataBindings.Add("Text", Citatel, "Obciansky")
+                tedMeno.DataBindings.Add("Text", Citatel, "Meno")
+                tedPriezvysko.DataBindings.Add("Text", Citatel, "Priezvisko")
+                dedDatumNarodenia.DataBindings.Add("Text", Citatel, "Datumnarodenia")
+                tedObciansky.DataBindings.Add("Text", Citatel, "Obciansky")
 
+            End If
         End If
 
     End Sub
@@ -71,9 +72,6 @@ Public Class NovyCitatel
             Close()
 
         End If
-
-
-
 
     End Sub
 

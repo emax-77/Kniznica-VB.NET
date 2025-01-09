@@ -15,21 +15,21 @@ Public Class NovaKniha
         idKnihy = aktualnyPocetKnih + 1
         tedIdKnihy.Text = idKnihy
 
-        'V pripade editacie vlozit eixstujuce udaje do formularov
+        'V pripade editacie urobit DataBindings
         If edit = True Then
 
             uow = New UnitOfWork()
 
-            Dim Riadok As Object = Knihy.GridView2.GetFocusedRow()
-            Dim pomocnaKniha As Kniha = CType(Riadok, XPBaseObject)
-            Dim Kniha = uow.GetObjectByKey(Of Kniha)(pomocnaKniha.Key)
+            Dim riadok = TryCast(Knihy.GridView2.GetFocusedRow(), Kniha)
+            If riadok IsNot Nothing Then
+                Dim Kniha = uow.GetObjectByKey(Of Kniha)(riadok.Key)
 
-            tedNazovKnihy.DataBindings.Add("Text", Kniha, "Nazov")
-            tedAutor.DataBindings.Add("Text", Kniha, "Autor")
-            spePocetKusov.DataBindings.Add("Value", Kniha, "Pocet")
+                tedNazovKnihy.DataBindings.Add("Text", Kniha, "Nazov")
+                tedAutor.DataBindings.Add("Text", Kniha, "Autor")
+                spePocetKusov.DataBindings.Add("Value", Kniha, "Pocet")
 
+            End If
         End If
-
     End Sub
 
     ' Funkcia na zistenie aktualneho poctu knih v kniznici
