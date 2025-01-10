@@ -19,7 +19,11 @@ Partial Class NovaKniha
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NovaKniha))
+        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.tedNazovKnihy = New DevExpress.XtraEditors.TextEdit()
         Me.tedAutor = New DevExpress.XtraEditors.TextEdit()
@@ -29,14 +33,15 @@ Partial Class NovaKniha
         Me.spePocetKusov = New DevExpress.XtraEditors.SpinEdit()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.SimpleSeparator1 = New DevExpress.XtraLayout.SimpleSeparator()
         Me.SplitterItem1 = New DevExpress.XtraLayout.SplitterItem()
+        Me.DxValidationProvider1 = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.tedNazovKnihy.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,14 +50,15 @@ Partial Class NovaKniha
         CType(Me.spePocetKusov.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitterItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DxValidationProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -79,6 +85,9 @@ Partial Class NovaKniha
         Me.tedNazovKnihy.Size = New System.Drawing.Size(391, 20)
         Me.tedNazovKnihy.StyleController = Me.LayoutControl1
         Me.tedNazovKnihy.TabIndex = 5
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
+        ConditionValidationRule1.ErrorText = "This value is not valid"
+        Me.DxValidationProvider1.SetValidationRule(Me.tedNazovKnihy, ConditionValidationRule1)
         '
         'tedAutor
         '
@@ -87,6 +96,9 @@ Partial Class NovaKniha
         Me.tedAutor.Size = New System.Drawing.Size(391, 20)
         Me.tedAutor.StyleController = Me.LayoutControl1
         Me.tedAutor.TabIndex = 6
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
+        ConditionValidationRule2.ErrorText = "This value is not valid"
+        Me.DxValidationProvider1.SetValidationRule(Me.tedAutor, ConditionValidationRule2)
         '
         'btnUlozit
         '
@@ -128,6 +140,10 @@ Partial Class NovaKniha
         Me.spePocetKusov.Size = New System.Drawing.Size(175, 20)
         Me.spePocetKusov.StyleController = Me.LayoutControl1
         Me.spePocetKusov.TabIndex = 14
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule3.ErrorText = "This value is not valid"
+        ConditionValidationRule3.Value1 = CType(0, Short)
+        Me.DxValidationProvider1.SetValidationRule(Me.spePocetKusov, ConditionValidationRule3)
         '
         'Root
         '
@@ -146,15 +162,6 @@ Partial Class NovaKniha
         Me.LayoutControlItem2.Text = "Nazov Knihy"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(59, 13)
         '
-        'LayoutControlItem3
-        '
-        Me.LayoutControlItem3.Control = Me.tedAutor
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(466, 24)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(466, 24)
-        Me.LayoutControlItem3.Text = "Autor"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(59, 13)
-        '
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.tedIdKnihy
@@ -163,15 +170,6 @@ Partial Class NovaKniha
         Me.LayoutControlItem1.Size = New System.Drawing.Size(216, 24)
         Me.LayoutControlItem1.Text = "ID knihy"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(59, 13)
-        '
-        'LayoutControlItem4
-        '
-        Me.LayoutControlItem4.Control = Me.spePocetKusov
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(216, 0)
-        Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(250, 24)
-        Me.LayoutControlItem4.Text = "Pocet kusov"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(59, 13)
         '
         'LayoutControlItem6
         '
@@ -203,6 +201,24 @@ Partial Class NovaKniha
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem5.TextVisible = False
         '
+        'LayoutControlItem4
+        '
+        Me.LayoutControlItem4.Control = Me.spePocetKusov
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(216, 0)
+        Me.LayoutControlItem4.Name = "LayoutControlItem4"
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(250, 24)
+        Me.LayoutControlItem4.Text = "Pocet kusov"
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(59, 13)
+        '
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.tedAutor
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(466, 24)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(466, 24)
+        Me.LayoutControlItem3.Text = "Autor"
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(59, 13)
+        '
         'SimpleSeparator1
         '
         Me.SimpleSeparator1.AllowHotTrack = False
@@ -217,13 +233,17 @@ Partial Class NovaKniha
         Me.SplitterItem1.Name = "SplitterItem1"
         Me.SplitterItem1.Size = New System.Drawing.Size(932, 166)
         '
-        'xNovaKniha
+        'DxValidationProvider1
+        '
+        Me.DxValidationProvider1.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.[Auto]
+        '
+        'NovaKniha
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(952, 110)
         Me.Controls.Add(Me.LayoutControl1)
-        Me.Name = "xNovaKniha"
+        Me.Name = "NovaKniha"
         Me.Text = "xNovaKniha"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
@@ -233,14 +253,15 @@ Partial Class NovaKniha
         CType(Me.spePocetKusov.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SplitterItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DxValidationProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -262,4 +283,5 @@ Partial Class NovaKniha
     Friend WithEvents btnZrusit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents DxValidationProvider1 As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
 End Class

@@ -19,6 +19,11 @@ Partial Class NovyCitatel
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NovyCitatel))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.tedMeno = New DevExpress.XtraEditors.TextEdit()
@@ -30,10 +35,11 @@ Partial Class NovyCitatel
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.DxValidationProvider1 = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.tedMeno.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,10 +50,11 @@ Partial Class NovyCitatel
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DxValidationProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -74,6 +81,9 @@ Partial Class NovyCitatel
         Me.tedMeno.Size = New System.Drawing.Size(352, 20)
         Me.tedMeno.StyleController = Me.LayoutControl1
         Me.tedMeno.TabIndex = 4
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
+        ConditionValidationRule1.ErrorText = "This value is not valid"
+        Me.DxValidationProvider1.SetValidationRule(Me.tedMeno, ConditionValidationRule1)
         '
         'tedPriezvysko
         '
@@ -82,6 +92,9 @@ Partial Class NovyCitatel
         Me.tedPriezvysko.Size = New System.Drawing.Size(352, 20)
         Me.tedPriezvysko.StyleController = Me.LayoutControl1
         Me.tedPriezvysko.TabIndex = 5
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
+        ConditionValidationRule2.ErrorText = "This value is not valid"
+        Me.DxValidationProvider1.SetValidationRule(Me.tedPriezvysko, ConditionValidationRule2)
         '
         'dedDatumNarodenia
         '
@@ -93,6 +106,10 @@ Partial Class NovyCitatel
         Me.dedDatumNarodenia.Size = New System.Drawing.Size(350, 20)
         Me.dedDatumNarodenia.StyleController = Me.LayoutControl1
         Me.dedDatumNarodenia.TabIndex = 6
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.LessOrEqual
+        ConditionValidationRule3.ErrorText = "This value is not valid"
+        ConditionValidationRule3.Value1 = New Date(2025, 1, 10, 13, 34, 24, 0)
+        Me.DxValidationProvider1.SetValidationRule(Me.dedDatumNarodenia, ConditionValidationRule3)
         '
         'tedObciansky
         '
@@ -101,6 +118,9 @@ Partial Class NovyCitatel
         Me.tedObciansky.Size = New System.Drawing.Size(350, 20)
         Me.tedObciansky.StyleController = Me.LayoutControl1
         Me.tedObciansky.TabIndex = 7
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
+        ConditionValidationRule4.ErrorText = "This value is not valid"
+        Me.DxValidationProvider1.SetValidationRule(Me.tedObciansky, ConditionValidationRule4)
         '
         'btnUlozit
         '
@@ -149,24 +169,6 @@ Partial Class NovyCitatel
         Me.LayoutControlItem2.Text = "Priezvisko"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(90, 13)
         '
-        'LayoutControlItem3
-        '
-        Me.LayoutControlItem3.Control = Me.dedDatumNarodenia
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(458, 0)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(456, 24)
-        Me.LayoutControlItem3.Text = "Datum narodenia"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(90, 13)
-        '
-        'LayoutControlItem4
-        '
-        Me.LayoutControlItem4.Control = Me.tedObciansky
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(458, 24)
-        Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(456, 24)
-        Me.LayoutControlItem4.Text = "Obciansky preukaz"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(90, 13)
-        '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.btnUlozit
@@ -185,13 +187,35 @@ Partial Class NovyCitatel
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem6.TextVisible = False
         '
-        'xNovyCitatel
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.dedDatumNarodenia
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(458, 0)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(456, 24)
+        Me.LayoutControlItem3.Text = "Datum narodenia"
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(90, 13)
+        '
+        'LayoutControlItem4
+        '
+        Me.LayoutControlItem4.Control = Me.tedObciansky
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(458, 24)
+        Me.LayoutControlItem4.Name = "LayoutControlItem4"
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(456, 24)
+        Me.LayoutControlItem4.Text = "Obciansky preukaz"
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(90, 13)
+        '
+        'DxValidationProvider1
+        '
+        Me.DxValidationProvider1.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.[Auto]
+        '
+        'NovyCitatel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(934, 109)
         Me.Controls.Add(Me.LayoutControl1)
-        Me.Name = "xNovyCitatel"
+        Me.Name = "NovyCitatel"
         Me.Text = "xNovyCitatel"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
@@ -203,10 +227,11 @@ Partial Class NovyCitatel
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DxValidationProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -225,4 +250,5 @@ Partial Class NovyCitatel
     Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents DxValidationProvider1 As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
 End Class
