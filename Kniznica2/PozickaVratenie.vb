@@ -1,6 +1,7 @@
 ﻿Imports DevExpress.CodeParser
 Imports DevExpress.Data.Filtering
 Imports DevExpress.Xpo
+Imports DevExpress.XtraGrid
 Imports Org.BouncyCastle.Asn1
 
 Public Class PozickaVratenie
@@ -38,11 +39,15 @@ Public Class PozickaVratenie
             novaPozicka.Citatel = vybranyCitatel
             novaPozicka.Datumpozicania = DateTime.Now
 
-            ' Ulozit zmeny
+
+            ' Ulozit zmeny a aktualizovat udaje v tabulkach
+            novaPozicka.Save()
             uow.CommitChanges()
 
             MessageBox.Show($"Pozicka pre knihu {pozicanaKniha.Nazov} bola vytvorena")
             pozickaKnihy = False
+
+            RefreshData()
 
         End If
 
@@ -61,7 +66,7 @@ Public Class PozickaVratenie
 
             ' Overenie vybratych objektov
             If pozicanaKniha Is Nothing OrElse vybranyCitatel Is Nothing Then
-                MessageBox.Show("Vyber knihu aj čitateľa")
+                MessageBox.Show("Vyber knihu aj citatela")
                 Return
             End If
 
@@ -73,14 +78,37 @@ Public Class PozickaVratenie
             pozicka.Datumvratenia = DateTime.Now
 
             ' Ulozit zmeny
+            pozicka.Save()
             uow.CommitChanges()
+
 
             MessageBox.Show($"Kniha {pozicanaKniha.Nazov} bola vratena")
             vratenieKnihy = False
+
+
         End If
 
-
         Close()
+        'aktualizovat udaje v tabulkach
+        RefreshData()
 
     End Sub
+
+
+    Private Sub RefreshData()
+        'Aktualizacia udajov v tabulkach Knihy a Pozicky (ReFresh)
+
+        Dim uow As New UnitOfWork()
+
+        Dim aktualizovaneKnihy = uow.Query(Of Kniha)().ToList()
+        Dim aktualizovanePozicky = uow.Query(Of Pozicka)().ToList()
+
+        Knihy.GridControl2.DataSource = aktualizovaneKnihy
+        Pozicky.GridControl3.DataSource = aktualizovanePozicky
+
+        Knihy.GridControl2.RefreshDataSource()
+        Pozicky.GridControl3.RefreshDataSource()
+    End Sub
+
+
 End Class

@@ -32,6 +32,7 @@ Public Class NovyCitatel
         If edit = False Then
             Try
 
+
                 ' nacitat udaje z formularu
                 Dim meno As String = tedMeno.Text
                 Dim priezvisko As String = tedPriezvysko.Text
@@ -46,6 +47,7 @@ Public Class NovyCitatel
                 novyCitatel.Priezvisko = priezvisko
                 novyCitatel.Datumnarodenia = datumNarodenia.ToString
                 novyCitatel.Obciansky = obcianskyPreukaz
+
                 novyCitatel.Save()
                 session.CommitChanges()
                 MessageBox.Show($"Citatel {novyCitatel.Meno} {novyCitatel.Priezvisko} bol ulozeny")

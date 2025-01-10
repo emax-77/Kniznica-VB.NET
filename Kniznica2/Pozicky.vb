@@ -22,6 +22,9 @@ Public Class Pozicky
             MessageBox.Show("Pozicka bola vymazana")
 
             ' zobrazit aktualizovanu tabulku Pozicky
+
+
+
             XpCollection3.Reload()
             GridView3.RefreshData()
 
@@ -29,5 +32,7 @@ Public Class Pozicky
             MessageBox.Show($"Chyba pri mazani: {ex.Message}")
 
         End Try
+
+
     End Sub
 End Class
