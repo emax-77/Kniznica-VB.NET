@@ -30,7 +30,7 @@ Public Class Kniha
         End Set
     End Property
 
-    'Pocet knih
+    'Celkovy pocet knih
     Private _pocet As Integer
     Public Property Pocet() As Integer
         Get
@@ -74,6 +74,14 @@ Public Class Kniha
         Set(ByVal value As Boolean)
             SetPropertyValue(NameOf(Pozicana), _pozicana, value)
         End Set
+    End Property
+
+    ' Pocet pozicanych knih
+    <PersistentAlias("Pozicka[Datumvratenia IS NULL].Count")>
+    Public ReadOnly Property PocetPozicanych() As Integer
+        Get
+            Return Convert.ToInt32(EvaluateAlias(NameOf(PocetPozicanych)))
+        End Get
     End Property
 
     'Asociacia na tabulku Pozicky

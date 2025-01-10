@@ -34,6 +34,7 @@ Partial Class Knihy
         Me.colAutor = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPozicana = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPocet = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
@@ -101,7 +102,7 @@ Partial Class Knihy
         '
         'GridView2
         '
-        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey1, Me.colId, Me.colNazov, Me.colAutor, Me.colPozicana, Me.colPocet})
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey1, Me.colId, Me.colNazov, Me.colAutor, Me.colPozicana, Me.colPocet, Me.GridColumn1})
         Me.GridView2.GridControl = Me.GridControl2
         Me.GridView2.Name = "GridView2"
         '
@@ -145,10 +146,19 @@ Partial Class Knihy
         '
         'colPocet
         '
+        Me.colPocet.Caption = "Mnozstvo"
         Me.colPocet.FieldName = "Pocet"
         Me.colPocet.Name = "colPocet"
         Me.colPocet.Visible = True
         Me.colPocet.VisibleIndex = 4
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Pozicanych"
+        Me.GridColumn1.FieldName = "PocetPozicanych"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 5
         '
         'SimpleButton1
         '
@@ -318,4 +328,5 @@ Partial Class Knihy
     Friend WithEvents XtraTabbedMdiManager1 As DevExpress.XtraTabbedMdi.XtraTabbedMdiManager
     Friend WithEvents XpCollection2 As DevExpress.Xpo.XPCollection
     Friend WithEvents UnitOfWork2 As DevExpress.Xpo.UnitOfWork
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
 End Class
