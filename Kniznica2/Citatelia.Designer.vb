@@ -21,10 +21,20 @@ Partial Class Citatelia
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Citatelia))
-        Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
         Me.UnitOfWork1 = New DevExpress.Xpo.UnitOfWork(Me.components)
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
+        Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
+        Me.XpCollection2 = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.UnitOfWork2 = New DevExpress.Xpo.UnitOfWork(Me.components)
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colKey1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDatumpozicania = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDatumvratenia = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridLookUpEdit1 = New DevExpress.XtraEditors.GridLookUpEdit()
+        Me.GridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colKey = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colObciansky = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -33,27 +43,56 @@ Partial Class Citatelia
         Me.colDatumnarodenia = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.sbtnNovyCitatel = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
-        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.LayoutControl1.SuspendLayout()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LayoutControl1.SuspendLayout()
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UnitOfWork2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridLookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'XpCollection1
+        '
+        Me.XpCollection1.DisplayableProperties = "Key;Obciansky;Meno;Priezvisko;Datumnarodenia"
+        Me.XpCollection1.ObjectType = GetType(Kniznica2.Citatel)
+        Me.XpCollection1.Session = Me.UnitOfWork1
+        '
+        'SimpleButton3
+        '
+        Me.SimpleButton3.ImageOptions.Image = CType(resources.GetObject("SimpleButton3.ImageOptions.Image"), System.Drawing.Image)
+        Me.SimpleButton3.Location = New System.Drawing.Point(885, 12)
+        Me.SimpleButton3.Name = "SimpleButton3"
+        Me.SimpleButton3.Size = New System.Drawing.Size(436, 36)
+        Me.SimpleButton3.StyleController = Me.LayoutControl1
+        Me.SimpleButton3.TabIndex = 33
+        Me.SimpleButton3.Text = "Vymazat citatela"
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.GridControl2)
+        Me.LayoutControl1.Controls.Add(Me.GridLookUpEdit1)
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Controls.Add(Me.sbtnNovyCitatel)
         Me.LayoutControl1.Controls.Add(Me.SimpleButton2)
@@ -67,21 +106,69 @@ Partial Class Citatelia
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'GridControl2
+        '
+        Me.GridControl2.DataSource = Me.XpCollection2
+        Me.GridControl2.Location = New System.Drawing.Point(12, 326)
+        Me.GridControl2.MainView = Me.GridView2
+        Me.GridControl2.Name = "GridControl2"
+        Me.GridControl2.Size = New System.Drawing.Size(1309, 270)
+        Me.GridControl2.TabIndex = 36
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'XpCollection2
+        '
+        Me.XpCollection2.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
+        Me.XpCollection2.ObjectType = GetType(Kniznica2.Pozicka)
+        Me.XpCollection2.Session = Me.UnitOfWork2
+        '
+        'GridView2
+        '
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey1, Me.colDatumpozicania, Me.colDatumvratenia, Me.GridColumn1, Me.GridColumn2})
+        Me.GridView2.GridControl = Me.GridControl2
+        Me.GridView2.Name = "GridView2"
+        '
+        'colKey1
+        '
+        Me.colKey1.FieldName = "Key"
+        Me.colKey1.Name = "colKey1"
+        '
+        'colDatumpozicania
+        '
+        Me.colDatumpozicania.FieldName = "Datumpozicania"
+        Me.colDatumpozicania.Name = "colDatumpozicania"
+        '
+        'colDatumvratenia
+        '
+        Me.colDatumvratenia.FieldName = "Datumvratenia"
+        Me.colDatumvratenia.Name = "colDatumvratenia"
+        '
+        'GridLookUpEdit1
+        '
+        Me.GridLookUpEdit1.Location = New System.Drawing.Point(120, 600)
+        Me.GridLookUpEdit1.Name = "GridLookUpEdit1"
+        Me.GridLookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.GridLookUpEdit1.Properties.PopupView = Me.GridLookUpEdit1View
+        Me.GridLookUpEdit1.Size = New System.Drawing.Size(1201, 20)
+        Me.GridLookUpEdit1.StyleController = Me.LayoutControl1
+        Me.GridLookUpEdit1.TabIndex = 35
+        '
+        'GridLookUpEdit1View
+        '
+        Me.GridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridLookUpEdit1View.Name = "GridLookUpEdit1View"
+        Me.GridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridLookUpEdit1View.OptionsView.ShowGroupPanel = False
+        '
         'GridControl1
         '
         Me.GridControl1.DataSource = Me.XpCollection1
         Me.GridControl1.Location = New System.Drawing.Point(12, 52)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1309, 568)
+        Me.GridControl1.Size = New System.Drawing.Size(1309, 270)
         Me.GridControl1.TabIndex = 30
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'XpCollection1
-        '
-        Me.XpCollection1.DisplayableProperties = "Key;Obciansky;Meno;Priezvisko;Datumnarodenia"
-        Me.XpCollection1.ObjectType = GetType(Kniznica2.Citatel)
-        Me.XpCollection1.Session = Me.UnitOfWork1
         '
         'GridView1
         '
@@ -143,21 +230,11 @@ Partial Class Citatelia
         Me.SimpleButton2.TabIndex = 32
         Me.SimpleButton2.Text = "Upravit citatela"
         '
-        'SimpleButton3
-        '
-        Me.SimpleButton3.ImageOptions.Image = CType(resources.GetObject("SimpleButton3.ImageOptions.Image"), System.Drawing.Image)
-        Me.SimpleButton3.Location = New System.Drawing.Point(885, 12)
-        Me.SimpleButton3.Name = "SimpleButton3"
-        Me.SimpleButton3.Size = New System.Drawing.Size(436, 36)
-        Me.SimpleButton3.StyleController = Me.LayoutControl1
-        Me.SimpleButton3.TabIndex = 33
-        Me.SimpleButton3.Text = "Vymazat citatela"
-        '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem3, Me.LayoutControlItem2})
         Me.Root.Name = "Root"
         Me.Root.Size = New System.Drawing.Size(1333, 632)
         Me.Root.TextVisible = False
@@ -167,7 +244,7 @@ Partial Class Citatelia
         Me.LayoutControlItem1.Control = Me.GridControl1
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 40)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1313, 572)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1313, 274)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -198,6 +275,39 @@ Partial Class Citatelia
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem7.TextVisible = False
         '
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.GridLookUpEdit1
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 588)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(1313, 24)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(96, 13)
+        '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.GridControl2
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 314)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(1313, 274)
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem2.TextVisible = False
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Kniha"
+        Me.GridColumn1.FieldName = "Kniha.Nazov"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 1
+        '
+        'GridColumn2
+        '
+        Me.GridColumn2.Caption = "Citatel"
+        Me.GridColumn2.FieldName = "Citatel.Priezvisko"
+        Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.Visible = True
+        Me.GridColumn2.VisibleIndex = 0
+        '
         'Citatelia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -207,23 +317,41 @@ Partial Class Citatelia
         Me.Name = "Citatelia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Citatelia"
-        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UnitOfWork2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridLookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-
+    Friend WithEvents XpCollection1 As DevExpress.Xpo.XPCollection
+    Friend WithEvents UnitOfWork1 As DevExpress.Xpo.UnitOfWork
+    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControl1 As DevExpress.XtraLayout.LayoutControl
-    Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents XpCollection2 As DevExpress.Xpo.XPCollection
+    Friend WithEvents UnitOfWork2 As DevExpress.Xpo.UnitOfWork
+    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents colKey1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDatumpozicania As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDatumvratenia As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridLookUpEdit1 As DevExpress.XtraEditors.GridLookUpEdit
+    Friend WithEvents GridLookUpEdit1View As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents colKey As DevExpress.XtraGrid.Columns.GridColumn
@@ -231,13 +359,15 @@ Partial Class Citatelia
     Friend WithEvents colMeno As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colPriezvisko As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colDatumnarodenia As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents sbtnNovyCitatel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents XpCollection1 As DevExpress.Xpo.XPCollection
-    Friend WithEvents UnitOfWork1 As DevExpress.Xpo.UnitOfWork
+    Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

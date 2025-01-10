@@ -58,4 +58,14 @@ Public Class Knihy
         PozickaVratenie.Show()
 
     End Sub
+
+    Private Sub GridView2_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView2.FocusedRowChanged
+        Dim riadok As Kniha = GridView2.GetFocusedRow()
+        If riadok Is Nothing Then
+            XpCollection3.Criteria = Nothing
+            Return
+        End If
+
+        XpCollection3.Criteria = CriteriaOperator.Parse("[Kniha.Key] = ?", riadok.Key)
+    End Sub
 End Class

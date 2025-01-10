@@ -1,4 +1,6 @@
-﻿Imports DevExpress.Xpo
+﻿Imports DevExpress.CodeParser
+Imports DevExpress.Data.Filtering
+Imports DevExpress.Xpo
 
 Public Class Citatelia
     Private Sub xCitatelia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -38,4 +40,19 @@ Public Class Citatelia
             MessageBox.Show($"Chyba pri mazani: {ex.Message}")
         End Try
     End Sub
+
+    Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
+
+        Dim riadok As Citatel = GridView1.GetFocusedRow()
+        If riadok Is Nothing Then
+            XpCollection2.Criteria = Nothing
+            'XpCollection2.Reload()
+            Return
+
+        End If
+
+        XpCollection2.Criteria = CriteriaOperator.Parse("[Citatel.Key] = ?", riadok.Key)
+
+    End Sub
+
 End Class
