@@ -20,10 +20,10 @@ Partial Class NovyCitatel
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ConditionValidationRule5 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NovyCitatel))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.tedMeno = New DevExpress.XtraEditors.TextEdit()
@@ -81,9 +81,9 @@ Partial Class NovyCitatel
         Me.tedMeno.Size = New System.Drawing.Size(352, 20)
         Me.tedMeno.StyleController = Me.LayoutControl1
         Me.tedMeno.TabIndex = 4
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
-        ConditionValidationRule1.ErrorText = "This value is not valid"
-        Me.DxValidationProvider1.SetValidationRule(Me.tedMeno, ConditionValidationRule1)
+        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
+        ConditionValidationRule5.ErrorText = "This value is not valid"
+        Me.DxValidationProvider1.SetValidationRule(Me.tedMeno, ConditionValidationRule5)
         '
         'tedPriezvysko
         '
@@ -92,9 +92,9 @@ Partial Class NovyCitatel
         Me.tedPriezvysko.Size = New System.Drawing.Size(352, 20)
         Me.tedPriezvysko.StyleController = Me.LayoutControl1
         Me.tedPriezvysko.TabIndex = 5
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
-        ConditionValidationRule2.ErrorText = "This value is not valid"
-        Me.DxValidationProvider1.SetValidationRule(Me.tedPriezvysko, ConditionValidationRule2)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
+        ConditionValidationRule1.ErrorText = "This value is not valid"
+        Me.DxValidationProvider1.SetValidationRule(Me.tedPriezvysko, ConditionValidationRule1)
         '
         'dedDatumNarodenia
         '
@@ -106,10 +106,10 @@ Partial Class NovyCitatel
         Me.dedDatumNarodenia.Size = New System.Drawing.Size(350, 20)
         Me.dedDatumNarodenia.StyleController = Me.LayoutControl1
         Me.dedDatumNarodenia.TabIndex = 6
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.LessOrEqual
-        ConditionValidationRule3.ErrorText = "This value is not valid"
-        ConditionValidationRule3.Value1 = New Date(2025, 1, 10, 13, 34, 24, 0)
-        Me.DxValidationProvider1.SetValidationRule(Me.dedDatumNarodenia, ConditionValidationRule3)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.LessOrEqual
+        ConditionValidationRule2.ErrorText = "This value is not valid"
+        ConditionValidationRule2.Value1 = New Date(2025, 1, 10, 13, 34, 24, 0)
+        Me.DxValidationProvider1.SetValidationRule(Me.dedDatumNarodenia, ConditionValidationRule2)
         '
         'tedObciansky
         '
@@ -118,9 +118,9 @@ Partial Class NovyCitatel
         Me.tedObciansky.Size = New System.Drawing.Size(350, 20)
         Me.tedObciansky.StyleController = Me.LayoutControl1
         Me.tedObciansky.TabIndex = 7
-        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
-        ConditionValidationRule4.ErrorText = "This value is not valid"
-        Me.DxValidationProvider1.SetValidationRule(Me.tedObciansky, ConditionValidationRule4)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
+        ConditionValidationRule3.ErrorText = "This value is not valid"
+        Me.DxValidationProvider1.SetValidationRule(Me.tedObciansky, ConditionValidationRule3)
         '
         'btnUlozit
         '

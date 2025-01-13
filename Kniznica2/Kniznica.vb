@@ -1,5 +1,64 @@
 ﻿Imports DevExpress.Xpo
 Imports DevExpress.Xpo.DB
+Imports DevExpress.XtraReports.UI
+Imports System.IO
+
+
+'Zobrazit report 1
+Module Report1
+    Sub ZobrazReport1()
+
+        ' Cesta k suboru
+        Dim filePath As String = "C:\Users\wirth\Documents\XtraReport1.repx"
+
+        ' kontorola ci subor existuje
+        If File.Exists(filePath) Then
+            Try
+                ' Vytvorenie inštancie XtraReport
+                Dim report As New XtraReport()
+
+                ' Načítanie reportu zo súboru .repx
+                report.LoadLayout(filePath)
+
+                ' Zobrazenie reportu v náhľade
+                Dim printTool As New ReportPrintTool(report)
+                printTool.ShowPreviewDialog()
+            Catch ex As Exception
+                Console.WriteLine("Chyba pri načítavaní reportu: " & ex.Message)
+            End Try
+        Else
+            Console.WriteLine("Subor neexistuje: " & filePath)
+        End If
+    End Sub
+End Module
+
+Module Report2
+    Sub ZobrazReport2()
+
+        ' Cesta k suboru
+        Dim filePath As String = "C:\Users\wirth\Documents\XtraReport2.repx"
+
+        ' kontorola ci subor existuje
+        If File.Exists(filePath) Then
+            Try
+                ' Vytvorenie instancie XtraReport
+                Dim report2 As New XtraReport()
+
+                ' Nacitanie reportu zo suboru .repx
+                report2.LoadLayout(filePath)
+
+                ' Zobrazenie reportu 
+                Dim printTool As New ReportPrintTool(report2)
+                printTool.ShowPreviewDialog()
+            Catch ex As Exception
+                Console.WriteLine("Chyba pri nacitani reportu: " & ex.Message)
+            End Try
+        Else
+            Console.WriteLine("Subor neexistuje: " & filePath)
+        End If
+    End Sub
+End Module
+
 
 Module GlobalVariables
     Public edit As Boolean = False
@@ -21,11 +80,6 @@ Public Class Kniznica
         Pozicky.Show()
         Knihy.Activate()
 
-        'zotriedenie tabuliek po spusteni
-        Citatelia.GridView1.Columns("Priezvisko").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending ' Zotriedi tabulku Citatelia podla priezviska
-        Knihy.GridView2.Columns("Id").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending 'Zotriedi tabulku Knihy podla Id knihy
-        Pozicky.GridView3.Columns("Datumpozicania").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending 'Zotriedi tabulku Pozicky podla datumu pozicania
-
     End Sub
 
     ' Bocne menu (vertikalne)
@@ -41,16 +95,20 @@ Public Class Kniznica
         Pozicky.Activate()
     End Sub
 
-    'Horne menu (horizontalne)
-    Private Sub BarSubItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarSubItem5.ItemClick
-        Citatelia.Activate()
+    ' Zobrazit report c.1
+    Private Sub BarButtonItem17_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem17.ItemClick
+        ZobrazReport1()
     End Sub
 
-    Private Sub BarSubItem6_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarSubItem6.ItemClick
-        Knihy.Activate()
+    ' Zobrazit report c.2
+    Private Sub BarButtonItem18_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem18.ItemClick
+        ZobrazReport2()
     End Sub
 
-    Private Sub BarSubItem7_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarSubItem7.ItemClick
-        Pozicky.Activate()
+    ' Designer
+    Private Sub BarButtonItem19_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem19.ItemClick
+        Dim report As New XtraReport1
+        Dim reportView As New ReportDesignTool(report)
+        reportView.ShowDesigner()
     End Sub
 End Class

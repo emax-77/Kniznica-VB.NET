@@ -24,13 +24,22 @@ Partial Class Knihy
         Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Knihy))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
+        Me.XpCollection3 = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.UnitOfWork3 = New DevExpress.Xpo.UnitOfWork(Me.components)
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colKey = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDatumpozicania = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDatumvratenia = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
         Me.XpCollection2 = New DevExpress.Xpo.XPCollection(Me.components)
         Me.UnitOfWork2 = New DevExpress.Xpo.UnitOfWork(Me.components)
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colKey1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colId = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colNazov = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Nazov = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colAutor = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPozicana = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colPocet = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -47,21 +56,16 @@ Partial Class Knihy
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.UnitOfWork1 = New DevExpress.Xpo.UnitOfWork(Me.components)
         Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.UnitOfWork3 = New DevExpress.Xpo.UnitOfWork(Me.components)
-        Me.XpCollection3 = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.colKey = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colDatumpozicania = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colDatumvratenia = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UnitOfWork3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UnitOfWork2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,14 +77,10 @@ Partial Class Knihy
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UnitOfWork3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -100,6 +100,59 @@ Partial Class Knihy
         Me.LayoutControl1.Size = New System.Drawing.Size(1116, 546)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'GridControl1
+        '
+        Me.GridControl1.DataSource = Me.XpCollection3
+        Me.GridControl1.Location = New System.Drawing.Point(12, 295)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(1092, 239)
+        Me.GridControl1.TabIndex = 40
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'XpCollection3
+        '
+        Me.XpCollection3.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
+        Me.XpCollection3.ObjectType = GetType(Kniznica2.Pozicka)
+        Me.XpCollection3.Session = Me.UnitOfWork3
+        '
+        'GridView1
+        '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey, Me.colDatumpozicania, Me.colDatumvratenia, Me.GridColumn2, Me.GridColumn3})
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        '
+        'colKey
+        '
+        Me.colKey.FieldName = "Key"
+        Me.colKey.Name = "colKey"
+        '
+        'colDatumpozicania
+        '
+        Me.colDatumpozicania.FieldName = "Datumpozicania"
+        Me.colDatumpozicania.Name = "colDatumpozicania"
+        '
+        'colDatumvratenia
+        '
+        Me.colDatumvratenia.FieldName = "Datumvratenia"
+        Me.colDatumvratenia.Name = "colDatumvratenia"
+        '
+        'GridColumn2
+        '
+        Me.GridColumn2.Caption = "Kniha"
+        Me.GridColumn2.FieldName = "Kniha.Nazov"
+        Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.Visible = True
+        Me.GridColumn2.VisibleIndex = 0
+        '
+        'GridColumn3
+        '
+        Me.GridColumn3.Caption = "Priezvisko"
+        Me.GridColumn3.FieldName = "Citatel.Priezvisko"
+        Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.Visible = True
+        Me.GridColumn3.VisibleIndex = 1
         '
         'GridControl2
         '
@@ -122,7 +175,7 @@ Partial Class Knihy
         '
         'GridView2
         '
-        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey1, Me.colId, Me.colNazov, Me.colAutor, Me.colPozicana, Me.colPocet, Me.GridColumn1})
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey1, Me.colId, Me.Nazov, Me.colAutor, Me.colPozicana, Me.colPocet, Me.GridColumn1})
         Me.GridView2.GridControl = Me.GridControl2
         Me.GridView2.Name = "GridView2"
         '
@@ -139,13 +192,13 @@ Partial Class Knihy
         Me.colId.VisibleIndex = 0
         Me.colId.Width = 46
         '
-        'colNazov
+        'Nazov
         '
-        Me.colNazov.FieldName = "Nazov"
-        Me.colNazov.Name = "colNazov"
-        Me.colNazov.Visible = True
-        Me.colNazov.VisibleIndex = 2
-        Me.colNazov.Width = 217
+        Me.Nazov.FieldName = "Nazov"
+        Me.Nazov.Name = "Nazov"
+        Me.Nazov.Visible = True
+        Me.Nazov.VisibleIndex = 2
+        Me.Nazov.Width = 217
         '
         'colAutor
         '
@@ -293,32 +346,6 @@ Partial Class Knihy
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem11.TextVisible = False
         '
-        'XtraTabbedMdiManager1
-        '
-        Me.XtraTabbedMdiManager1.MdiParent = Nothing
-        '
-        'XpCollection1
-        '
-        Me.XpCollection1.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
-        Me.XpCollection1.ObjectType = GetType(Kniznica2.Pozicka)
-        Me.XpCollection1.Session = Me.UnitOfWork1
-        '
-        'GridControl1
-        '
-        Me.GridControl1.DataSource = Me.XpCollection3
-        Me.GridControl1.Location = New System.Drawing.Point(12, 295)
-        Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1092, 239)
-        Me.GridControl1.TabIndex = 40
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'GridView1
-        '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey, Me.colDatumpozicania, Me.colDatumvratenia, Me.GridColumn2, Me.GridColumn3})
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
-        '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.GridControl1
@@ -328,42 +355,15 @@ Partial Class Knihy
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = False
         '
-        'XpCollection3
+        'XtraTabbedMdiManager1
         '
-        Me.XpCollection3.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
-        Me.XpCollection3.ObjectType = GetType(Kniznica2.Pozicka)
-        Me.XpCollection3.Session = Me.UnitOfWork3
+        Me.XtraTabbedMdiManager1.MdiParent = Nothing
         '
-        'colKey
+        'XpCollection1
         '
-        Me.colKey.FieldName = "Key"
-        Me.colKey.Name = "colKey"
-        '
-        'colDatumpozicania
-        '
-        Me.colDatumpozicania.FieldName = "Datumpozicania"
-        Me.colDatumpozicania.Name = "colDatumpozicania"
-        '
-        'colDatumvratenia
-        '
-        Me.colDatumvratenia.FieldName = "Datumvratenia"
-        Me.colDatumvratenia.Name = "colDatumvratenia"
-        '
-        'GridColumn2
-        '
-        Me.GridColumn2.Caption = "Kniha"
-        Me.GridColumn2.FieldName = "Kniha.Nazov"
-        Me.GridColumn2.Name = "GridColumn2"
-        Me.GridColumn2.Visible = True
-        Me.GridColumn2.VisibleIndex = 0
-        '
-        'GridColumn3
-        '
-        Me.GridColumn3.Caption = "Priezvisko"
-        Me.GridColumn3.FieldName = "Citatel.Priezvisko"
-        Me.GridColumn3.Name = "GridColumn3"
-        Me.GridColumn3.Visible = True
-        Me.GridColumn3.VisibleIndex = 1
+        Me.XpCollection1.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
+        Me.XpCollection1.ObjectType = GetType(Kniznica2.Pozicka)
+        Me.XpCollection1.Session = Me.UnitOfWork1
         '
         'Knihy
         '
@@ -376,6 +376,10 @@ Partial Class Knihy
         Me.Text = "Knihy"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UnitOfWork3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UnitOfWork2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -387,14 +391,10 @@ Partial Class Knihy
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UnitOfWork3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -405,7 +405,7 @@ Partial Class Knihy
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents colKey1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colId As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colNazov As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents Nazov As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colAutor As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colPozicana As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem

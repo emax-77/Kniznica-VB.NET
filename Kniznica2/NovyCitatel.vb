@@ -80,4 +80,12 @@ Public Class NovyCitatel
     Private Sub btnZrusit_Click(sender As Object, e As EventArgs) Handles btnZrusit.Click
         Close()
     End Sub
+
+    Private Sub dedDatumNarodenia_Properties_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles dedDatumNarodenia.Properties.Validating
+        ' validacia datumu narodenia  - nesmie byt neskorsi ako dnes
+
+        If dedDatumNarodenia.EditValue > DateTime.Now Then
+            e.Cancel = True
+        End If
+    End Sub
 End Class

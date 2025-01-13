@@ -32,6 +32,8 @@ Partial Class Citatelia
         Me.colKey1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDatumpozicania = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDatumvratenia = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridLookUpEdit1 = New DevExpress.XtraEditors.GridLookUpEdit()
         Me.GridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
@@ -39,7 +41,7 @@ Partial Class Citatelia
         Me.colKey = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colObciansky = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colMeno = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPriezvisko = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Priezvisko = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDatumnarodenia = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.sbtnNovyCitatel = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
@@ -50,8 +52,6 @@ Partial Class Citatelia
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,6 +143,22 @@ Partial Class Citatelia
         Me.colDatumvratenia.FieldName = "Datumvratenia"
         Me.colDatumvratenia.Name = "colDatumvratenia"
         '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Kniha"
+        Me.GridColumn1.FieldName = "Kniha.Nazov"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 1
+        '
+        'GridColumn2
+        '
+        Me.GridColumn2.Caption = "Citatel"
+        Me.GridColumn2.FieldName = "Citatel.Priezvisko"
+        Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.Visible = True
+        Me.GridColumn2.VisibleIndex = 0
+        '
         'GridLookUpEdit1
         '
         Me.GridLookUpEdit1.Location = New System.Drawing.Point(120, 600)
@@ -172,7 +188,7 @@ Partial Class Citatelia
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey, Me.colObciansky, Me.colMeno, Me.colPriezvisko, Me.colDatumnarodenia})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colKey, Me.colObciansky, Me.colMeno, Me.Priezvisko, Me.colDatumnarodenia})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colMeno, DevExpress.Data.ColumnSortOrder.Ascending)})
@@ -196,12 +212,12 @@ Partial Class Citatelia
         Me.colMeno.Visible = True
         Me.colMeno.VisibleIndex = 1
         '
-        'colPriezvisko
+        'Priezvisko
         '
-        Me.colPriezvisko.FieldName = "Priezvisko"
-        Me.colPriezvisko.Name = "colPriezvisko"
-        Me.colPriezvisko.Visible = True
-        Me.colPriezvisko.VisibleIndex = 0
+        Me.Priezvisko.FieldName = "Priezvisko"
+        Me.Priezvisko.Name = "Priezvisko"
+        Me.Priezvisko.Visible = True
+        Me.Priezvisko.VisibleIndex = 0
         '
         'colDatumnarodenia
         '
@@ -292,22 +308,6 @@ Partial Class Citatelia
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = False
         '
-        'GridColumn1
-        '
-        Me.GridColumn1.Caption = "Kniha"
-        Me.GridColumn1.FieldName = "Kniha.Nazov"
-        Me.GridColumn1.Name = "GridColumn1"
-        Me.GridColumn1.Visible = True
-        Me.GridColumn1.VisibleIndex = 1
-        '
-        'GridColumn2
-        '
-        Me.GridColumn2.Caption = "Citatel"
-        Me.GridColumn2.FieldName = "Citatel.Priezvisko"
-        Me.GridColumn2.Name = "GridColumn2"
-        Me.GridColumn2.Visible = True
-        Me.GridColumn2.VisibleIndex = 0
-        '
         'Citatelia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -357,7 +357,7 @@ Partial Class Citatelia
     Friend WithEvents colKey As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colObciansky As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colMeno As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colPriezvisko As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents Priezvisko As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colDatumnarodenia As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents sbtnNovyCitatel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton

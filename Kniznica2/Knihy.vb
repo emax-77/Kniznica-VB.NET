@@ -6,9 +6,10 @@ Public Class Knihy
     Private Sub xKnihy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Kniznica
 
-        ' zobrazit aktualizovanu tabulku Knihy 
-        XpCollection2.Reload()
-        GridView2.RefreshData()
+        ' Zotriedenie podla nazvu knihy
+        GridView2.ClearSorting()
+        GridView2.Columns("Nazov").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending
+
 
     End Sub
 
@@ -59,6 +60,7 @@ Public Class Knihy
 
     End Sub
 
+    'Zobrazit info kto ma pozicane Knihy
     Private Sub GridView2_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView2.FocusedRowChanged
         Dim riadok As Kniha = GridView2.GetFocusedRow()
         If riadok Is Nothing Then

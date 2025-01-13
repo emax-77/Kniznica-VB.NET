@@ -3,11 +3,14 @@ Imports DevExpress.Data.Filtering
 Imports DevExpress.Xpo
 
 Public Class Citatelia
-    Private Sub xCitatelia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Private Sub Citatelia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MdiParent = Kniznica
-        'zobrazit aktualizovanmu tabulku Citatelia 
-        XpCollection1.Reload()
-        GridView1.RefreshData()
+
+        ' Zotriedenie podla Priezviska
+        GridView1.ClearSorting()
+        GridView1.Columns("Priezvisko").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending
+
 
     End Sub
 
@@ -41,14 +44,13 @@ Public Class Citatelia
         End Try
     End Sub
 
+    ' Zobrazit info o pozickach Citatela
     Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
 
         Dim riadok As Citatel = GridView1.GetFocusedRow()
         If riadok Is Nothing Then
             XpCollection2.Criteria = Nothing
-            'XpCollection2.Reload()
             Return
-
         End If
 
         XpCollection2.Criteria = CriteriaOperator.Parse("[Citatel.Key] = ?", riadok.Key)

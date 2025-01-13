@@ -28,18 +28,13 @@ Partial Class Kniznica
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar1 = New DevExpress.XtraBars.Bar()
         Me.Bar2 = New DevExpress.XtraBars.Bar()
-        Me.BarSubItem5 = New DevExpress.XtraBars.BarSubItem()
-        Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarSubItem6 = New DevExpress.XtraBars.BarSubItem()
-        Me.BarButtonItem10 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem11 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem12 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem15 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem16 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarSubItem7 = New DevExpress.XtraBars.BarSubItem()
-        Me.BarButtonItem13 = New DevExpress.XtraBars.BarButtonItem()
+        Me.SkinBarSubItem1 = New DevExpress.XtraBars.SkinBarSubItem()
+        Me.BarSubItem8 = New DevExpress.XtraBars.BarSubItem()
+        Me.BarButtonItem17 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem18 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem20 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem21 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem19 = New DevExpress.XtraBars.BarButtonItem()
         Me.Bar3 = New DevExpress.XtraBars.Bar()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
@@ -57,7 +52,17 @@ Partial Class Kniznica
         Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
         Me.PopupMenu2 = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem9 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem10 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem11 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem12 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarSubItem7 = New DevExpress.XtraBars.BarSubItem()
+        Me.BarButtonItem13 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem14 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem15 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem16 = New DevExpress.XtraBars.BarButtonItem()
         Me.NavBarGroup1 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarControl1 = New DevExpress.XtraNavBar.NavBarControl()
         Me.NavBarGroup2 = New DevExpress.XtraNavBar.NavBarGroup()
@@ -82,9 +87,9 @@ Partial Class Kniznica
         Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
         Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
-        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarSubItem1, Me.BarSubItem2, Me.BarSubItem3, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarSubItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarSubItem5, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarSubItem6, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarSubItem7, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BarButtonItem16})
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarSubItem1, Me.BarSubItem2, Me.BarSubItem3, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarSubItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarSubItem7, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BarButtonItem16, Me.SkinBarSubItem1, Me.BarSubItem8, Me.BarButtonItem17, Me.BarButtonItem18, Me.BarButtonItem20, Me.BarButtonItem21, Me.BarButtonItem19})
         Me.BarManager1.MainMenu = Me.Bar2
-        Me.BarManager1.MaxItemId = 23
+        Me.BarManager1.MaxItemId = 32
         Me.BarManager1.StatusBar = Me.Bar3
         '
         'Bar1
@@ -101,85 +106,53 @@ Partial Class Kniznica
         Me.Bar2.DockCol = 0
         Me.Bar2.DockRow = 0
         Me.Bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem5), New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem6), New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem7)})
+        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.SkinBarSubItem1), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem19), New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem8)})
         Me.Bar2.OptionsBar.MultiLine = True
         Me.Bar2.OptionsBar.UseWholeRow = True
         Me.Bar2.Text = "Main menu"
         '
-        'BarSubItem5
+        'SkinBarSubItem1
         '
-        Me.BarSubItem5.Caption = "Citatelia"
-        Me.BarSubItem5.Id = 10
-        Me.BarSubItem5.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem7), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem8), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem9)})
-        Me.BarSubItem5.Name = "BarSubItem5"
+        Me.SkinBarSubItem1.Caption = "Zmenit vzhlad"
+        Me.SkinBarSubItem1.Id = 23
+        Me.SkinBarSubItem1.Name = "SkinBarSubItem1"
         '
-        'BarButtonItem7
+        'BarSubItem8
         '
-        Me.BarButtonItem7.Caption = "Novy"
-        Me.BarButtonItem7.Id = 11
-        Me.BarButtonItem7.Name = "BarButtonItem7"
+        Me.BarSubItem8.Caption = "Reporty"
+        Me.BarSubItem8.Id = 24
+        Me.BarSubItem8.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem17), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem18)})
+        Me.BarSubItem8.Name = "BarSubItem8"
         '
-        'BarButtonItem8
+        'BarButtonItem17
         '
-        Me.BarButtonItem8.Caption = "Upravit"
-        Me.BarButtonItem8.Id = 12
-        Me.BarButtonItem8.Name = "BarButtonItem8"
+        Me.BarButtonItem17.Caption = "Report 1"
+        Me.BarButtonItem17.Id = 25
+        Me.BarButtonItem17.Name = "BarButtonItem17"
         '
-        'BarButtonItem9
+        'BarButtonItem18
         '
-        Me.BarButtonItem9.Caption = "Vymazat"
-        Me.BarButtonItem9.Id = 13
-        Me.BarButtonItem9.Name = "BarButtonItem9"
+        Me.BarButtonItem18.Caption = "Report 2"
+        Me.BarButtonItem18.Id = 26
+        Me.BarButtonItem18.Name = "BarButtonItem18"
         '
-        'BarSubItem6
+        'BarButtonItem20
         '
-        Me.BarSubItem6.Caption = "Knihy"
-        Me.BarSubItem6.Id = 14
-        Me.BarSubItem6.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem10), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem11), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem12), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem15), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem16)})
-        Me.BarSubItem6.Name = "BarSubItem6"
+        Me.BarButtonItem20.Caption = "Report 1"
+        Me.BarButtonItem20.Id = 29
+        Me.BarButtonItem20.Name = "BarButtonItem20"
         '
-        'BarButtonItem10
+        'BarButtonItem21
         '
-        Me.BarButtonItem10.Caption = "Nova"
-        Me.BarButtonItem10.Id = 15
-        Me.BarButtonItem10.Name = "BarButtonItem10"
+        Me.BarButtonItem21.Caption = "Report 2"
+        Me.BarButtonItem21.Id = 30
+        Me.BarButtonItem21.Name = "BarButtonItem21"
         '
-        'BarButtonItem11
+        'BarButtonItem19
         '
-        Me.BarButtonItem11.Caption = "Upravit"
-        Me.BarButtonItem11.Id = 16
-        Me.BarButtonItem11.Name = "BarButtonItem11"
-        '
-        'BarButtonItem12
-        '
-        Me.BarButtonItem12.Caption = "Vymazat"
-        Me.BarButtonItem12.Id = 17
-        Me.BarButtonItem12.Name = "BarButtonItem12"
-        '
-        'BarButtonItem15
-        '
-        Me.BarButtonItem15.Caption = "Pozicat knihu"
-        Me.BarButtonItem15.Id = 21
-        Me.BarButtonItem15.Name = "BarButtonItem15"
-        '
-        'BarButtonItem16
-        '
-        Me.BarButtonItem16.Caption = "Vratit knihu"
-        Me.BarButtonItem16.Id = 22
-        Me.BarButtonItem16.Name = "BarButtonItem16"
-        '
-        'BarSubItem7
-        '
-        Me.BarSubItem7.Caption = "Pozicky"
-        Me.BarSubItem7.Id = 18
-        Me.BarSubItem7.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem13)})
-        Me.BarSubItem7.Name = "BarSubItem7"
-        '
-        'BarButtonItem13
-        '
-        Me.BarButtonItem13.Caption = "Vymazat pozicku"
-        Me.BarButtonItem13.Id = 19
-        Me.BarButtonItem13.Name = "BarButtonItem13"
+        Me.BarButtonItem19.Caption = "Designer"
+        Me.BarButtonItem19.Id = 31
+        Me.BarButtonItem19.Name = "BarButtonItem19"
         '
         'Bar3
         '
@@ -318,11 +291,72 @@ Partial Class Kniznica
         Me.PopupMenu2.Manager = Me.BarManager1
         Me.PopupMenu2.Name = "PopupMenu2"
         '
+        'BarButtonItem7
+        '
+        Me.BarButtonItem7.Caption = "Novy"
+        Me.BarButtonItem7.Id = 11
+        Me.BarButtonItem7.Name = "BarButtonItem7"
+        '
+        'BarButtonItem8
+        '
+        Me.BarButtonItem8.Caption = "Upravit"
+        Me.BarButtonItem8.Id = 12
+        Me.BarButtonItem8.Name = "BarButtonItem8"
+        '
+        'BarButtonItem9
+        '
+        Me.BarButtonItem9.Caption = "Vymazat"
+        Me.BarButtonItem9.Id = 13
+        Me.BarButtonItem9.Name = "BarButtonItem9"
+        '
+        'BarButtonItem10
+        '
+        Me.BarButtonItem10.Caption = "Nova"
+        Me.BarButtonItem10.Id = 15
+        Me.BarButtonItem10.Name = "BarButtonItem10"
+        '
+        'BarButtonItem11
+        '
+        Me.BarButtonItem11.Caption = "Upravit"
+        Me.BarButtonItem11.Id = 16
+        Me.BarButtonItem11.Name = "BarButtonItem11"
+        '
+        'BarButtonItem12
+        '
+        Me.BarButtonItem12.Caption = "Vymazat"
+        Me.BarButtonItem12.Id = 17
+        Me.BarButtonItem12.Name = "BarButtonItem12"
+        '
+        'BarSubItem7
+        '
+        Me.BarSubItem7.Caption = "Pozicky"
+        Me.BarSubItem7.Id = 18
+        Me.BarSubItem7.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem13)})
+        Me.BarSubItem7.Name = "BarSubItem7"
+        '
+        'BarButtonItem13
+        '
+        Me.BarButtonItem13.Caption = "Vymazat pozicku"
+        Me.BarButtonItem13.Id = 19
+        Me.BarButtonItem13.Name = "BarButtonItem13"
+        '
         'BarButtonItem14
         '
         Me.BarButtonItem14.Caption = "Vratit knihu"
         Me.BarButtonItem14.Id = 20
         Me.BarButtonItem14.Name = "BarButtonItem14"
+        '
+        'BarButtonItem15
+        '
+        Me.BarButtonItem15.Caption = "Pozicat knihu"
+        Me.BarButtonItem15.Id = 21
+        Me.BarButtonItem15.Name = "BarButtonItem15"
+        '
+        'BarButtonItem16
+        '
+        Me.BarButtonItem16.Caption = "Vratit knihu"
+        Me.BarButtonItem16.Id = 22
+        Me.BarButtonItem16.Name = "BarButtonItem16"
         '
         'NavBarGroup1
         '
@@ -436,11 +470,9 @@ Partial Class Kniznica
     Friend WithEvents SeparatorControl1 As DevExpress.XtraEditors.SeparatorControl
     Friend WithEvents BarButtonItem6 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents PopupMenu2 As DevExpress.XtraBars.PopupMenu
-    Friend WithEvents BarSubItem5 As DevExpress.XtraBars.BarSubItem
     Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem9 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarSubItem6 As DevExpress.XtraBars.BarSubItem
     Friend WithEvents BarButtonItem10 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem11 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem12 As DevExpress.XtraBars.BarButtonItem
@@ -449,4 +481,11 @@ Partial Class Kniznica
     Friend WithEvents BarButtonItem14 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem15 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem16 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents SkinBarSubItem1 As DevExpress.XtraBars.SkinBarSubItem
+    Friend WithEvents BarSubItem8 As DevExpress.XtraBars.BarSubItem
+    Friend WithEvents BarButtonItem17 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem18 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem20 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem21 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem19 As DevExpress.XtraBars.BarButtonItem
 End Class
