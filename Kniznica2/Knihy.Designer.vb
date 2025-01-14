@@ -60,6 +60,9 @@ Partial Class Knihy
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.UnitOfWork1 = New DevExpress.Xpo.UnitOfWork(Me.components)
         Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.GridControl3 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,10 +84,14 @@ Partial Class Knihy
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.GridControl3)
         Me.LayoutControl1.Controls.Add(Me.GridControl1)
         Me.LayoutControl1.Controls.Add(Me.GridControl2)
         Me.LayoutControl1.Controls.Add(Me.SimpleButton1)
@@ -104,10 +111,10 @@ Partial Class Knihy
         'GridControl1
         '
         Me.GridControl1.DataSource = Me.XpCollection3
-        Me.GridControl1.Location = New System.Drawing.Point(12, 295)
+        Me.GridControl1.Location = New System.Drawing.Point(12, 282)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1092, 239)
+        Me.GridControl1.Size = New System.Drawing.Size(1092, 228)
         Me.GridControl1.TabIndex = 40
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -163,7 +170,7 @@ Partial Class Knihy
         Me.GridControl2.Location = New System.Drawing.Point(12, 52)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(1092, 239)
+        Me.GridControl2.Size = New System.Drawing.Size(1092, 226)
         Me.GridControl2.TabIndex = 25
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -287,7 +294,7 @@ Partial Class Knihy
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem10, Me.LayoutControlItem11, Me.LayoutControlItem2})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem10, Me.LayoutControlItem11, Me.LayoutControlItem2, Me.LayoutControlItem3})
         Me.Root.Name = "Root"
         Me.Root.Size = New System.Drawing.Size(1116, 546)
         Me.Root.TextVisible = False
@@ -297,7 +304,7 @@ Partial Class Knihy
         Me.LayoutControlItem1.Control = Me.GridControl2
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 40)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1096, 243)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1096, 230)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -349,9 +356,9 @@ Partial Class Knihy
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.GridControl1
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 283)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 270)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(1096, 243)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(1096, 232)
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = False
         '
@@ -364,6 +371,29 @@ Partial Class Knihy
         Me.XpCollection1.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
         Me.XpCollection1.ObjectType = GetType(Kniznica2.Pozicka)
         Me.XpCollection1.Session = Me.UnitOfWork1
+        '
+        'GridControl3
+        '
+        Me.GridControl3.Location = New System.Drawing.Point(12, 514)
+        Me.GridControl3.MainView = Me.GridView3
+        Me.GridControl3.Name = "GridControl3"
+        Me.GridControl3.Size = New System.Drawing.Size(1092, 20)
+        Me.GridControl3.TabIndex = 41
+        Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
+        '
+        'GridView3
+        '
+        Me.GridView3.GridControl = Me.GridControl3
+        Me.GridView3.Name = "GridView3"
+        '
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.GridControl3
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 502)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(1096, 24)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem3.TextVisible = False
         '
         'Knihy
         '
@@ -395,6 +425,9 @@ Partial Class Knihy
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -436,4 +469,7 @@ Partial Class Knihy
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridControl3 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView3 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
 End Class
