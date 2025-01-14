@@ -45,6 +45,7 @@ Partial Class Citatelia
         Me.colDatumnarodenia = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.sbtnNovyCitatel = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
+        Me.sbtnExportExcel = New DevExpress.XtraEditors.SimpleButton()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -52,6 +53,7 @@ Partial Class Citatelia
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +73,7 @@ Partial Class Citatelia
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'XpCollection1
@@ -84,7 +87,7 @@ Partial Class Citatelia
         Me.SimpleButton3.ImageOptions.Image = CType(resources.GetObject("SimpleButton3.ImageOptions.Image"), System.Drawing.Image)
         Me.SimpleButton3.Location = New System.Drawing.Point(885, 12)
         Me.SimpleButton3.Name = "SimpleButton3"
-        Me.SimpleButton3.Size = New System.Drawing.Size(436, 36)
+        Me.SimpleButton3.Size = New System.Drawing.Size(216, 36)
         Me.SimpleButton3.StyleController = Me.LayoutControl1
         Me.SimpleButton3.TabIndex = 33
         Me.SimpleButton3.Text = "Vymazat citatela"
@@ -97,6 +100,7 @@ Partial Class Citatelia
         Me.LayoutControl1.Controls.Add(Me.sbtnNovyCitatel)
         Me.LayoutControl1.Controls.Add(Me.SimpleButton2)
         Me.LayoutControl1.Controls.Add(Me.SimpleButton3)
+        Me.LayoutControl1.Controls.Add(Me.sbtnExportExcel)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
@@ -246,11 +250,21 @@ Partial Class Citatelia
         Me.SimpleButton2.TabIndex = 32
         Me.SimpleButton2.Text = "Upravit citatela"
         '
+        'sbtnExportExcel
+        '
+        Me.sbtnExportExcel.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
+        Me.sbtnExportExcel.Location = New System.Drawing.Point(1105, 12)
+        Me.sbtnExportExcel.Name = "sbtnExportExcel"
+        Me.sbtnExportExcel.Size = New System.Drawing.Size(216, 36)
+        Me.sbtnExportExcel.StyleController = Me.LayoutControl1
+        Me.sbtnExportExcel.TabIndex = 37
+        Me.sbtnExportExcel.Text = "Export do Excelu"
+        '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem3, Me.LayoutControlItem2})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem3, Me.LayoutControlItem2, Me.LayoutControlItem4})
         Me.Root.Name = "Root"
         Me.Root.Size = New System.Drawing.Size(1333, 632)
         Me.Root.TextVisible = False
@@ -287,7 +301,7 @@ Partial Class Citatelia
         Me.LayoutControlItem7.Control = Me.SimpleButton3
         Me.LayoutControlItem7.Location = New System.Drawing.Point(873, 0)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(440, 40)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(220, 40)
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem7.TextVisible = False
         '
@@ -307,6 +321,15 @@ Partial Class Citatelia
         Me.LayoutControlItem2.Size = New System.Drawing.Size(1313, 274)
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = False
+        '
+        'LayoutControlItem4
+        '
+        Me.LayoutControlItem4.Control = Me.sbtnExportExcel
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(1093, 0)
+        Me.LayoutControlItem4.Name = "LayoutControlItem4"
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(220, 40)
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem4.TextVisible = False
         '
         'Citatelia
         '
@@ -336,6 +359,7 @@ Partial Class Citatelia
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -370,4 +394,6 @@ Partial Class Citatelia
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents sbtnExportExcel As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
 End Class

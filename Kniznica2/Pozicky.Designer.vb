@@ -36,6 +36,8 @@ Partial Class Pozicky
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.sbtnExportExcel = New DevExpress.XtraEditors.SimpleButton()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.GridControl3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,12 +47,14 @@ Partial Class Pozicky
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
         Me.LayoutControl1.Controls.Add(Me.GridControl3)
         Me.LayoutControl1.Controls.Add(Me.SimpleButton1)
+        Me.LayoutControl1.Controls.Add(Me.sbtnExportExcel)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
@@ -131,7 +135,7 @@ Partial Class Pozicky
         Me.SimpleButton1.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
         Me.SimpleButton1.Location = New System.Drawing.Point(12, 12)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(1164, 36)
+        Me.SimpleButton1.Size = New System.Drawing.Size(580, 36)
         Me.SimpleButton1.StyleController = Me.LayoutControl1
         Me.SimpleButton1.TabIndex = 31
         Me.SimpleButton1.Text = "Vymazat pozicku "
@@ -140,7 +144,7 @@ Partial Class Pozicky
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem1})
         Me.Root.Name = "Root"
         Me.Root.Size = New System.Drawing.Size(1188, 538)
         Me.Root.TextVisible = False
@@ -159,9 +163,28 @@ Partial Class Pozicky
         Me.LayoutControlItem3.Control = Me.SimpleButton1
         Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(1168, 40)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(584, 40)
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextVisible = False
+        '
+        'sbtnExportExcel
+        '
+        Me.sbtnExportExcel.ImageOptions.Image = CType(resources.GetObject("SimpleButton2.ImageOptions.Image"), System.Drawing.Image)
+        Me.sbtnExportExcel.Location = New System.Drawing.Point(596, 12)
+        Me.sbtnExportExcel.Name = "sbtnExportExcel"
+        Me.sbtnExportExcel.Size = New System.Drawing.Size(580, 36)
+        Me.sbtnExportExcel.StyleController = Me.LayoutControl1
+        Me.sbtnExportExcel.TabIndex = 32
+        Me.sbtnExportExcel.Text = "Export do Excelu"
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.sbtnExportExcel
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(584, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(584, 40)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
         '
         'Pozicky
         '
@@ -181,6 +204,7 @@ Partial Class Pozicky
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -199,4 +223,6 @@ Partial Class Pozicky
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents XpCollection3 As DevExpress.Xpo.XPCollection
     Friend WithEvents UnitOfWork3 As DevExpress.Xpo.UnitOfWork
+    Friend WithEvents sbtnExportExcel As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
 End Class
