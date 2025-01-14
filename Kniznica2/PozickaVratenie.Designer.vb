@@ -22,6 +22,10 @@ Partial Class PozickaVratenie
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PozickaVratenie))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.SearchLookUpEdit3 = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.XpCollection3 = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.UnitOfWork3 = New DevExpress.Xpo.UnitOfWork(Me.components)
+        Me.SearchLookUpEdit3View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.SearchLookUpEdit2 = New DevExpress.XtraEditors.SearchLookUpEdit()
         Me.XpCollection2 = New DevExpress.Xpo.XPCollection(Me.components)
         Me.UnitOfWork2 = New DevExpress.Xpo.UnitOfWork(Me.components)
@@ -46,13 +50,13 @@ Partial Class PozickaVratenie
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.SplitterItem2 = New DevExpress.XtraLayout.SplitterItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.SearchLookUpEdit3 = New DevExpress.XtraEditors.SearchLookUpEdit()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.SearchLookUpEdit3View = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.UnitOfWork3 = New DevExpress.Xpo.UnitOfWork(Me.components)
-        Me.XpCollection3 = New DevExpress.Xpo.XPCollection(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.SearchLookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UnitOfWork3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SearchLookUpEdit3View, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SearchLookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UnitOfWork2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,11 +71,7 @@ Partial Class PozickaVratenie
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitterItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SearchLookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SearchLookUpEdit3View, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UnitOfWork3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -89,6 +89,31 @@ Partial Class PozickaVratenie
         Me.LayoutControl1.Size = New System.Drawing.Size(972, 85)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'SearchLookUpEdit3
+        '
+        Me.SearchLookUpEdit3.Location = New System.Drawing.Point(12, 86)
+        Me.SearchLookUpEdit3.Name = "SearchLookUpEdit3"
+        Me.SearchLookUpEdit3.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.SearchLookUpEdit3.Properties.DataSource = Me.XpCollection3
+        Me.SearchLookUpEdit3.Properties.PopupView = Me.SearchLookUpEdit3View
+        Me.SearchLookUpEdit3.Size = New System.Drawing.Size(931, 20)
+        Me.SearchLookUpEdit3.StyleController = Me.LayoutControl1
+        Me.SearchLookUpEdit3.TabIndex = 8
+        Me.SearchLookUpEdit3.Visible = False
+        '
+        'XpCollection3
+        '
+        Me.XpCollection3.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
+        Me.XpCollection3.ObjectType = GetType(Kniznica2.Pozicka)
+        Me.XpCollection3.Session = Me.UnitOfWork3
+        '
+        'SearchLookUpEdit3View
+        '
+        Me.SearchLookUpEdit3View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.SearchLookUpEdit3View.Name = "SearchLookUpEdit3View"
+        Me.SearchLookUpEdit3View.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.SearchLookUpEdit3View.OptionsView.ShowGroupPanel = False
         '
         'SearchLookUpEdit2
         '
@@ -276,18 +301,6 @@ Partial Class PozickaVratenie
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem4.TextVisible = False
         '
-        'SearchLookUpEdit3
-        '
-        Me.SearchLookUpEdit3.Location = New System.Drawing.Point(12, 86)
-        Me.SearchLookUpEdit3.Name = "SearchLookUpEdit3"
-        Me.SearchLookUpEdit3.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.SearchLookUpEdit3.Properties.DataSource = Me.XpCollection3
-        Me.SearchLookUpEdit3.Properties.PopupView = Me.SearchLookUpEdit3View
-        Me.SearchLookUpEdit3.Size = New System.Drawing.Size(931, 20)
-        Me.SearchLookUpEdit3.StyleController = Me.LayoutControl1
-        Me.SearchLookUpEdit3.TabIndex = 8
-        Me.SearchLookUpEdit3.Visible = False
-        '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.SearchLookUpEdit3
@@ -296,19 +309,6 @@ Partial Class PozickaVratenie
         Me.LayoutControlItem5.Size = New System.Drawing.Size(935, 24)
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem5.TextVisible = False
-        '
-        'SearchLookUpEdit3View
-        '
-        Me.SearchLookUpEdit3View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.SearchLookUpEdit3View.Name = "SearchLookUpEdit3View"
-        Me.SearchLookUpEdit3View.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.SearchLookUpEdit3View.OptionsView.ShowGroupPanel = False
-        '
-        'XpCollection3
-        '
-        Me.XpCollection3.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
-        Me.XpCollection3.ObjectType = GetType(Kniznica2.Pozicka)
-        Me.XpCollection3.Session = Me.UnitOfWork3
         '
         'PozickaVratenie
         '
@@ -320,6 +320,10 @@ Partial Class PozickaVratenie
         Me.Text = "PozickaVratenie"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.SearchLookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UnitOfWork3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SearchLookUpEdit3View, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SearchLookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XpCollection2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UnitOfWork2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -334,11 +338,7 @@ Partial Class PozickaVratenie
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SplitterItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SearchLookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SearchLookUpEdit3View, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UnitOfWork3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XpCollection3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

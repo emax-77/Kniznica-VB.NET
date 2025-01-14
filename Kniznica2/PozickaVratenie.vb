@@ -9,9 +9,9 @@ Public Class PozickaVratenie
         Close()
     End Sub
 
+    'Pozicanie knihy
     Private Sub btnPozicat_Click(sender As Object, e As EventArgs) Handles btnPozicat.Click
 
-        'Pozicanie knihy
         If pozickaKnihy = True Then
 
             ' Pouzitie jednej session pre vsetky operacie
@@ -26,7 +26,7 @@ Public Class PozickaVratenie
 
             ' Overenie vybratych objektov
             If pozicanaKniha Is Nothing OrElse vybranyCitatel Is Nothing Then
-                MessageBox.Show("Vyber knihu aj čitateľa")
+                MessageBox.Show("Vyber knihu aj citatela")
                 Return
             End If
 
@@ -38,7 +38,6 @@ Public Class PozickaVratenie
             novaPozicka.Kniha = pozicanaKniha
             novaPozicka.Citatel = vybranyCitatel
             novaPozicka.Datumpozicania = DateTime.Now
-
 
             ' Ulozit zmeny a aktualizovat udaje v tabulkach
             novaPozicka.Save()
@@ -81,10 +80,8 @@ Public Class PozickaVratenie
             pozicka.Save()
             uow.CommitChanges()
 
-
             MessageBox.Show($"Kniha {pozicanaKniha.Nazov} bola vratena")
             vratenieKnihy = False
-
 
         End If
 
@@ -94,9 +91,8 @@ Public Class PozickaVratenie
 
     End Sub
 
-
+    'funkcia na Aktualizaciu udajov v tabulkach Knihy a Pozicky (ReFresh)
     Private Sub RefreshData()
-        'Aktualizacia udajov v tabulkach Knihy a Pozicky (ReFresh)
 
         Dim uow As New UnitOfWork()
 
@@ -110,5 +106,7 @@ Public Class PozickaVratenie
         Pozicky.GridControl3.RefreshDataSource()
     End Sub
 
+    Private Sub PozickaVratenie_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

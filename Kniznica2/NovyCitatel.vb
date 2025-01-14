@@ -26,12 +26,11 @@ Public Class NovyCitatel
 
     End Sub
 
+    'Novy citatel
     Private Sub btnUlozit_Click(sender As Object, e As EventArgs) Handles btnUlozit.Click
 
-        'Novy citatel
         If edit = False Then
             Try
-
 
                 ' nacitat udaje z formularu
                 Dim meno As String = tedMeno.Text
@@ -77,13 +76,13 @@ Public Class NovyCitatel
 
     End Sub
 
+    'tlacidlo Zrusit
     Private Sub btnZrusit_Click(sender As Object, e As EventArgs) Handles btnZrusit.Click
         Close()
     End Sub
 
+    ' Validacia datumu narodenia pri novom citatelovi  - datum nesmie byt neskorsi ako dnes
     Private Sub dedDatumNarodenia_Properties_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles dedDatumNarodenia.Properties.Validating
-        ' validacia datumu narodenia  - nesmie byt neskorsi ako dnes
-
         If dedDatumNarodenia.EditValue > DateTime.Now Then
             e.Cancel = True
         End If

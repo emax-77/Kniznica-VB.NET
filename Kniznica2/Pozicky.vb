@@ -13,8 +13,8 @@ Public Class Pozicky
 
     End Sub
 
+    'Vymazat vybraty riadok z tabulky Pozicky
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        'Vymazat vybrany riadok z tabulky Pozicky
         Try
             Dim Riadok As Object = GridView3.GetFocusedRow()
             Dim vymazatPozicku As Pozicka = CType(Riadok, XPBaseObject)
@@ -29,10 +29,9 @@ Public Class Pozicky
         Catch ex As Exception
             MessageBox.Show($"Chyba pri mazani: {ex.Message}")
         End Try
-
-
     End Sub
 
+    'Export Poziciek do Excelu
     Private Sub sbtnExportExcel_Click(sender As Object, e As EventArgs) Handles sbtnExportExcel.Click
         Try
             ' cesta pre ulozenie Excel suboru

@@ -10,30 +10,28 @@ Public Class Knihy
         GridView2.ClearSorting()
         GridView2.Columns("Nazov").SortOrder = DevExpress.Data.ColumnSortOrder.Ascending
 
-
     End Sub
 
+    ' Vratit knihu
     Private Sub btnVratitKnihu_Click(sender As Object, e As EventArgs)
-        ' Vratit knihu
         vratenieKnihy = True
         PozickaVratenie.Show()
-
     End Sub
 
+    'Nova kniha
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        'Nova kniha
         edit = False
         NovaKniha.Show()
     End Sub
 
+    'Uprava udajov knihy
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        'Uprava udajov knihy
         edit = True
         NovaKniha.Show()
     End Sub
 
+    ' Vymazat Knihu
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
-        ' Vymazat Knihu
         Try
             Dim Riadok As Object = GridView2.GetFocusedRow()
             Dim vymazatKnihu As Kniha = CType(Riadok, XPBaseObject)
@@ -46,18 +44,16 @@ Public Class Knihy
         End Try
     End Sub
 
+    'Vytvorit pozicku knihy
     Private Sub SimpleButton4_Click(sender As Object, e As EventArgs) Handles SimpleButton4.Click
-        'Vytvorit pozicku knihy
         pozickaKnihy = True
         PozickaVratenie.ShowDialog()
-
     End Sub
 
+    ' Vratit knihu
     Private Sub SimpleButton5_Click(sender As Object, e As EventArgs) Handles SimpleButton5.Click
-        ' Vratit knihu
         vratenieKnihy = True
         PozickaVratenie.Show()
-
     End Sub
 
     'Zobrazit info kto ma pozicane Knihy

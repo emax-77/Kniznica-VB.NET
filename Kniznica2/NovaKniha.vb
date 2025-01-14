@@ -38,14 +38,15 @@ Public Class NovaKniha
         Return pocetKnih.Count
     End Function
 
+    'tlacidlo Zrusit
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles btnZrusit.Click
         Close()
     End Sub
 
+    'Ulozit novu knihu
     Private Sub btnUlozit_Click(sender As Object, e As EventArgs) Handles btnUlozit.Click
-        'Ulozit novu knihu
-        If edit = False Then
 
+        If edit = False Then
             Try
                 ' nacitat udaje z formularu
                 Dim nazovKnihy As String = tedNazovKnihy.Text
