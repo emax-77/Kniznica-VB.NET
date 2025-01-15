@@ -32,16 +32,25 @@ Public Class Knihy
 
     ' Vymazat Knihu
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
-        Try
-            Dim Riadok As Object = GridView2.GetFocusedRow()
-            Dim vymazatKnihu As Kniha = CType(Riadok, XPBaseObject)
-            vymazatKnihu.Delete()
-            UnitOfWork2.CommitChanges()
-            MessageBox.Show($"Kniha {vymazatKnihu.Nazov} bola vymazana")
 
-        Catch ex As Exception
-            MessageBox.Show($"Chyba pri mazani: {ex.Message}")
-        End Try
+        Dim Riadok As Object = GridView2.GetFocusedRow()
+        Dim vybrataKniha As Kniha = CType(Riadok, XPBaseObject)
+
+        'Kontrola ci kniha nie je pozicana
+        If vybrataKniha.Pozicana = False Then
+            Try
+                vybrataKniha.Delete()
+                UnitOfWork2.CommitChanges()
+                MessageBox.Show($"Kniha {vybrataKniha.Nazov} bola vymazana")
+
+            Catch ex As Exception
+                MessageBox.Show($"Chyba pri mazani: {ex.Message}")
+            End Try
+        Else
+            MessageBox.Show("Knihu nemozno vymazat pretoze je pozicana !")
+
+        End If
+
     End Sub
 
     'Vytvorit pozicku knihy
@@ -86,4 +95,5 @@ Public Class Knihy
             MessageBox.Show("Chyba pri exporte: " & ex.Message, "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
 End Class

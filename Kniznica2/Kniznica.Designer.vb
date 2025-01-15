@@ -69,8 +69,11 @@ Partial Class Kniznica
         Me.NavBarItem1 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem2 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem3 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarItem4 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarItem5 = New DevExpress.XtraNavBar.NavBarItem()
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.SeparatorControl1 = New DevExpress.XtraEditors.SeparatorControl()
+        Me.NavBarItem6 = New DevExpress.XtraNavBar.NavBarItem()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -368,7 +371,7 @@ Partial Class Kniznica
         Me.NavBarControl1.ActiveGroup = Me.NavBarGroup2
         Me.NavBarControl1.Dock = System.Windows.Forms.DockStyle.Left
         Me.NavBarControl1.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.NavBarGroup2})
-        Me.NavBarControl1.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem1, Me.NavBarItem2, Me.NavBarItem3})
+        Me.NavBarControl1.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem1, Me.NavBarItem2, Me.NavBarItem3, Me.NavBarItem4, Me.NavBarItem5, Me.NavBarItem6})
         Me.NavBarControl1.Location = New System.Drawing.Point(0, 46)
         Me.NavBarControl1.Name = "NavBarControl1"
         Me.NavBarControl1.OptionsNavPane.ExpandedWidth = 140
@@ -380,7 +383,7 @@ Partial Class Kniznica
         '
         Me.NavBarGroup2.Caption = "Kniznica"
         Me.NavBarGroup2.Expanded = True
-        Me.NavBarGroup2.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem1), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem2), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem3)})
+        Me.NavBarGroup2.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem1), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem2), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem3), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem6)})
         Me.NavBarGroup2.Name = "NavBarGroup2"
         '
         'NavBarItem1
@@ -404,6 +407,20 @@ Partial Class Kniznica
         Me.NavBarItem3.ImageOptions.SmallImage = CType(resources.GetObject("NavBarItem3.ImageOptions.SmallImage"), System.Drawing.Image)
         Me.NavBarItem3.Name = "NavBarItem3"
         '
+        'NavBarItem4
+        '
+        Me.NavBarItem4.Caption = "TreeView"
+        Me.NavBarItem4.ImageOptions.LargeImage = CType(resources.GetObject("NavBarItem4.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.NavBarItem4.ImageOptions.SmallImage = CType(resources.GetObject("NavBarItem4.ImageOptions.SmallImage"), System.Drawing.Image)
+        Me.NavBarItem4.Name = "NavBarItem4"
+        '
+        'NavBarItem5
+        '
+        Me.NavBarItem5.Caption = "Export do XML"
+        Me.NavBarItem5.ImageOptions.LargeImage = CType(resources.GetObject("NavBarItem5.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.NavBarItem5.ImageOptions.SmallImage = CType(resources.GetObject("NavBarItem5.ImageOptions.SmallImage"), System.Drawing.Image)
+        Me.NavBarItem5.Name = "NavBarItem5"
+        '
         'XtraTabbedMdiManager1
         '
         Me.XtraTabbedMdiManager1.MdiParent = Me
@@ -414,6 +431,13 @@ Partial Class Kniznica
         Me.SeparatorControl1.Name = "SeparatorControl1"
         Me.SeparatorControl1.Size = New System.Drawing.Size(1918, 23)
         Me.SeparatorControl1.TabIndex = 16
+        '
+        'NavBarItem6
+        '
+        Me.NavBarItem6.Caption = "TreeView"
+        Me.NavBarItem6.ImageOptions.LargeImage = CType(resources.GetObject("NavBarItem6.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.NavBarItem6.ImageOptions.SmallImage = CType(resources.GetObject("NavBarItem6.ImageOptions.SmallImage"), System.Drawing.Image)
+        Me.NavBarItem6.Name = "NavBarItem6"
         '
         'Kniznica
         '
@@ -488,4 +512,7 @@ Partial Class Kniznica
     Friend WithEvents BarButtonItem20 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem21 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem19 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents NavBarItem4 As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents NavBarItem5 As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents NavBarItem6 As DevExpress.XtraNavBar.NavBarItem
 End Class

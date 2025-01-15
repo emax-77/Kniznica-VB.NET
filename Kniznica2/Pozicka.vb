@@ -44,12 +44,12 @@ Public Class Pozicka
     End Property
 
     'Datum pozicania knihy
-    Private _datumpozicania As DateTime
-    Public Property Datumpozicania() As DateTime
+    Private _datumpozicania As DateTime?
+    Public Property Datumpozicania() As DateTime?
         Get
             Return _datumpozicania
         End Get
-        Set(ByVal value As DateTime)
+        Set(ByVal value As DateTime?)
             SetPropertyValue(NameOf(Datumpozicania), _datumpozicania, value)
         End Set
     End Property

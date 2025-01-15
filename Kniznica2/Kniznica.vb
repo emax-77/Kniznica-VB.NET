@@ -112,4 +112,8 @@ Public Class Kniznica
         Dim reportView As New ReportDesignTool(report)
         reportView.ShowDesigner()
     End Sub
+
+    Private Sub NavBarItem6_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem6.LinkClicked
+        TreeListKnihy.Show()
+    End Sub
 End Class

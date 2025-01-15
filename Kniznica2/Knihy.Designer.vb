@@ -108,10 +108,10 @@ Partial Class Knihy
         'GridControl1
         '
         Me.GridControl1.DataSource = Me.XpCollection3
-        Me.GridControl1.Location = New System.Drawing.Point(12, 223)
+        Me.GridControl1.Location = New System.Drawing.Point(12, 363)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1092, 311)
+        Me.GridControl1.Size = New System.Drawing.Size(1092, 171)
         Me.GridControl1.TabIndex = 40
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -167,7 +167,7 @@ Partial Class Knihy
         Me.GridControl2.Location = New System.Drawing.Point(12, 52)
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(1092, 167)
+        Me.GridControl2.Size = New System.Drawing.Size(1092, 307)
         Me.GridControl2.TabIndex = 25
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -311,7 +311,7 @@ Partial Class Knihy
         Me.LayoutControlItem1.Control = Me.GridControl2
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 40)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1096, 171)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1096, 311)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -363,9 +363,9 @@ Partial Class Knihy
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.GridControl1
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 211)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 351)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(1096, 315)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(1096, 175)
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = False
         '
