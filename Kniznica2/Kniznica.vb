@@ -14,13 +14,13 @@ Module Report1
         ' kontorola ci subor existuje
         If File.Exists(filePath) Then
             Try
-                ' Vytvorenie inštancie XtraReport
+                ' Vytvorenie instancie XtraReport
                 Dim report As New XtraReport()
 
-                ' Načítanie reportu zo súboru .repx
+                ' Nacitanie reportu zo suboru .repx
                 report.LoadLayout(filePath)
 
-                ' Zobrazenie reportu v náhľade
+                ' Zobrazenie reportu 
                 Dim printTool As New ReportPrintTool(report)
                 printTool.ShowPreviewDialog()
             Catch ex As Exception
@@ -70,6 +70,7 @@ End Module
 Public Class Kniznica
 
     Private Sub Kniznica_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         ' Pripojenie na lokalnu MySQL databazu
         Dim appDataPath As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
         Dim connectionString As String = MySqlConnectionProvider.GetConnectionString("localhost", 3306, "root", "peter", "databaza")
@@ -79,7 +80,7 @@ Public Class Kniznica
         Citatelia.Show()
         Knihy.Show()
         Pozicky.Show()
-        Knihy.Activate()
+        Pozicky.Activate()
 
     End Sub
 

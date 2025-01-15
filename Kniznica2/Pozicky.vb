@@ -50,4 +50,8 @@ Public Class Pozicky
             MessageBox.Show("Chyba pri exporte: " & ex.Message, "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        PozickyPivotGrid.Show()
+    End Sub
 End Class
