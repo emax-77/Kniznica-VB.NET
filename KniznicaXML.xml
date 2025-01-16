@@ -1,0 +1,18 @@
+<Kniznica>
+  <Kniha Nazov="Don Quixote" Autor="Miguel de Cervantes" />
+  <Kniha Nazov="A Tale of Two Cities" Autor="Charles Dickens" />
+  <Kniha Nazov="The Lord of the Rings" Autor="J. R. R. Tolkien" />
+  <Kniha Nazov="Harry Potter" Autor="J. K. Rowling" />
+  <Kniha Nazov="The Name of the Rose" Autor="Umberto Eco" />
+  <Kniha Nazov="The Catcher in the Rye" Autor="J. D. Salinger">
+    <Pozicka Meno="Rudolf" Priezvisko="Chovanec" DatumPozicania="10. 1. 2025" DatumVratenia="" />
+    <Pozicka Meno="Peter" Priezvisko="Wirth" DatumPozicania="9. 1. 2025" DatumVratenia="" />
+  </Kniha>
+  <Kniha Nazov="The Alchemist" Autor="Paulo Coelho" />
+  <Kniha Nazov="The Da Vinci Code" Autor="Dan Brown" />
+  <Kniha Nazov="And Then There Were None" Autor="Agatha Christie" />
+  <Kniha Nazov="The Little Prince" Autor="Antoine de Saint-Exupéry" />
+  <Kniha Nazov="Alice in Wonderland" Autor="Charles Lutwidge Dodgson ">
+    <Pozicka Meno="Michaela" Priezvisko="Zilinska" DatumPozicania="10. 1. 2025" DatumVratenia="10. 1. 2025" />
+  </Kniha>
+</Kniznica>

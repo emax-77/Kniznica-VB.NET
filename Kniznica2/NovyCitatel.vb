@@ -83,7 +83,8 @@ Public Class NovyCitatel
 
     ' Validacia datumu narodenia pri novom citatelovi  - datum nesmie byt neskorsi ako dnes
     Private Sub dedDatumNarodenia_Properties_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles dedDatumNarodenia.Properties.Validating
-        If dedDatumNarodenia.EditValue > DateTime.Now Then
+        If dedDatumNarodenia.EditValue > DateTime.Today Then
+            MessageBox.Show(DateTime.Today.ToString)
             e.Cancel = True
         End If
     End Sub

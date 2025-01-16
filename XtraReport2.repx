@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="21.2.8.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="Report2" Margins="93, 100, 123, 217" PageWidth="850" PageHeight="1100" Version="21.2" DataSource="#Ref-0" Font="Arial, 9.75pt">
+  <Bands>
+    <Item1 Ref="2" ControlType="TopMarginBand" Name="TopMargin" HeightF="123">
+      <Controls>
+        <Item1 Ref="3" ControlType="XRPictureBox" Name="pictureBox1" ImageSource="img,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" SizeF="200,57.29167" LocationFloat="450,10.0000067" />
+        <Item2 Ref="4" ControlType="XRLabel" Name="label3" Multiline="true" Text="SunSoft plus spol. s. r. o.&#xD;&#xA;Hviezdoslavovo nám. 1688/15&#xD;&#xA;02601 Dolný Kubín&#xD;&#xA;IČO: 31590128&#xD;&#xA;IČ DPH: SK2020425088" SizeF="294.7917,102.916656" LocationFloat="10.0000067,10.0000067" Font="Arial, 9.75pt, style=Bold" Padding="2,2,0,0,100">
+          <StylePriority Ref="5" UseFont="false" />
+        </Item2>
+      </Controls>
+    </Item1>
+    <Item2 Ref="6" ControlType="BottomMarginBand" Name="BottomMargin" HeightF="216.500092">
+      <Controls>
+        <Item1 Ref="7" ControlType="XRPageInfo" Name="pageInfo1" PageInfo="DateTime" TextAlignment="MiddleLeft" SizeF="329.0417,23.0000172" LocationFloat="0,2.08002734" StyleName="PageInfo">
+          <StylePriority Ref="8" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="9" ControlType="XRPageInfo" Name="pageInfo2" TextFormatString="Page {0} of {1}" TextAlignment="MiddleRight" SizeF="327.958282,23" LocationFloat="329.041718,2.08002734" StyleName="PageInfo">
+          <StylePriority Ref="10" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="11" ControlType="XRLabel" Name="label2" SizeF="650,2.08" LocationFloat="0,0" StyleName="GroupFooterBackground3" Borders="None">
+          <StylePriority Ref="12" UseBorders="false" />
+        </Item3>
+        <Item4 Ref="13" ControlType="XRLabel" Name="label4" Multiline="true" Text="kontakt: +421 43 583 11 00, sunsoft@sunsoft.sk" TextAlignment="TopCenter" SizeF="656.999939,19.791666" LocationFloat="3.17891427E-05,25.07998" Font="Arial, 9.75pt, style=Bold" Padding="2,2,0,0,100">
+          <StylePriority Ref="14" UseFont="false" UseTextAlignment="false" />
+        </Item4>
+      </Controls>
+    </Item2>
+    <Item3 Ref="15" ControlType="ReportHeaderBand" Name="ReportHeader" HeightF="50.6250076">
+      <Controls>
+        <Item1 Ref="16" ControlType="XRLabel" Name="label1" Multiline="true" Text="Knihy s pozickami&#xD;&#xA;" TextAlignment="TopCenter" SizeF="649.999939,27.0833321" LocationFloat="3.17891427E-05,10.0000067" Font="Arial, 14.25pt" Padding="6,6,0,0,100">
+          <StylePriority Ref="17" UseFont="false" UsePadding="false" UseTextAlignment="false" />
+        </Item1>
+      </Controls>
+    </Item3>
+    <Item4 Ref="18" ControlType="GroupHeaderBand" Name="GroupHeader3" GroupUnion="WithFirstDetail" Level="1" HeightF="30.50003">
+      <Controls>
+        <Item1 Ref="19" ControlType="XRLabel" Name="label10" Multiline="true" Text="Nazov&#xD;&#xA;" TextAlignment="MiddleLeft" SizeF="309.94632,30.0833378" LocationFloat="347.05368,0.4166921" Font="Arial, 9.75pt, style=Bold" ForeColor="WhiteSmoke" BackColor="Black" Padding="2,2,0,0,100">
+          <StylePriority Ref="20" UseFont="false" UseForeColor="false" UseBackColor="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="21" ControlType="XRLabel" Name="label9" Multiline="true" Text="Autor" TextAlignment="MiddleLeft" SizeF="347.05365,30.0833378" LocationFloat="3.17891427E-05,0.4166921" Font="Arial, 9.75pt, style=Bold" ForeColor="WhiteSmoke" BackColor="Black" Padding="8,2,0,0,100">
+          <StylePriority Ref="22" UseFont="false" UseForeColor="false" UseBackColor="false" UsePadding="false" UseTextAlignment="false" />
+        </Item2>
+      </Controls>
+    </Item4>
+    <Item5 Ref="23" ControlType="DetailBand" Name="Detail" HeightF="25">
+      <Controls>
+        <Item1 Ref="24" ControlType="XRTable" Name="table1" SizeF="657,25" LocationFloat="0,0" Padding="2,2,0,0,96" Borders="None">
+          <Rows>
+            <Item1 Ref="25" ControlType="XRTableRow" Name="tableRow1" Weight="11.5">
+              <Cells>
+                <Item1 Ref="26" ControlType="XRTableCell" Name="tableCell1" Weight="0.56972903965562716" Multiline="true" Text="tableCell1" Padding="6,2,0,0,100">
+                  <ExpressionBindings>
+                    <Item1 Ref="27" EventName="BeforePrint" PropertyName="Text" Expression="[Autor]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="28" UsePadding="false" />
+                </Item1>
+                <Item2 Ref="29" ControlType="XRTableCell" Name="tableCell4" Weight="0.50881296967173339" Multiline="true" Text="tableCell4">
+                  <ExpressionBindings>
+                    <Item1 Ref="30" EventName="BeforePrint" PropertyName="Text" Expression="[Nazov]" />
+                  </ExpressionBindings>
+                </Item2>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="31" UseBorders="false" />
+        </Item1>
+      </Controls>
+    </Item5>
+    <Item6 Ref="32" ControlType="GroupFooterBand" Name="GroupFooter1" GroupUnion="WithLastDetail" Expanded="false" HeightF="0.9999593" />
+    <Item7 Ref="33" ControlType="DetailReportBand" Name="DetailReport" Level="0" DataMember="Pozicka" DataSource="#Ref-0">
+      <Bands>
+        <Item1 Ref="34" ControlType="DetailBand" Name="Detail1" HeightF="23">
+          <Controls>
+            <Item1 Ref="35" ControlType="XRLabel" Name="label8" TextFormatString="{0:d}" Multiline="true" Text="label8" SizeF="100,23" LocationFloat="275.000031,0" ForeColor="Red" Padding="2,2,0,0,100">
+              <ExpressionBindings>
+                <Item1 Ref="36" EventName="BeforePrint" PropertyName="Text" Expression="[Datumvratenia]" />
+              </ExpressionBindings>
+              <StylePriority Ref="37" UseForeColor="false" />
+            </Item1>
+            <Item2 Ref="38" ControlType="XRLabel" Name="label7" TextFormatString="{0:d}" Multiline="true" Text="label7" SizeF="100,23" LocationFloat="175.000031,0" ForeColor="Red" Padding="2,2,0,0,100">
+              <ExpressionBindings>
+                <Item1 Ref="39" EventName="BeforePrint" PropertyName="Text" Expression="[Datumpozicania]" />
+              </ExpressionBindings>
+              <StylePriority Ref="40" UseForeColor="false" />
+            </Item2>
+            <Item3 Ref="41" ControlType="XRLabel" Name="label6" Multiline="true" Text="label6" SizeF="100,23" LocationFloat="75.00003,0" ForeColor="Red" Padding="2,2,0,0,100">
+              <ExpressionBindings>
+                <Item1 Ref="42" EventName="BeforePrint" PropertyName="Text" Expression="[Citatel].[Priezvisko]" />
+              </ExpressionBindings>
+              <StylePriority Ref="43" UseForeColor="false" />
+            </Item3>
+            <Item4 Ref="44" ControlType="XRLabel" Name="label5" Multiline="true" Text="label5" SizeF="70.95836,23" LocationFloat="4.04167175,0" ForeColor="Red" Padding="6,2,0,0,100">
+              <ExpressionBindings>
+                <Item1 Ref="45" EventName="BeforePrint" PropertyName="Text" Expression="[Citatel].[Meno]" />
+              </ExpressionBindings>
+              <StylePriority Ref="46" UseForeColor="false" UsePadding="false" />
+            </Item4>
+          </Controls>
+        </Item1>
+      </Bands>
+    </Item7>
+  </Bands>
+  <StyleSheet>
+    <Item1 Ref="47" Name="Title" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 14.25pt" ForeColor="255,75,75,75" BackColor="Transparent" BorderColor="Black" Sides="None" StringFormat="Near;Near;0;None;Character;Default" BorderWidthSerializable="1" />
+    <Item2 Ref="48" Name="GroupCaption1" BorderStyle="Inset" Padding="6,2,0,0,100" Font="Arial, 8.25pt, style=Bold" ForeColor="255,228,228,228" BackColor="255,162,162,162" BorderColor="White" Sides="Bottom" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item3 Ref="49" Name="GroupData1" BorderStyle="Inset" Padding="6,2,0,0,100" Font="Arial, 8.25pt, style=Bold" ForeColor="White" BackColor="255,162,162,162" BorderColor="White" Sides="Bottom" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item4 Ref="50" Name="DetailCaption1" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt, style=Bold" ForeColor="White" BackColor="255,75,75,75" BorderColor="White" Sides="Left" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item5 Ref="51" Name="DetailData1" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt" ForeColor="Black" BorderColor="Transparent" Sides="Left" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item6 Ref="52" Name="GroupFooterBackground3" BorderStyle="Inset" Padding="6,2,0,0,100" Font="Arial, 8.25pt, style=Bold" ForeColor="255,228,228,228" BackColor="255,137,137,137" BorderColor="White" Sides="Bottom" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="2" />
+    <Item7 Ref="53" Name="DetailData3_Odd" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt" ForeColor="Black" BackColor="255,231,231,231" BorderColor="Transparent" Sides="None" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item8 Ref="54" Name="PageInfo" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Arial, 8.25pt, style=Bold" ForeColor="255,75,75,75" StringFormat="Near;Near;0;None;Character;Default" />
+  </StyleSheet>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.Xpo.XPObjectSource,DevExpress.Xpo.v21.2" Name="xpObjectSource1" Base64="PFhQT2JqZWN0U291cmNlPjxOYW1lPnhwT2JqZWN0U291cmNlMTwvTmFtZT48VG9wUmVjb3Jkcz4wPC9Ub3BSZWNvcmRzPjxTa2lwUmVjb3Jkcz4wPC9Ta2lwUmVjb3Jkcz48RW50aXR5VHlwZT5Lbml6bmljYTIuS25paGEsIEtuaXpuaWNhMiwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGw8L0VudGl0eVR5cGU+PFBhcmFtZXRlcnMgLz48U29ydGluZyAvPjxQcm9wZXJ0aWVzIC8+PC9YUE9iamVjdFNvdXJjZT4=" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

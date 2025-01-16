@@ -36,7 +36,7 @@ Public Class Knihy
         Dim Riadok As Object = GridView2.GetFocusedRow()
         Dim vybrataKniha As Kniha = CType(Riadok, XPBaseObject)
 
-        'Kontrola ci kniha nie je pozicana
+        'Kontrola pred vymazanim - ci kniha nie je pozicana
         If vybrataKniha.Pozicana = False Then
             Try
                 vybrataKniha.Delete()
@@ -80,7 +80,7 @@ Public Class Knihy
     Private Sub sbtnExportExcel_Click(sender As Object, e As EventArgs) Handles sbtnExportExcel.Click
         Try
             ' cesta pre ulozenie Excel suboru
-            Dim savePath As String = "C:\Users\wirth\Documents\Knihy.xlsx"
+            Dim savePath As String = "C:\Users\wirth\source\repos\Kniznica2\Knihy.xlsx"
 
             'kontrola ci GridControl obsahuje udaje na export
             If GridControl2.DataSource IsNot Nothing Then

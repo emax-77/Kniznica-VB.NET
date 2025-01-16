@@ -28,7 +28,7 @@ Public Class TreeListKnihy
                 stromoveUdaje.Add(New TreeListNode With {
                     .Key = Guid.NewGuid(),
                     .Nazov = kniha.Nazov & " - Pozicka",
-                    .ParentKey = knihaKey, ' Odkaz na Key knihy
+                    .ParentKey = knihaKey,
                     .Autor = kniha.Autor,
                     .Meno = pozicka.Citatel?.Meno,
                     .Priezvisko = pozicka.Citatel?.Priezvisko,
@@ -96,7 +96,7 @@ Public Class TreeListKnihy
     ' Kniznica do XML 
     Private Sub sbtnExportXML_Click(sender As Object, e As EventArgs) Handles sbtnExportXML.Click
         ' cesta ku suboru
-        Dim exportFilePath As String = "C:\Users\wirth\Documents\KniznicaXML.xml"
+        Dim exportFilePath As String = "C:\Users\wirth\source\repos\Kniznica2\KniznicaXML.xml"
 
         ExportToXML(stromoveUdaje, exportFilePath)
     End Sub

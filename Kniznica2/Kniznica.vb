@@ -9,7 +9,7 @@ Module Report1
     Sub ZobrazReport1()
 
         ' Cesta k suboru
-        Dim filePath As String = "C:\Users\wirth\Documents\XtraReport1.repx"
+        Dim filePath As String = "C:\Users\wirth\source\repos\Kniznica2\XtraReport1.repx"
 
         ' kontorola ci subor existuje
         If File.Exists(filePath) Then
@@ -37,7 +37,7 @@ Module Report2
     Sub ZobrazReport2()
 
         ' Cesta k suboru
-        Dim filePath As String = "C:\Users\wirth\Documents\XtraReport2.repx"
+        Dim filePath As String = "C:\Users\wirth\source\repos\Kniznica2\XtraReport2.repx"
 
         ' kontorola ci subor existuje
         If File.Exists(filePath) Then

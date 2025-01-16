@@ -35,7 +35,7 @@ Public Class Pozicky
     Private Sub sbtnExportExcel_Click(sender As Object, e As EventArgs) Handles sbtnExportExcel.Click
         Try
             ' cesta pre ulozenie Excel suboru
-            Dim savePath As String = "C:\Users\wirth\Documents\Pozicky.xlsx"
+            Dim savePath As String = "C:\Users\wirth\source\repos\Kniznica2\Pozicky.xlsx"
 
             'kontrola ci GridControl obsahuje udaje na export
             If GridControl3.DataSource IsNot Nothing Then

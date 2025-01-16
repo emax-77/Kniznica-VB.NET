@@ -26,16 +26,24 @@ Public Class Citatelia
         NovyCitatel.Show()
     End Sub
 
+    ' Vymazat vybrany riadok z tabulky Citatelia
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
-        ' Vymazat vybrany riadok z tabulky Citatelia
         Try
             Dim Riadok As Object = GridView1.GetFocusedRow()
-            Dim vymazatCitatela As Citatel = CType(Riadok, XPBaseObject)
-            vymazatCitatela.Delete()
-            UnitOfWork1.CommitChanges()
-            MessageBox.Show($"Citatel: {vymazatCitatela.Meno} {vymazatCitatela.Priezvisko} bol vymazany")
+            Dim vybranyCitatel As Citatel = CType(Riadok, XPBaseObject)
 
-            ' zobrazit aktualizovanu tabulku Citatelia
+            ' Kontrola, ci citatel ma aktivne pozicky - ci ho mozno vymazat
+            If vybranyCitatel.Pozicka.Any(Function(p) Not p.Datumvratenia.HasValue) Then
+                MessageBox.Show("Citatela nie je mozne vymazat, pretoze ma nevratene knihy !")
+                Return
+            End If
+
+            ' Vymazanie citatela
+            vybranyCitatel.Delete()
+            UnitOfWork1.CommitChanges()
+            MessageBox.Show($"Citatel: {vybranyCitatel.Meno} {vybranyCitatel.Priezvisko} bol vymazany.")
+
+            ' Aktualizacia tabulky
             XpCollection1.Reload()
             GridView1.RefreshData()
 
@@ -61,7 +69,7 @@ Public Class Citatelia
     Private Sub sbtnExportExcel_Click(sender As Object, e As EventArgs) Handles sbtnExportExcel.Click
         Try
             ' cesta pre ulozenie Excel suboru
-            Dim savePath As String = "C:\Users\wirth\Documents\Citatelia.xlsx"
+            Dim savePath As String = "C:\Users\wirth\source\repos\Kniznica2\Citatelia.xlsx"
 
             'kontrola ci GridControl obsahuje udaje na export
             If GridControl1.DataSource IsNot Nothing Then
