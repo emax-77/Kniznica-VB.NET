@@ -1,4 +1,5 @@
-﻿Imports DevExpress.Xpo
+﻿Imports DevExpress.Utils.About
+Imports DevExpress.Xpo
 Imports Org.BouncyCastle.Asn1
 
 Public Class NovaKniha
@@ -61,9 +62,11 @@ Public Class NovaKniha
                 novaKniha.Nazov = nazovKnihy
                 novaKniha.Autor = autor
                 novaKniha.Pocet = pocet
+
+                ' ulozit knihu
                 novaKniha.Save()
                 session.CommitChanges()
-                MessageBox.Show($"Kniha {novaKniha.Nazov} bola ulozena")
+                MessageBox.Show($"Kniha {novaKniha.Nazov} bola ulozena", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 ' zobrazit aktualizovanu tabulku Knihy a zavriet formular
                 Knihy.XpCollection2.Reload()
@@ -71,7 +74,7 @@ Public Class NovaKniha
                 Close()
 
             Catch ex As Exception
-                MessageBox.Show($"Chyba pri ukladani knihy: {ex.Message}")
+                MessageBox.Show($"Chyba pri ukladani knihy: {ex.Message}", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
 
         End If

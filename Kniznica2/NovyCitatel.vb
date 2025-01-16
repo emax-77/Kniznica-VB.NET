@@ -1,4 +1,5 @@
-﻿Imports DevExpress.Xpo
+﻿Imports DevExpress.Utils.About
+Imports DevExpress.Xpo
 
 Public Class NovyCitatel
     'Vytvorit alebo Editovat noveho citatela
@@ -47,9 +48,10 @@ Public Class NovyCitatel
                 novyCitatel.Datumnarodenia = datumNarodenia.ToString
                 novyCitatel.Obciansky = obcianskyPreukaz
 
+                ' ulozit citatela
                 novyCitatel.Save()
                 session.CommitChanges()
-                MessageBox.Show($"Citatel {novyCitatel.Meno} {novyCitatel.Priezvisko} bol ulozeny")
+                MessageBox.Show($"Citatel {novyCitatel.Meno} {novyCitatel.Priezvisko} bol ulozeny", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 ' zobrazit aktualizovanu tabulku Citatelia a zavriet formular
                 Citatelia.XpCollection1.Reload()
@@ -57,7 +59,7 @@ Public Class NovyCitatel
                 Close()
 
             Catch ex As Exception
-                MessageBox.Show($"Chyba pri ukladani citatela: {ex.Message}")
+                MessageBox.Show($"Chyba pri ukladani citatela: {ex.Message}", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
 

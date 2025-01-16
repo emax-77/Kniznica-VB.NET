@@ -7,19 +7,24 @@ Public Class TreeListKnihy
 
     ' Vyyvorenie stromovej struktury
     Private Sub TreeListKnihy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        session = New Session()
-        stromoveUdaje = New List(Of TreeListNode)()
 
         ' Nacitanie knih
+        session = New Session()
         Dim knihy As New XPCollection(Of Kniha)(session)
+
+        'vytvorenie noveho stromu
+        stromoveUdaje = New List(Of TreeListNode)()
+
+
         For Each kniha In knihy
 
-            ' Vytvorenie unikatneho identifikatora pre knihu
             Dim knihaKey = Guid.NewGuid()
+
+            ' Pridanie knih
             stromoveUdaje.Add(New TreeListNode With {
                 .Key = knihaKey,
-                .Nazov = kniha.Nazov,
                 .ParentKey = Nothing,
+                .Nazov = kniha.Nazov,
                 .Autor = kniha.Autor
             })
 
@@ -27,8 +32,8 @@ Public Class TreeListKnihy
             For Each pozicka In kniha.Pozicka
                 stromoveUdaje.Add(New TreeListNode With {
                     .Key = Guid.NewGuid(),
-                    .Nazov = kniha.Nazov & " - Pozicka",
                     .ParentKey = knihaKey,
+                    .Nazov = kniha.Nazov,
                     .Autor = kniha.Autor,
                     .Meno = pozicka.Citatel?.Meno,
                     .Priezvisko = pozicka.Citatel?.Priezvisko,
@@ -38,69 +43,84 @@ Public Class TreeListKnihy
             Next
         Next
 
-        ' Nastavenie DataSource pre TreeList1
+        ' dataSource pre TreeList1
         TreeList1.DataSource = stromoveUdaje
 
-        ' Nastavenie klucovych poli
         TreeList1.KeyFieldName = "Key"
         TreeList1.ParentFieldName = "ParentKey"
 
-        ' Rozbalenie celeho stromu
+        ' rozbalenie celeho stromu
         TreeList1.ExpandAll()
     End Sub
 
 
-    ' Vytvorenie XML suboru
-    Public Sub ExportToXML(treeListNodes As List(Of TreeListNode), exportFilePath As String)
+    ' Vytvorenei XML z databazy
+    Private Sub sbtnExportDatabazaDoXML_Click(sender As Object, e As EventArgs) Handles sbtnExportDatabazaDoXML.Click
         Try
-            ' Vytvorenie XML dokumentu
+
+            ' Nacitanie knih z databazy
+            Dim session As New Session()
+            Dim knihy As New XPCollection(Of Kniha)(session)
+
+            ' Vytvorenie XML struktury
             Dim xmlDoc As New XmlDocument()
-            Dim rootElement As XmlElement = xmlDoc.CreateElement("Kniznica") ' ROOT uzol
+            Dim rootElement As XmlElement = xmlDoc.CreateElement("Kniznica")
             xmlDoc.AppendChild(rootElement)
 
-            ' Nacitanie unikatnych knih
-            Dim knihy = treeListNodes.Where(Function(node) node.ParentKey Is Nothing).ToList()
-
-
             For Each kniha In knihy
-                ' Vytvorenie XML elementu pre knihu
+                ' Vytvorenie elementu Kniha
                 Dim knihaElement As XmlElement = xmlDoc.CreateElement("Kniha")
-                knihaElement.SetAttribute("Nazov", kniha.Nazov)
-                knihaElement.SetAttribute("Autor", kniha.Autor)
 
-                ' Pridanie CHILD uzlov pre pozicky
-                Dim pozicky = treeListNodes.Where(Function(node) node.ParentKey.HasValue AndAlso node.ParentKey = kniha.Key).ToList()
-                For Each pozicka In pozicky
+                ' Pridanie elementov pre nazov a autora
+                Dim nazovElement As XmlElement = xmlDoc.CreateElement("Nazov")
+                nazovElement.InnerText = kniha.Nazov
+                knihaElement.AppendChild(nazovElement)
+
+                Dim autorElement As XmlElement = xmlDoc.CreateElement("Autor")
+                autorElement.InnerText = kniha.Autor
+                knihaElement.AppendChild(autorElement)
+
+                ' Nacitanie poziciek pre danu knihu
+                For Each pozicka In kniha.Pozicka
                     Dim pozickaElement As XmlElement = xmlDoc.CreateElement("Pozicka")
-                    pozickaElement.SetAttribute("Meno", If(pozicka.Meno, String.Empty))
-                    pozickaElement.SetAttribute("Priezvisko", If(pozicka.Priezvisko, String.Empty))
-                    pozickaElement.SetAttribute("DatumPozicania", If(Not String.IsNullOrEmpty(pozicka.DatumPozicania), pozicka.DatumPozicania, String.Empty))
-                    pozickaElement.SetAttribute("DatumVratenia", If(Not String.IsNullOrEmpty(pozicka.DatumVratenia), pozicka.DatumVratenia, String.Empty))
+
+                    ' Pridanie elementov pre pozicku
+                    Dim menoElement As XmlElement = xmlDoc.CreateElement("Meno")
+                    menoElement.InnerText = If(pozicka.Citatel?.Meno, String.Empty)
+                    pozickaElement.AppendChild(menoElement)
+
+                    Dim priezviskoElement As XmlElement = xmlDoc.CreateElement("Priezvisko")
+                    priezviskoElement.InnerText = If(pozicka.Citatel?.Priezvisko, String.Empty)
+                    pozickaElement.AppendChild(priezviskoElement)
+
+                    Dim datumPozicaniaElement As XmlElement = xmlDoc.CreateElement("DatumPozicania")
+                    datumPozicaniaElement.InnerText = If(pozicka.Datumpozicania.HasValue, pozicka.Datumpozicania.Value.ToString("d"), String.Empty)
+                    pozickaElement.AppendChild(datumPozicaniaElement)
+
+                    Dim datumVrateniaElement As XmlElement = xmlDoc.CreateElement("DatumVratenia")
+                    datumVrateniaElement.InnerText = If(pozicka.Datumvratenia.HasValue, pozicka.Datumvratenia.Value.ToString("d"), String.Empty)
+                    pozickaElement.AppendChild(datumVrateniaElement)
+
+                    ' Pripojenie pozicky ku knihe
                     knihaElement.AppendChild(pozickaElement)
                 Next
 
-                ' Pripojenie knihy k ROOT uzlu
+                ' Pripojenie knihy k ROOT elementu
                 rootElement.AppendChild(knihaElement)
             Next
 
-            ' Ulozenie XML dokumentu do suboru
+            ' Ulozenie XML do suboru
+            Dim exportFilePath As String = "C:\Users\wirth\source\repos\Kniznica2\KniznicaXML.xml"
             xmlDoc.Save(exportFilePath)
 
             MessageBox.Show($"Udaje boli exportovane do suboru: {exportFilePath}", "Export OK", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
-
-            MessageBox.Show($"Nastala chyba pocas exportu:  {ex.Message}", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Chyba pocas exportu: {ex.Message}", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    ' Kniznica do XML 
-    Private Sub sbtnExportXML_Click(sender As Object, e As EventArgs) Handles sbtnExportXML.Click
-        ' cesta ku suboru
-        Dim exportFilePath As String = "C:\Users\wirth\source\repos\Kniznica2\KniznicaXML.xml"
-
-        ExportToXML(stromoveUdaje, exportFilePath)
-    End Sub
 End Class
+
 
 Public Class TreeListNode
     Public Property Key As Guid ' Unikatne ID pre uzol

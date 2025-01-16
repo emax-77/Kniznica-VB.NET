@@ -20,6 +20,7 @@ Partial Class PozickyPivotGrid
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim XyDiagram1 As DevExpress.XtraCharts.XYDiagram = New DevExpress.XtraCharts.XYDiagram()
         Dim DataSourceColumnBinding1 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
         Dim DataSourceColumnBinding2 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
         Dim DataSourceColumnBinding3 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
@@ -28,11 +29,10 @@ Partial Class PozickyPivotGrid
         Dim DataSourceColumnBinding6 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
         Dim DataSourceColumnBinding7 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
         Dim DataSourceColumnBinding8 As DevExpress.XtraPivotGrid.DataSourceColumnBinding = New DevExpress.XtraPivotGrid.DataSourceColumnBinding()
-        Dim XyDiagram1 As DevExpress.XtraCharts.XYDiagram = New DevExpress.XtraCharts.XYDiagram()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.ChartControl1 = New DevExpress.XtraCharts.ChartControl()
         Me.PivotGridControl1 = New DevExpress.XtraPivotGrid.PivotGridControl()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
         Me.UnitOfWork1 = New DevExpress.Xpo.UnitOfWork(Me.components)
         Me.fieldDatumpozicania = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.fieldDatumvratenia = New DevExpress.XtraPivotGrid.PivotGridField()
@@ -42,18 +42,18 @@ Partial Class PozickyPivotGrid
         Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField5 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField6 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.ChartControl1 = New DevExpress.XtraCharts.ChartControl()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(XyDiagram1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -69,14 +69,23 @@ Partial Class PozickyPivotGrid
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'Root
+        'ChartControl1
         '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1223, 597)
-        Me.Root.TextVisible = False
+        Me.ChartControl1.DataSource = Me.PivotGridControl1
+        XyDiagram1.AxisX.VisibleInPanesSerializable = "-1"
+        XyDiagram1.AxisY.VisibleInPanesSerializable = "-1"
+        Me.ChartControl1.Diagram = XyDiagram1
+        Me.ChartControl1.Legend.MaxHorizontalPercentage = 30.0R
+        Me.ChartControl1.Location = New System.Drawing.Point(12, 300)
+        Me.ChartControl1.Name = "ChartControl1"
+        Me.ChartControl1.SeriesDataMember = "Series"
+        Me.ChartControl1.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
+        Me.ChartControl1.SeriesTemplate.ArgumentDataMember = "Arguments"
+        Me.ChartControl1.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative
+        Me.ChartControl1.SeriesTemplate.SeriesDataMember = "Series"
+        Me.ChartControl1.SeriesTemplate.ValueDataMembersSerializable = "Values"
+        Me.ChartControl1.Size = New System.Drawing.Size(1199, 285)
+        Me.ChartControl1.TabIndex = 5
         '
         'PivotGridControl1
         '
@@ -88,20 +97,18 @@ Partial Class PozickyPivotGrid
         Me.PivotGridControl1.Size = New System.Drawing.Size(1199, 284)
         Me.PivotGridControl1.TabIndex = 4
         '
-        'LayoutControlItem1
+        'XpCollection1
         '
-        Me.LayoutControlItem1.Control = Me.PivotGridControl1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1203, 288)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
+        Me.XpCollection1.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
+        Me.XpCollection1.ObjectType = GetType(Kniznica2.Pozicka)
+        Me.XpCollection1.Session = Me.UnitOfWork1
         '
         'fieldDatumpozicania
         '
         Me.fieldDatumpozicania.AreaIndex = 0
         Me.fieldDatumpozicania.Caption = "Datumpozicania"
         DataSourceColumnBinding1.ColumnName = "Datumpozicania"
+        DataSourceColumnBinding1.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.[Date]
         Me.fieldDatumpozicania.DataBinding = DataSourceColumnBinding1
         Me.fieldDatumpozicania.Name = "fieldDatumpozicania"
         '
@@ -110,6 +117,7 @@ Partial Class PozickyPivotGrid
         Me.fieldDatumvratenia.AreaIndex = 1
         Me.fieldDatumvratenia.Caption = "Datumvratenia"
         DataSourceColumnBinding2.ColumnName = "Datumvratenia"
+        DataSourceColumnBinding2.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.[Date]
         Me.fieldDatumvratenia.DataBinding = DataSourceColumnBinding2
         Me.fieldDatumvratenia.Name = "fieldDatumvratenia"
         '
@@ -161,29 +169,23 @@ Partial Class PozickyPivotGrid
         Me.PivotGridField6.DataBinding = DataSourceColumnBinding8
         Me.PivotGridField6.Name = "PivotGridField6"
         '
-        'XpCollection1
+        'Root
         '
-        Me.XpCollection1.DisplayableProperties = "Key;Kniha;Citatel;Datumpozicania;Datumvratenia"
-        Me.XpCollection1.ObjectType = GetType(Kniznica2.Pozicka)
-        Me.XpCollection1.Session = Me.UnitOfWork1
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(1223, 597)
+        Me.Root.TextVisible = False
         '
-        'ChartControl1
+        'LayoutControlItem1
         '
-        Me.ChartControl1.DataSource = Me.PivotGridControl1
-        XyDiagram1.AxisX.VisibleInPanesSerializable = "-1"
-        XyDiagram1.AxisY.VisibleInPanesSerializable = "-1"
-        Me.ChartControl1.Diagram = XyDiagram1
-        Me.ChartControl1.Legend.MaxHorizontalPercentage = 30.0R
-        Me.ChartControl1.Location = New System.Drawing.Point(12, 300)
-        Me.ChartControl1.Name = "ChartControl1"
-        Me.ChartControl1.SeriesDataMember = "Series"
-        Me.ChartControl1.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
-        Me.ChartControl1.SeriesTemplate.ArgumentDataMember = "Arguments"
-        Me.ChartControl1.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative
-        Me.ChartControl1.SeriesTemplate.SeriesDataMember = "Series"
-        Me.ChartControl1.SeriesTemplate.ValueDataMembersSerializable = "Values"
-        Me.ChartControl1.Size = New System.Drawing.Size(1199, 285)
-        Me.ChartControl1.TabIndex = 5
+        Me.LayoutControlItem1.Control = Me.PivotGridControl1
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1203, 288)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
         '
         'LayoutControlItem2
         '
@@ -204,13 +206,13 @@ Partial Class PozickyPivotGrid
         Me.Text = "PozickyPivotGrid"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(XyDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChartControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UnitOfWork1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
