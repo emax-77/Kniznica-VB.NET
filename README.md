@@ -1,5 +1,7 @@
-# program KNIZNICA vo VB.NET s pouzitim DevExpress, XPO a MySQL databazy
+# KNIZNICA vo VB.NET s pouzitim DevExpress, XPO a MySQL databazy
+## program pre spravu knih, citatelov a poziciek 
 ***program som vytvoril pre moje studijne ucely .NET***
+
 
 
 ### Printscreen z programu:
